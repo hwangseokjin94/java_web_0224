@@ -15,7 +15,6 @@ public class Test09 {
 				bingo[i][j] = i * SIZE + 1 + j;
 			}
 		}
-		
 		// 2. 섞기 (SHUFFLE)
 		// x 방향 : 0 ~ SIZE - 1
 		// y 방향 : 0 ~ SIZE - 1
