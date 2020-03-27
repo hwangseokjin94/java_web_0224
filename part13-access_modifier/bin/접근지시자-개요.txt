@@ -1,0 +1,43 @@
+정보은닉 (Information Hiding)
+
+	1. 불필요한 내부 정보는 숨기고, 필요한 정보만 노출시킨다.
+	2. 불필요한 내부 정보는 대표적으로 "필드"이다.
+	3. 노출시키는 정보는 대표적으로 "생성자", "메소드"이다.
+	4. 노출여부 결정은 "접근 지시자"를 통해서 한다.
+	5. "접근 지시자"의 종류
+		1) private		: 같은 클래스내에서만 접근 가능
+		2) default		: 같은 패키지내에서만 접근 가능
+		3) protected	: 같은 패키지 + 상속 관계의 클래스내에서만 접근 가능
+		4) public		: 누구나 접근 가능
+	6. 일반적으로 다음과 같이 관리한다.
+		1) 필드		: private
+		2) 생성자	: public
+		3) 메소드	: public
+
+
+Getters And Setters
+
+	1. 필드를 private 처리하면 필연적으로 필드에 접근하기 위한 메소드가 필요하다.
+	2. 필드에 값을 저장하는 메소드들을 setter 라고 한다.
+	3. 필드의 값을 읽어오는 메소드들을 getter 라고 한다.
+	4. setter 규칙
+		1) public void set필드명(매개변수) {
+		       this.필드 = 매개변수;
+		   }
+		   
+		   boolean isKorean;
+		2) public void setKorean(boolean isKorean) {
+		       this.isKorean = isKorean;
+		   }
+	5. getter 규칙
+		1) public 리턴타입 get필드명() {
+		       return 필드명;
+		   }
+		
+		   boolean isKorean;
+		2) public boolean isKorean() {
+		       return isKorean;
+		   }
+	6. 이클립스는 setter 와 getter 를 자동완성 해준다.
+		1) 메뉴 - Source - Generate Getters and Setters
+		2) 우클릭 - Source - Generate Getters and Setters 

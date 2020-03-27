@@ -1,0 +1,38 @@
+Test01.java
+
+Employee 클래스			필드 : String name, String department
+						메소드 : Constructor, int getPay(), void empInfo()
+
+SalaryWorker 클래스		필드 : int salary
+						메소드 : Constructor, int getPay(), void empInfo()
+
+SalesWorker 클래스		필드 : int salesVolume, double salesIncentive
+						메소드 : Constructor, int getPay(), void empInfo(),
+								 int getSalesPay(),
+								 void setSalesVolume(int salesVolume),
+								 void setSalesIncentive(double salesIncentive)
+
+PartTimeWorker 클래스	필드 : int workTime, int payPerHour
+						메소드 : Constructor, int getPay(), void empInfo()
+								 void setWorkTime(int workTime)
+
+메인 클래스 : Employee 타입의 배열을 이용해서 직원의 정보 저장 및 각 직원의 확인 코드 삽입
+
+
+
+Test02.java
+
+Product 클래스			필드 : String model, int price
+						메소드 : Constructor, String getModel(), int getPrice()
+						
+Tv 클래스				필드 : X
+						메소드 : Constructor
+						
+Computer 클래스			필드 : X
+						메소드 : Constructor
+						
+Customer 클래스			필드 : int money, int bonusPoint, Product[] cart, int numOfProduct
+						메소드 : Constructor,
+							     void buy(Product product) : product 구매 후 cart 에 담기, 보너스포인트는 구매액의 5%
+							     void purchaseList() : 구매 목록, 총 구매액, 보너스포인트, 구매자가 구매 후 남은 돈 출력
+

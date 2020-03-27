@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://C:/java_web_study/part01-basic/part01-basic.iml" filepath="C:/java_web_study/part01-basic/part01-basic.iml" />
+      <module fileurl="file://C:/java_web_study/part02-input/part02-input.iml" filepath="C:/java_web_study/part02-input/part02-input.iml" />
+      <module fileurl="file://C:/java_web_study/part03-random/part03-random.iml" filepath="C:/java_web_study/part03-random/part03-random.iml" />
+      <module fileurl="file://C:/java_web_study/part04-control_statement/part04-control_statement.iml" filepath="C:/java_web_study/part04-control_statement/part04-control_statement.iml" />
+      <module fileurl="file://C:/java_web_study/part05-array/part05-array.iml" filepath="C:/java_web_study/part05-array/part05-array.iml" />
+      <module fileurl="file://C:/java_web_study/part06-class/part06-class.iml" filepath="C:/java_web_study/part06-class/part06-class.iml" />
+      <module fileurl="file://C:/java_web_study/part07-constructor/part07-constructor.iml" filepath="C:/java_web_study/part07-constructor/part07-constructor.iml" />
+      <module fileurl="file://C:/java_web_study/part08-this/part08-this.iml" filepath="C:/java_web_study/part08-this/part08-this.iml" />
+      <module fileurl="file://C:/java_web_study/part09-static/part09-static.iml" filepath="C:/java_web_study/part09-static/part09-static.iml" />
+      <module fileurl="file://C:/java_web_study/part10-reference_field/part10-reference_field.iml" filepath="C:/java_web_study/part10-reference_field/part10-reference_field.iml" />
+      <module fileurl="file://C:/java_web_study/part11-object_array/part11-object_array.iml" filepath="C:/java_web_study/part11-object_array/part11-object_array.iml" />
+    </modules>
+  </component>
+</project>
