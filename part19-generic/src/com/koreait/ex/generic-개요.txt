@@ -1,0 +1,49 @@
+제네릭 (generic)
+
+	1. 클래스나 메소드에서 컴파일할 때 타입체크(type check)를 하는 기능이다.
+	2. 미리 객체(인스턴스)의 공통적인 타입을 명시해서 처리하기 때문에
+	   안정성이 높고, 캐스팅(형변환)을 생략할 수 있다.
+	3. 제네릭 클래스와 제네릭 메소드의 구현이 가능하다.
+	4. 모든 컬렉션 프레임워크는 제네릭 처리가 되어 있어 제네릭을 반드시 알아야 한다.
+	5. 2개 이상의 제네릭 타입 선언이 가능하다.
+	6. 제네릭 타입의 구체화는 reference type 만 가능하다. (primitive type 은 불가능하다.)
+	7. 주의사항
+		1) T obj = new T();		불가능 (제네릭 타입의 객체 생성은 불가능하다.)
+		2) T[] arr = new T[3];	불가능 (제네릭 타입의 배열 생성은 불가능하다.)
+		3) T[] arr;				가능 (제네릭 타입은 배열 타입 선언만 가능하다.)
+
+
+class Box <T> {
+
+	private T obj;
+	
+	public void setObj(T obj) {
+		this.obj = obj;
+	}
+	public T getObj() {
+		return obj;
+	}
+	
+}
+
+// main
+Box<String> box = new Box<>();			// 구체화
+Box<String> box = new Box<String>();	// 구체화는 referenceType 만 허용
+
+
+// 컴파일 시점
+
+T 타입이 String 으로 대치된다.
+
+class Box {		// 구체화 된 클래스
+
+	private String obj;
+	
+	public void setObj(String obj) {
+		this.obj = obj;
+	}
+	public String getObj() {
+		return obj;
+	}
+
+}
