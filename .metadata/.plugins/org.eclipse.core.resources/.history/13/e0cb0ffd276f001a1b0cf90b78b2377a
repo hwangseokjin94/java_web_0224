@@ -1,0 +1,12 @@
+package com.koreait.etc;
+
+public class Ex01_String {
+	public static void main(String[] args) {
+
+		String a = "Apple";
+		String b = "apple";
+
+		System.out.println(a.hashCode());
+		System.out.println(b.hashCode());
+	}
+}

@@ -1,0 +1,30 @@
+package com.koreait.ex;
+
+
+class Mother{
+	String motherName;
+	
+	Mother(String motherName){
+		this.motherName = motherName;
+	}
+}
+
+class Daughter {
+	String daughterName;
+	Daughter(String daughterName) {
+		this.daughterName =daughterName ; 
+		
+	}
+	
+	
+}
+
+public class Ex04_constructor {
+
+	public static void main(String[] args) {
+		Daughter girl = new Daughter("앨리스");
+		System.out.println("엄마이름 :"+girl.motherName);
+
+	}
+
+}

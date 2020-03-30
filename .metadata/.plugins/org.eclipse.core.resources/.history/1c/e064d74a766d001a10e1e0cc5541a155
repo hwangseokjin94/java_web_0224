@@ -1,0 +1,31 @@
+package com.koreait.downcasting;
+
+class Car {
+	private String model;
+
+	public Car(String model) {
+		super();
+		this.model = model;
+	}
+
+	public void drice() {
+		System.out.println(model + "타고 드라이브중 .");
+	}
+
+}
+
+class EV extends Car {
+	private  int battery;
+	
+}
+
+class Hybrid extends EV {
+	oil;
+	addOil;
+}
+
+public class Ex02_Car {
+	public static void main(String[] args) {
+
+	}
+}

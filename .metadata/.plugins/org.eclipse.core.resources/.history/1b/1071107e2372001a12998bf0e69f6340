@@ -1,0 +1,29 @@
+package com.koreait.object;
+
+//toString ():  객체 (인스턴스)를 String으로 변환하는 메소드
+//데이터클래스
+class Person {
+	private String name;
+	private int age;
+
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public void printPerson() {
+		System.out.println("이름  : " + name);
+		System.out.println("나이 : " + age + "살");
+		
+	}
+
+}
+
+public class Ex02_toString {
+
+	public static void main(String[] args) {
+		Person p = new Person("앨리스", 25);
+		String message =  p.toString();
+		System.out.println("객체 p의 String 변환 : "+message);
+	}
+}

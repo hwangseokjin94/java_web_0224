@@ -1,0 +1,20 @@
+package com.koreait.etc;
+
+import java.math.BigInteger;
+
+public class Ex04_big_number {
+	public static void main(String[] args) {
+		//primitive type의 최대값
+		//int 형 최대값.
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(Long.MAX_VALUE);
+		System.out.println(Double.MAX_VALUE);
+
+		//BigInteger 클래스를 활용해서 long 타입 이상 이하 값을 저장한다.
+		BigInteger a= new BigInteger("12345678901234567890");
+		
+		System.out.println(a);
+		//BigInteger 클래스의 필드값.
+		System.out.println(BigInteger.ZERO);
+	}
+}

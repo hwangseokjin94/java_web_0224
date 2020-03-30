@@ -22,3 +22,39 @@ Test04.java
 각자 기념하고 싶은 기념일을 이용해서
 기념일부터 오늘까지 며칠이 지났는지 계산하시오.
 Calendar 클래스와 getTimeInMillis() 메소드 활용 
+
+
+Test05.java
+Score 클래스	필드 : int kor, eng, mat
+				메소드 : toString(), equals()
+
+Score 인스턴스를 2개 생성하고, 동등 비교(세 과목이 모두 같으면 동등) 결과 출력
+각 인스턴스 정보는 toString 메소드를 통해 출력
+
+
+Test06.java
+User 클래스		필드 : String id, password
+				메소드 : Constructor, toString(), equals()
+				
+toString() : 아이디 : ad***, 비밀번호 : ****   (아이디가 "admin", 비밀번호가 "1234"인 회원인 경우)
+equals() : 아이디가 일치하면 true, 아니면 false
+
+
+Test07.java
+Coordinate 클래스	필드 : int x, y
+					메소드 : Constructor, toString(), equals()
+Circle 클래스		필드 : Coordinate center, double radius
+					메소드 : Constructor, toString(), equals()
+
+toString() : 중심좌표 [0, 0], 반지름 : 1.5
+equals() : 중심좌표와 반지름이 모두 같으면 true, 아니면 false
+
+
+
+
+
+
+
+
+
+

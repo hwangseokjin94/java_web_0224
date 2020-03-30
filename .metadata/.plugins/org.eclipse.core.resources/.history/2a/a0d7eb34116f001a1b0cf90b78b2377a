@@ -1,0 +1,46 @@
+package com.koreait.ex2;
+class BankAccount {
+	//필드
+	private String no ; //계좌번호
+	private long balance ;//잔액
+	//constructor
+	BankAccount(String no , long balance){
+		this.no= no;
+		this.balance = balance;
+	}
+	//method
+	//1.입금
+	public void deposit(long money) {
+		
+	}
+	//2.출금
+	public long withdraw(long money) {
+		
+	}
+	//3.조회
+	public void inquiry() {
+		System.out.println("계좌번호 "+no + "잔액은 :"+balance);
+	}
+	//4.이체
+	 public void transfer(??) {
+		 
+	 }
+}
+public class Ex05_BankAccount {
+	public static void main(String[] args) {
+		BankAccount me  = new BankAccount("123-456","50_000");
+		BankAccount you  = new BankAccount("789-000","100_000");
+		me.deposit(-10000);//불가
+		me.deposit(10_000); //현재잔액 60_000
+		me.withdraw(-10000);//불가
+		me.withdraw(100000);//불가
+		me.withdraw(10000);//현재잔액 50_000
+		me.transfer(you,-10_000);// 불가
+		me.transfer(you,10_000_000); //불가
+		me.transfer(you,10_000); //현재잔액 40000 /you 110_000
+		
+		
+		
+		me.inquiry();
+	}
+}

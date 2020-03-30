@@ -1,0 +1,29 @@
+package com.koreait.ex2;
+
+import java.util.Scanner;
+class AgeException extends Exception{
+	public AgeException(String message) {
+		super(message);
+	}
+}
+
+
+public class Ex02_AgeException {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		try {
+
+			System.out.println("나이를 입력하세요");
+			int a = sc.nextInt();
+			throw new AgeException("1~120의 숫자를 입력해주세요");
+		} catch (Exception e) {
+			System.out.println( "예외가 발생하였다.");
+			System.out.println( e.getMessage());
+		}
+
+		
+		sc.close();
+	}
+
+}

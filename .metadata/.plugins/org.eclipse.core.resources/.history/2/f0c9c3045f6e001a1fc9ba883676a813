@@ -1,0 +1,15 @@
+package com.koreait.ex;
+
+public class Ex06_printStackTrace {
+	public static void main(String[] args) {
+		try {
+			System.out.println(args[1]); //ArrayIndexOutOfBoundException 예외 발생 //
+	
+		}catch(Exception e){
+			//System.out.println(e.getMessage());
+		}
+		
+		
+		
+	}//main
+}

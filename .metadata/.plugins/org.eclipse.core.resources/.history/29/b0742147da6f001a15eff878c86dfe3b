@@ -1,0 +1,26 @@
+package com.koreait.test;
+
+import java.util.Calendar;
+
+public class Test03 {
+
+	public static void main(String[] args) {
+		/*Test03.java
+현재 날짜를 StringBuffer, Calendar 클래스를 이용하여
+"2019년 10월 21일 월요일 오후 1시 10분" 과 같은 형식으로 완성하고 출력하시오.*/
+		
+		Calendar cal = Calendar.getInstance();
+//		cal.set(2019, 9, 21));
+	
+
+		cal.set(2019, 9, 21, 2, 10);
+		System.out.print(cal.get(Calendar.YEAR)+"년");
+		System.out.print((cal.get(Calendar.MONTH)+1)+"월");
+		System.out.print(cal.get(Calendar.DAY_OF_MONTH)+"일 :");
+		System.out.print(cal.get(Calendar.DAY_OF_WEEK)+"요일");
+		System.out.print(cal.get(Calendar.AM_PM)+"오후");
+		System.out.println(cal.get(Calendar.HOUR)+"시");
+		System.out.println(cal.get(Calendar.MINUTE)+"분  ");
+	}
+
+}

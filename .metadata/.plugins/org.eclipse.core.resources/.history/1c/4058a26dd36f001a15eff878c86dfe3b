@@ -1,0 +1,20 @@
+package com.koreait.etc;
+
+import java.util.Calendar;
+
+public class Ex05_Calaendar {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Calendar 날짜와 시간을 다루는 클ㄹ래스
+		//Calendar 생성은 getInstance()메소드를 이용한다
+		Calendar cal = Calendar.getInstance();
+		//1.확인은 필드를 이용한다.
+		//년 월 일
+		
+		System.out.println("년 :"+cal.get(Calendar.YEAR));
+		System.out.println("월 :"+cal.get(Calendar.MONTH)+1); //ㅊ
+		System.out.println("일 :"+cal.get(Calendar.DAY_OF_MONTH)+1); //ㅊ
+	}
+
+}

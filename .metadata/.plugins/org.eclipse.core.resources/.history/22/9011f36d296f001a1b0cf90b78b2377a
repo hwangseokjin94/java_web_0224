@@ -1,0 +1,19 @@
+package com.koreait.etc;
+
+public class Ex01_String {
+	public static void main(String[] args) {
+
+		String a = "apple";
+		String b = "apple";
+		
+		System.out.println("a 의 해시코드 (참조값,주소값)="+a.hashCode());
+		System.out.println("b 의 해시코드 (참조값,주소값)="+b.hashCode());
+		
+		String c = new String("Banana");
+		String d = new String("Banana");
+		
+		System.out.println("c 의 해시코드 (참조값,주소값)="+c.hashCode());
+		System.out.println("d 의 해시코드 (참조값,주소값)="+d.hashCode());
+		
+	}
+}

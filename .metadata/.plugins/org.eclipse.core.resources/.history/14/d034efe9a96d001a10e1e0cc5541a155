@@ -1,0 +1,12 @@
+package com.itkoreaex;
+//인터 페이스명  :~할수있는 
+interface Eatable{
+	void eat();
+	void caloireInfo();
+}
+public class Ex03_Eatable {
+
+public static void main(String[] args) {
+	
+}
+}

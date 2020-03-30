@@ -1,0 +1,42 @@
+package com.koreait.ex;
+
+import java.util.Scanner;
+
+class Calculator {
+	private int count;
+
+	// 메서드
+	public void calculator(String a, String b) {
+		count++;
+		int n1 = Integer.parseInt(a);
+		int n2 = Integer.parseInt(b);
+		System.out.println(n1 + "+" + n2 + "=" + (n1 + n2));
+		System.out.println(n1 + "-" + n2 + "=" + (n1 - n2));
+		System.out.println(n1 + "*" + n2 + "=" + (n1 * n2));
+		System.out.println(n1 + "/" + n2 + "=" + (n1 / n2));
+	}
+
+	public void countInfo() {
+		System.out.println("계산기 사용횟수 :" + count + "회");
+	}
+}
+
+public class Ex09_throws {
+
+	public static void main(String[] args) {
+		// Calculator 클래스를 이용해 myCalculator 객체 생성
+		Calculator myCalculator = new Calculator();
+
+		// 정수입력(String 이용)
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 a 입력 >>>");
+		String a = sc.next();
+		System.out.print("정수 b 입력 >>>");
+		String b = sc.next();
+
+		myCalculator.calculator(a, b);
+		myCalculator.countInfo();
+		sc.close();
+	}
+
+}

@@ -1,0 +1,29 @@
+package com.koreait.etc;
+
+/*1.primitive type -> reference type 변경해 주는 클래스들을 의미한다.
+ *2.종류
+ * 1)byte  ->Byte 
+ * 2)int   ->Integer
+ * 3)char  -> Character
+ * 4)short ->Short
+ * 5)long ->Long
+ * 6)double - >Double
+ * 
+ * 3. 변수를 "객체(인스턴스)"로 변환해주는 클래스들이다.
+ * 4. 자동으로 변환되는 "Auto Boxing , UnBoxing을 지원한다.
+ * 5.반드시 reference type을 요구하는 클래스 및 메소드가 있다. 그럴떄 사용한다.
+ * 
+ * 
+ * 
+ * **/
+public class Ex03_wrapper_class {
+
+	public static void main(String[] args) {
+		 Integer a = new Integer(10);
+		 Integer b = new Integer(20);
+		 
+		 //동등비교
+		 System.out.println(a.equals(b));
+	}
+
+}

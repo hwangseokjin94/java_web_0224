@@ -1,0 +1,32 @@
+package com.koreait.etc;
+
+public class Ex01_String {
+	public static void main(String[] args) {
+		//1. 문자열 리터럴은 자바에 의해 최적화 가능
+		// 같은 문자열 을 또 사용하면 기존 문자열을 사용
+		String a = "apple";
+		String b = "apple";
+		System.out.println(a == b ? "apple 1개": "apple2개");
+		System.out.println("a 의 해시코드 (참조값,주소값)="+a.hashCode());
+		System.out.println("b 의 해시코드 (참조값,주소값)="+b.hashCode());
+		
+		//2. new 는 언제나 새로운 문자열을 생성
+		String c = new String("Banana");//new
+		String d = new String("Banana");
+		System.out.println(c==d ? " banana 1개 " : "banana 2개");
+		
+		//3. equals() , equalsIgnoreCase()
+			
+		//4. length()
+			
+		//5. charAt() 
+
+		//6. indexOf() : 지정한 문자의 인덱스를 반환한다.
+		String perID = "123456-1234567";
+		System.out.println(perID.indexOf('-'));
+		
+		
+		
+		
+	}
+}

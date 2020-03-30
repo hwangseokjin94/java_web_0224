@@ -1,0 +1,5 @@
+package com.koreait.object;
+
+public class Ex05_equals_override {
+
+}
