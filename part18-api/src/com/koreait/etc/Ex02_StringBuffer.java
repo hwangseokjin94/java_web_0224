@@ -1,4 +1,5 @@
 package com.koreait.etc;
+
 //StringBuffer , StringBuilder는 같은 역활로 이해하면된다.
 
 public class Ex02_StringBuffer { // 이름에 버퍼가 들어가면 좋은거// 버퍼를함으로서 메모리공간을 활용하여 효율이 증가
