@@ -1,0 +1,2 @@
+BufferedWriter 클래스를 활용해 만든 파일이다. 
+FileWriter 클래스에 비해 속도가 빠르다.

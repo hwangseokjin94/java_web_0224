@@ -5,7 +5,7 @@ BufferedOutputStream 클래스를 이용하시오.
 
 << alphabet.txt >>
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
-abcdefghijklmnopqrstuvwxy
+abcdefghijklmnopqrstuvwxyz
 
 
 Test02.java
@@ -15,6 +15,28 @@ BufferedInputStream 클래스를 이용하시오.
 
 
 Test03.java
-alphabet.txt 파일을 복사하시오
-복사된 파일의 이름은alphabet.txt파일로지정하시오
-파일 복사에 걸린시간을 결과로 출력하시오
+
+alphabet.txt 파일을 복사하시오.
+복사된 파일의 이름은 alphabet2.txt 파일로 지정하시오.
+파일 복사에 걸린 시간을 결과로 출력하시오.
+
+
+Test04.java
+
+jquery-3.4.1.js 파일의 공백 문자(스페이스, 탭, 엔터)를 모두 제거하여
+크기를 줄인 jquery-3.4.1.min.js 파일을 생성하시오.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
