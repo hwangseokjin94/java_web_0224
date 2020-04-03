@@ -1,0 +1,51 @@
+스레드 (Thread)
+
+1. 어떤 프로세스 내에서 실행되는 여러 개의 세부 실행 단위이다.
+2. 한 프로세스 내에 여러 스레드가 포함될 수 있다.
+3. 한 프로세스 내의 스레드들은 Stack 영역만 개별적으로 할당 받고, 나머지 Code, Data, Heap 영역은 서로 공유한다.
+
+
+자바 스레드 (Thread)
+
+1. JVM에 의해 스케쥴링 되는 실행 단위이다.
+2. 자바에서는 프로세스는 존재하지 않고 스레드만 존재한다.
+
+
+스레드 생성 방법
+ 
+1. Runnable 인터페이스를 구현한다.
+   1) 다른 클래스를 이미 상속 받은 서브 클래스들은 스레드가 되기 위해 이 방법을 사용한다.
+   2) Runnable 타입의 객체를 생성한다.
+   3) Thread 를 생성하는 생성자에 Runnable 타입의 객체를 전달한다.
+   
+ 		class Task implements Runnable {
+ 			public void run() {
+ 				// 스레드 실행시 실행 부분
+ 			}	
+ 		}
+ 		Runnable task = new Task();
+ 		Thread thread = new Thread(task);
+ 		thread.start();  // start() 메소드를 호출해야 run() 메서드가 호출된다. 
+
+ 
+2. Thread 클래스를 상속한다.
+   1) 다른 클래스를 상속 받지 않는 경우에 이 방법을 사용한다.
+   2) 직접 Thread 클래스를 상속 받기 때문에 Thread 타입으로 객체를 생성하면 곧바로 스레드가 된다.
+    
+ 		class Task extends Thread {
+ 			@Override
+ 			public void run() {
+ 				// 스레드 실행시 실행 부분
+ 			}
+ 		}
+ 		Thread thread = new Task();
+ 		thread.start();  // run() 메서드 호출 
+
+
+동기화
+
+1. 동시에 실행되고 있는 여러 개의 스레드가 한 자원을 동시에 사용하려고 할 때 한 스레드만 사용할 수 있도록 허용하는 것이다.
+2. 임계 영역(Critical Section) : 공유 리소스를 다루는 영역 중에서 한 번에 한 스레드만 접근해야 하는 영역이다.
+3. 자바의 임계 영역은 다음과 같이 처리한다.
+   1) 메소드 앞에 synchronized 키워드를 선언한다.
+   2) 동기화 블록( synchronized(참조값) { } )을 사용한다.
