@@ -32,7 +32,6 @@ public class Ex01_ConnectionTest {
 			
 			System.out.println("DB접속에 성공했다.");
 		}catch(ClassNotFoundException e) {
-			
 			System.out.println("JDBC드라이버가 없다. Build Path확인이 필요하다.");
 		}catch (SQLException e) {
 			System.out.println("DB접속에 실패했다. 접속정보확인이 필요하다.");
