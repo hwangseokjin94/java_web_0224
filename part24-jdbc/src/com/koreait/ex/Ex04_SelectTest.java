@@ -46,7 +46,7 @@ public class Ex04_SelectTest {
 				int min_salary = rs.getInt("min_salary");
 				int max_salary = rs.getInt("max_salary");
 
-				System.out.println(job_id + ", " + job_title + ", " + min_salary + ", " + max_salary);
+				System.out.println(job_id + ", " + job_title + ", " + min_salary + ", "+ max_salary);
 
 			}
 
