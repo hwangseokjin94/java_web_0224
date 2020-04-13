@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A3ABB9A6-569E-CEA3-E436-C61920B37715" name="과목">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:50:43 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<ordsAlias>table_9</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="과목코드" id="A2B6487F-8B65-9270-8F26-7B98205FDEFE">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:51:58 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="과목명" id="0E5330E1-5436-311D-D057-891EFF9E0AB3">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:51:58 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="교수명" id="C8B93C77-A10B-C733-6BC2-40D9D88D2B10">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:51:58 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B128FBAE-2079-C476-8F0E-1303D530B38D" name="과목_PK">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:51:58 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A2B6487F-8B65-9270-8F26-7B98205FDEFE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

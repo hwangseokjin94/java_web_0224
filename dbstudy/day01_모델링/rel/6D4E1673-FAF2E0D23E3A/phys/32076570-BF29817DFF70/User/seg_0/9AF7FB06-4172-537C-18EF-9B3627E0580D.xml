@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="JAVAWEB0224" directorySegmentName="seg_0" id="9AF7FB06-4172-537C-18EF-9B3627E0580D">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjName>JAVAWEB0224</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:38:18 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<schemaObject>FE4835BA-6E8F-43BB-6A41-9735D379D402</schemaObject>
+<defTableSpace>D02DEEE7-9959-5447-27D8-5AA24EED85CC</defTableSpace>
+<privileges>UNLIMITED TABLESPACE</privileges>
+</UserOraclev10g>

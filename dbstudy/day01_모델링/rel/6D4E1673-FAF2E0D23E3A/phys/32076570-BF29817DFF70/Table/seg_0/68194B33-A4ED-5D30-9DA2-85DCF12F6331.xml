@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="학생" directorySegmentName="seg_0" id="68194B33-A4ED-5D30-9DA2-85DCF12F6331">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:44:34 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="성명" id="22401540-205F-4C9E-BDBF-286921B25B5F">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:45:07 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="학번" id="C25BECEF-DF7D-99DC-DE80-1818BAC32F17">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:45:07 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="나이" id="F9AD171D-783A-0BA1-98C7-41B532D4A248">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:45:07 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="학생_PK" id="2A5A3530-F4EB-57BD-19BA-A089B3BCD93B">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:46:35 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

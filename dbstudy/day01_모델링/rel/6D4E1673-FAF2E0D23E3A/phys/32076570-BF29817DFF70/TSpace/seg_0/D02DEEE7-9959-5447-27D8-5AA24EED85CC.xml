@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableSpaceOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableSpaceOraclev10g" name="SYSTEM" directorySegmentName="seg_0" id="D02DEEE7-9959-5447-27D8-5AA24EED85CC">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>JAVAWEB0224</sourceObjSchema>
+<sourceObjName>SYSTEM</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:38:19 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<emUniformSize>0</emUniformSize>
+<extentManagement>LOCAL</extentManagement>
+</TableSpaceOraclev10g>

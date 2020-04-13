@@ -1,0 +1,36 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="과목" directorySegmentName="seg_0" id="A3ABB9A6-569E-CEA3-E436-C61920B37715">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:50:43 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="과목명" id="0E5330E1-5436-311D-D057-891EFF9E0AB3">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:51:58 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="과목코드" id="A2B6487F-8B65-9270-8F26-7B98205FDEFE">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:51:58 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="교수명" id="C8B93C77-A10B-C733-6BC2-40D9D88D2B10">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:51:58 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="과목_PK" id="B128FBAE-2079-C476-8F0E-1303D530B38D">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:51:58 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

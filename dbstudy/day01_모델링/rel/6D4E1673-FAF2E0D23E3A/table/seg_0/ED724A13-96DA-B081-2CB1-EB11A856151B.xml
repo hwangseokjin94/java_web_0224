@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ED724A13-96DA-B081-2CB1-EB11A856151B" schemaObject="FE4835BA-6E8F-43BB-6A41-9735D379D402" name="SUBJECT">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>JAVAWEB0224</sourceObjSchema>
+<sourceObjName>SUBJECT</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:26:57 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SUB_CODE" id="AA26578D-9EC9-C14B-FDA3-066D690C2BB5">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>SUBJECT</sourceObjSchema>
+<sourceObjName>SUB_CODE</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:26:57 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SUB_NAME" id="8418F4DD-A4F3-FF25-BD6B-E722CC020204">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>SUBJECT</sourceObjSchema>
+<sourceObjName>SUB_NAME</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:26:57 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SUB_PRO_NAME" id="D40ED293-E9B2-101E-95C5-EFF6512A4C35">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>SUBJECT</sourceObjSchema>
+<sourceObjName>SUB_PRO_NAME</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:26:57 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EF295B39-D8EB-7E91-BA72-A5DBB4A263D4" schemaObject="FE4835BA-6E8F-43BB-6A41-9735D379D402" name="SUBJECT_PK">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>JAVAWEB0224</sourceObjSchema>
+<sourceObjName>SYS_C007051</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:26:57 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AA26578D-9EC9-C14B-FDA3-066D690C2BB5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

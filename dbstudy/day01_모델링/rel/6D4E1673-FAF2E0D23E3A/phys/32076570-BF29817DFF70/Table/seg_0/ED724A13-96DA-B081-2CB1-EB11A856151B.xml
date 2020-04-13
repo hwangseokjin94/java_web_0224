@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="SUBJECT" directorySegmentName="seg_0" id="ED724A13-96DA-B081-2CB1-EB11A856151B">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:26:57 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<schemaObject>FE4835BA-6E8F-43BB-6A41-9735D379D402</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>81F300BB-DCAA-9DE1-69FC-0BA24BE9941B</segment>
+<tableSpace>D02DEEE7-9959-5447-27D8-5AA24EED85CC</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="SUB_NAME" id="8418F4DD-A4F3-FF25-BD6B-E722CC020204">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:26:57 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SUB_CODE" id="AA26578D-9EC9-C14B-FDA3-066D690C2BB5">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:26:57 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SUB_PRO_NAME" id="D40ED293-E9B2-101E-95C5-EFF6512A4C35">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:26:57 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="SUBJECT_PK" id="EF295B39-D8EB-7E91-BA72-A5DBB4A263D4">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:26:57 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<schemaObject>FE4835BA-6E8F-43BB-6A41-9735D379D402</schemaObject>
+<segment>DD94D7EE-37B4-008A-0F4C-62A89C8EF721</segment>
+<tableSpace>D02DEEE7-9959-5447-27D8-5AA24EED85CC</tableSpace>
+<indexSegment>DD94D7EE-37B4-008A-0F4C-62A89C8EF721</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="68909D18-2F24-64FF-09FF-A6026C15DE40" schemaObject="FE4835BA-6E8F-43BB-6A41-9735D379D402" name="ENROLL">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>JAVAWEB0224</sourceObjSchema>
+<sourceObjName>ENROLL</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ENR_NUM" id="D1E4D36A-5717-6A88-3371-77D75B820413">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>ENROLL</sourceObjSchema>
+<sourceObjName>ENR_NUM</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STD_ID" id="9AAA21F9-54EA-98D2-B0A5-5419D7FE8943">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>ENROLL</sourceObjSchema>
+<sourceObjName>STD_ID</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="63B71EDE-5585-BBA6-B754-B500D16318FB" referredColumn="5799702B-4697-1814-3928-27EAD962A1BC"/>
+</associations>
+</Column>
+<Column name="SUB_CODE" id="29E83E91-B6B7-9385-498A-56A9B6D1272A">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>ENROLL</sourceObjSchema>
+<sourceObjName>SUB_CODE</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DC95D07A-EABC-9C76-4CD1-82C59BA269CD" referredColumn="AA26578D-9EC9-C14B-FDA3-066D690C2BB5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="53A3C171-9D01-2B85-AF17-18FEE23DAC9E" schemaObject="FE4835BA-6E8F-43BB-6A41-9735D379D402" name="ENROLL_PK">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>JAVAWEB0224</sourceObjSchema>
+<sourceObjName>SYS_C007053</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1E4D36A-5717-6A88-3371-77D75B820413"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A2778C0-AB3A-A988-6FE9-FA85D811E579" name="SYS_C007054">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9AAA21F9-54EA-98D2-B0A5-5419D7FE8943"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="56C7C6FD-A9B0-6FE1-F154-774AAA5D83EE" name="SYS_C007055">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29E83E91-B6B7-9385-498A-56A9B6D1272A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

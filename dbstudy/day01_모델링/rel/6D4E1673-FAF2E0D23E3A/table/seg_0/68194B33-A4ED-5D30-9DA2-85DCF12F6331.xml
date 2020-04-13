@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="68194B33-A4ED-5D30-9DA2-85DCF12F6331" name="학생">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:44:34 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="학번" id="C25BECEF-DF7D-99DC-DE80-1818BAC32F17">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:45:07 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="성명" id="22401540-205F-4C9E-BDBF-286921B25B5F">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:45:07 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="나이" id="F9AD171D-783A-0BA1-98C7-41B532D4A248">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:45:07 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2A5A3530-F4EB-57BD-19BA-A089B3BCD93B" name="학생_PK">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:46:35 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C25BECEF-DF7D-99DC-DE80-1818BAC32F17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

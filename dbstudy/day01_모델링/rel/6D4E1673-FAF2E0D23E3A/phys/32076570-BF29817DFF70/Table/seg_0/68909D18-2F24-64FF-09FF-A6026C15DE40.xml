@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="ENROLL" directorySegmentName="seg_0" id="68909D18-2F24-64FF-09FF-A6026C15DE40">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<schemaObject>FE4835BA-6E8F-43BB-6A41-9735D379D402</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>81F300BB-DCAA-9DE1-69FC-0BA24BE9941B</segment>
+<tableSpace>D02DEEE7-9959-5447-27D8-5AA24EED85CC</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="SUB_CODE" id="29E83E91-B6B7-9385-498A-56A9B6D1272A">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STD_ID" id="9AAA21F9-54EA-98D2-B0A5-5419D7FE8943">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ENR_NUM" id="D1E4D36A-5717-6A88-3371-77D75B820413">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C007054" id="0A2778C0-AB3A-A988-6FE9-FA85D811E579">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="SYS_C007055" id="56C7C6FD-A9B0-6FE1-F154-774AAA5D83EE">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="ENROLL_PK" id="53A3C171-9D01-2B85-AF17-18FEE23DAC9E">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<schemaObject>FE4835BA-6E8F-43BB-6A41-9735D379D402</schemaObject>
+<segment>DD94D7EE-37B4-008A-0F4C-62A89C8EF721</segment>
+<tableSpace>D02DEEE7-9959-5447-27D8-5AA24EED85CC</tableSpace>
+<indexSegment>DD94D7EE-37B4-008A-0F4C-62A89C8EF721</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

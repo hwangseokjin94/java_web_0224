@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DC95D07A-EABC-9C76-4CD1-82C59BA269CD" containerWithKeyObject="68909D18-2F24-64FF-09FF-A6026C15DE40" localFKIndex="56C7C6FD-A9B0-6FE1-F154-774AAA5D83EE" name="SYS_C007055">
+<sourceConnName>%EB%A1%9C%EC%BB%AC-javaweb0224</sourceConnName>
+<sourceObjSchema>JAVAWEB0224</sourceObjSchema>
+<sourceObjName>SYS_C007055</sourceObjName>
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 08:27:15 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<referredTableLongName>JAVAWEB0224.SUBJECT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>ED724A13-96DA-B081-2CB1-EB11A856151B</referredTableID>
+<keyObject>EF295B39-D8EB-7E91-BA72-A5DBB4A263D4</keyObject>
+<referredKeyID>EF295B39-D8EB-7E91-BA72-A5DBB4A263D4</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>SUB_CODE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

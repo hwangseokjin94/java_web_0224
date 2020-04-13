@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CA19ACAD-F938-1149-EAB3-F941D9B3ACBC" name="수강신청">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:52:08 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="신청번호" id="E1BD9BE3-1085-F707-5BEB-2519311E9387">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:53:20 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="학번" id="5E5FF0AB-95F1-F2CE-FF9C-584927D2B206">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:53:20 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EC3F84D8-AC21-4657-F34D-76EDDEA4C0EA" referredColumn="C25BECEF-DF7D-99DC-DE80-1818BAC32F17"/>
+</associations>
+</Column>
+<Column name="과목코드" id="ED052A16-9D7D-A990-15A3-A90503224EBE">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:53:20 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0C445875-E0E8-CE16-8F81-8CD3C84A581F" referredColumn="A2B6487F-8B65-9270-8F26-7B98205FDEFE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2AB2C88F-0123-4D5D-8231-A086A2FD7C4B" name="수강신청_PK">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:53:20 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1BD9BE3-1085-F707-5BEB-2519311E9387"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="791DF367-1330-3F33-ADC3-DB087FD8D280" name="수강신청_학생_FK">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:54:07 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E5FF0AB-95F1-F2CE-FF9C-584927D2B206"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DEC92DF6-F24F-8945-B70A-99266759EEF7" name="수강신청_과목_FK">
+<createdBy>PC</createdBy>
+<createdTime>2020-04-06 07:57:07 UTC</createdTime>
+<ownerDesignName>day01_모델링</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ED052A16-9D7D-A990-15A3-A90503224EBE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
