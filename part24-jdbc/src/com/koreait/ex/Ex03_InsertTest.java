@@ -59,10 +59,8 @@ public class Ex03_InsertTest {
 				}
 			} catch (Exception e) {
 
-			}
-
 		}
 
 	}//main
-
+	}
 }//class
