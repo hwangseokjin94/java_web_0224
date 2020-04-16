@@ -1,0 +1,6 @@
+--SYSTEM으로 접속해서 작업할것
+--javaweb0224계정을 먼저 혜제할것
+DROP USER javaweb0224;
+DROP USER javaweb0224 CASCADE;
+CREATE USER javaweb0224 IDENTIFIED BY 1111;
+GRANT DBA TO javaweb0224;
