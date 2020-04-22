@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+	문단 태그 : <p>
+	
+	1. 문단을 만들떄 사용한다.
+	2. 블록레벨 태그이다.
+	3. 공백 문자는 하나만 표시하고, 줄 바꿈은 표시하지않는다.
+	
+ -->
+	<p>여기가 첫번째 문단이다</p>
+	<p>여기가                    두번째 문단이다</p>
+	<p>여기가                    
+	세번째 문단이다</p>
+
+
+
+
+</body>
+
+</html>

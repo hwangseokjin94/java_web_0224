@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--1.<b></>
+<sub></sub>
+<ins></ins>  -->
+	<p>여기는 <b>처번째</b>문단이다</p>
+	<p>여기는 <i>두번째</i>문단이다</p>
+	<p>여기는 <sup>세번째문단이다</sup></p>
+	<p>여기는 <ins>넷번째</ins>문단이다</p>
+	<p>여기는 <sub>다섯번째</sub>문단이다</p>
+	<p>여기는 <del>여섯번째</del>문단이다</p>
+	<p>여기는 일곱번째문단이다</p>
+	<p>여기는 여덟번째문단이다</p>
+	<p>여기는 아홉번째문단이다</p>
+	<p>여기는 열번째문단이다</p>
+	
+</body>
+</html>

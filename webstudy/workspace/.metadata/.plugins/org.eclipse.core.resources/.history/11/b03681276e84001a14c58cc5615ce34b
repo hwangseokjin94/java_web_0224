@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 개념과 정의
+1. 개념을 의미하는 태그가 <dt>태그이다/
+2. 의미를 의미하는 태그가 <dd>태그이다.
+3.<dl태그의 자식 태그로><dt><dd>태그가있다.  -->
+<dl>
+	<dt>이름</dt>
+	<dd>앨리스</dd>
+	<dt>나이</dt>
+	<dd>22</dd>
+	<dt>자기소개</dt>
+	<dd>
+	나는 캘리포니아엣허 온 앨리스라고 해
+	</dd>
+</dl>
+
+<dl>
+	<dt>준비물</dt>
+	<dd>앨리스</dd>
+	<dd>김치</dd>
+	
+	<dt>조리법</dt>
+	<dd>1. 물을 넣고끓인다</dd>
+	<dd>2.김치를 넣는다</dd>
+	<dd>3.참치를 넣는다</dd>
+	
+</dl>
+
+
+
+</body>
+</html>

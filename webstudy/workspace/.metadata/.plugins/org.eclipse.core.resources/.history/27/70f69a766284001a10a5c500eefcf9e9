@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 
+		형식 태그
+		
+		1. <b></b> : bold, 굵게
+		2. <i></i> : italic, 기울임
+		3. <sup></sup> : super script, 위 첨자
+		4. <sub></sub> : sub script, 아래 첨자
+		5. <ins></ins> : insert, 밑줄  (예전에는 <u></u>)
+		6. <del></del> : delete, 취소선  (예전에는 <s></s>)
+		7.<span></span>: group, 인라인 레벨 css적용을 위해서
+		8.<div></div> :group 블록 레벨 , css적용을 위해서
+		
+	 -->
+
+	<p>여기는 <b>첫 번째</b> 문단이다.</p>
+	<p>여기는 <i>두 번째</i> 문단이다.</p>
+	<p>여기는 <sup>세 번째</sup> 문단이다.</p>
+	<p>여기는 <sub>네 번째</sub> 문단이다.</p>
+	<p>여기는 <ins>다섯 번째</ins> 문단이다.</p>
+	<p>여기는 <del>여섯 번째</del> 문단이다.</p>
+	<p><span style ="background-color:red">여기는 일곱 번째 문단이다.</span></p>
+	<p><span style ="text-align:center">여기는 여덟 번째 문단이다.</span></p>
+	<p><div style ="background-color:blue">여기는 아홉 번째 문단이다.</div></p>
+	<p><div style ="text-align:center">여기는 열 번째 문단이다.</div></p>
+
+</body>
+</html>

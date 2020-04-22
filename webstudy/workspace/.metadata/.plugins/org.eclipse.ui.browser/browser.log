@@ -1,0 +1,11 @@
+
+4월 22, 2020 14:15:50.07 NEW SESSION
+4월 22, 2020 14:15:50.07 [0422/141550.076:ERROR:settings.cc(320)] Settings magic is not 1129342067
+4월 22, 2020 14:15:50.62 [7220:7212:0422/141550.624:ERROR:upgrade_util_win.cc(73)] IProcessLauncher::LaunchCmdElevated failed; hr = 80004002
+4월 22, 2020 14:15:54.43 [7220:7212:0422/141554.430:ERROR:upgrade_util_win.cc(73)] IProcessLauncher::LaunchCmdElevated failed; hr = 80004002
+4월 22, 2020 14:32:19.28 [6148:9744:0422/143219.281:ERROR:upgrade_util_win.cc(73)] IProcessLauncher::LaunchCmdElevated failed; hr = 80004002
+4월 22, 2020 14:33:51.88 [6148:9744:0422/143351.889:ERROR:upgrade_util_win.cc(73)] IProcessLauncher::LaunchCmdElevated failed; hr = 80004002
+4월 22, 2020 14:41:00.72 [9384:3100:0422/144100.724:ERROR:upgrade_util_win.cc(73)] IProcessLauncher::LaunchCmdElevated failed; hr = 80004002
+
+4월 22, 2020 16:51:10.37 NEW SESSION
+4월 22, 2020 16:51:10.37 [5096:892:0422/165110.372:ERROR:upgrade_util_win.cc(73)] IProcessLauncher::LaunchCmdElevated failed; hr = 80004002
