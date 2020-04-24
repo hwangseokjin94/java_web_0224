@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- 메타 태그 -->
+<meta charset="UTF-8">  <!-- 인코딩 방식을 지정한다. -->
+<meta name="description" content="메타 태그를 배우는 페이지">  <!-- 웹 페이지의 설명을 작성한다. -->
+<meta name="keywords" content="meta, meta tag, meta data">  <!-- 웹 페이지의 중요 단어를 등록한다. -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">  <!-- 컨텐트 타입 : html 문서, utf-8 인코딩 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 
+	웹 페이지 크기
+	1. width=device-width : 기기 화면 크기에 너비를 맞춘다.
+	2. initial-scale=1.0 : 최초 크기를 100% 크기로 맞춘다.
+ -->
+<meta http-equiv="refresh" content="5">  <!-- 5초 후에 새로고침된다. -->
+
+
+
+<title>Insert title here</title>
+
+</head>
+<body>
+
+</body>
+</html>

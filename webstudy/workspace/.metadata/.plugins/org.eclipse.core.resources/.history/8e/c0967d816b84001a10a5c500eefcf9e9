@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		순서가 있는 목록 태그 : <ol>
+		
+		1. 순서가 있는 목록 = 번호가 있는 목록
+		2. 각 목록은 자식 태그인 <li></li> 사이에 작성한다.
+		3. type 속성
+		   1) type="1" : 1, 2, 3
+		   2) type="I" : 그리스 대문자
+		   3) type="i" : 그리스 소문자
+		   4) type="A" : 알파벳 대문자
+		   5) type="a" : 알파벳 소문자
+		4. start 속성
+		   목록의 시작 번호를 지정한다.
+		5. <ol>, <li> 는 블록레벨이다.
+	 -->
+
+	<h1>&lt;순서가 있는 목록&gt;</h1>
+	<ol>
+		<li>소주</li>
+		<li>맥주</li>
+		<li>양주</li>
+	</ol>
+	
+</body>
+</html>

@@ -1,133 +1,124 @@
---수강신청 데이터베이스 구축
---학생테이블
---교수테이블
---강의테이블
---수강신청 테이블
---과목테이블
---자식먼저 지우고 부모나중에 삭제
-DROP TABLE LECTURE;
-DROP TABLE ENROLL;
-DROP TABLE STUDENT;
-DROP TABLE COURSE;
+﻿-- 수강신청 데이터베이스 구축
+
+-- 학생(student) 테이블
+-- 교수(professor) 테이블
+-- 강의(lecture) 테이블
+-- 수강신청(enroll) 테이블
+-- 과목(enroll) 테이블
+
+
+-- 테이블 삭제 (자식을 먼저 삭제하고 부모를 나중에 삭제한다.)
+DROP TABLE lecture;
+DROP TABLE enroll;
+DROP TABLE student;
+DROP TABLE course;
 DROP TABLE professor;
---부모테이블생성이 먼저이다. 외래키가 없는 테이블
-CREATE TABLE professor(
-p_no NUMBER NOT NULL PRIMARY KEY,--교수번호
-p_name VARCHAR2(30) ,--교수이름
-p_major VARCHAR2(30)--전공
+
+
+-- 부모(parent) 테이블 생성이 먼저이다. (외래키가 없는 테이블)
+
+-- 1. 교수(professor) 테이블 생성
+CREATE TABLE professor
+(
+p_no NUMBER NOT NULL PRIMARY KEY,  -- 교수번호(기본키)
+p_name VARCHAR2(30),  -- 교수이름
+p_major VARCHAR2(30)  -- 전공
 );
 
-CREATE TABLE course(
-c_no NUMBER NOT NULL PRIMARY KEY,--과목번호 기본키
-c_name VARCHAR2(30),--과목명
-c_unit NUMBER(1) --이수학점
-);
---부모테이블 생성후에는 자식테이블을 생성한다
---3. 핫생 테이블생성 교수테이블의 자식테이블
 
-CREATE TABLE student(
-s_no NUMBER NOT NULL PRIMARY KEY,
-s_name VARCHAR2(30),
-s_address VARCHAR2(30),
-s_grade_no NUMBER(1),
-p_no NUMBER,
-FOREIGN KEY (p_no) REFERENCES professor (p_no)--외래키p_no는 professor테이블의 p_no를 참조한다.
+-- 2. 과목(course) 테이블 생성
+CREATE TABLE course
+(
+c_no NUMBER NOT NULL PRIMARY KEY,  -- 과목번호(기본키)
+c_name VARCHAR2(30),  -- 과목명
+c_unit NUMBER(1)  -- 이수학점
 );
 
---4.수강신청과 강의 관계면 수강신청이 부모테이블이다 그러므로 수강신청을 먼저 만들어야됨
---과목테이블의 자식테이블  + 강의 테이블의 부모 테이블
-CREATE TABLE enroll(
-s_no NUMBER NOT NULL,
-c_no NUMBER NOT NULL,
-e_date DATE,
-PRIMARY KEY(s_no,c_no),-- 기본키 (학번+과목번호)
-FOREIGN KEY (c_no)REFERENCES course (c_no),
-FOREIGN KEY (s_no)REFERENCES student (s_no)
 
+-- 부모 테이블 생성 후에는 자식 테이블을 생성한다.
+
+-- 3. 학생(student) 테이블 생성 - 교수(professor) 테이블의 자식 테이블
+CREATE TABLE student
+(
+s_no NUMBER NOT NULL PRIMARY KEY,  -- 학번(기본키)
+s_name VARCHAR2(30),  -- 학생이름
+s_address VARCHAR2(30),  -- 학생주소
+s_grade_no NUMBER(1),  -- 학년
+p_no NUMBER,  -- 담당교수번호
+FOREIGN KEY (p_no) REFERENCES professor (p_no)  -- 외래키 (p_no 는 professor 테이블의 p_no 를 참조한다.)
 );
 
---5.강의 테이블 생성
-CREATE TABLE lecture(
-lec_no NUMBER NOT NULL PRIMARY KEY,
-p_no NUMBER ,
-s_no NUMBER NOT NULL,
-c_no NUMBER NOT NULL,
-lec_name VARCHAR2(30),--강의이름
-lec_lab VARCHAR2(30), --강의실
-FOREIGN KEY (p_no) REFERENCES professor(p_no),--교수(professor)테이블의 교수번호 p_no를 참조하는 자식테이블
-FOREIGN KEY (s_no) REFERENCES student(s_no),--학생(student )테이블의 학번 s_no를 참조하는 자식테이블
-FOREIGN KEY (s_no,c_no) REFERENCES enroll(s_no,c_no)
---3)수강신청 테이블 (enroll)학번s_no +과목 c_no를 참조하는 자식테이블 외래키
+
+-- 4. 수강신청(enroll) 테이블 생성 - 과목(course) 테이블의 자식 테이블 + 강의(lecture) 테이블의 부모 테이블
+CREATE TABLE enroll
+(
+s_no NUMBER NOT NULL,  -- 학번
+c_no NUMBER NOT NULL,  -- 과목번호
+e_date DATE,  -- 신청일자
+PRIMARY KEY (s_no, c_no),  -- 기본키(학번 + 과목번호)
+FOREIGN KEY (c_no) REFERENCES course (c_no),  -- 외래키 (c_no 는 course 테이블의 c_no 를 참조한다.)
+FOREIGN KEY (s_no) REFERENCES student (s_no)  -- 외래키 (s_no 는 student 테이블의 s_no 를 참조한다.)
 );
---데이터 입력
-INSERT INTO   professor VALUES(123,'이영곤','IT경영학과');
-INSERT INTO   professor VALUES(124,'박주철','경영학과');
-INSERT INTO   professor VALUES(125,'황순귀','신소재 나노');
-
---2.과목(COURSE) (과목번호, 과목명, 이수학점)
-INSERT INTO COURSE VALUES (001,'자바',7);
-INSERT INTO COURSE VALUES (002,'JSP',7);
-INSERT INTO COURSE VALUES (003,'PYTHON',7);
-
-INSERT INTO STUDENT VALUES(101,'홍철화','안양','1','123');
-INSERT INTO STUDENT VALUES(102,'권혜정','부천','2','124');
-INSERT INTO STUDENT VALUES(103,'신지수','시흥','3','125');
 
 
-INSERT INTO ENROLL VALUES(101,001,SYSDATE);
-INSERT INTO ENROLL VALUES(102,002,SYSDATE);
-INSERT INTO ENROLL VALUES(103,003,SYSDATE);
-INSERT INTO ENROLL VALUES(102,001,SYSDATE);
-INSERT INTO ENROLL VALUES(102,003,SYSDATE);
-INSERT INTO ENROLL VALUES(103,001,SYSDATE);
-INSERT INTO ENROLL VALUES(103,002,SYSDATE);
-
-
-
-
-INSERT INTO LECTURE VALUES(111,123,101,001,'자바','E룸');
-INSERT INTO LECTURE VALUES(112,124,102,002,'JSP','D룸');
-INSERT INTO LECTURE VALUES(113,125,103,003,'PYTHON','A룸');
-
-
-
-
-CREATE TABLE lecture(
-lec_no NUMBER NOT NULL PRIMARY KEY,
-p_no NUMBER ,
-s_no NUMBER NOT NULL,
-c_no NUMBER NOT NULL,
-lec_name VARCHAR2(30),--강의이름
-lec_lab VARCHAR2(30), --강의실
-FOREIGN KEY (p_no) REFERENCES professor(p_no),--교수(professor)테이블의 교수번호 p_no를 참조하는 자식테이블
-FOREIGN KEY (s_no) REFERENCES student(s_no),--학생(student )테이블의 학번 s_no를 참조하는 자식테이블
-FOREIGN KEY (s_no,c_no) REFERENCES enroll(s_no,c_no)
---3)수강신청 테이블 (enroll)학번s_no +과목 c_no를 참조하는 자식테이블 외래키
+-- 5. 강의(lecture) 테이블 생성
+-- 1) 교수(professor) 테이블의 교수번호(p_no)를 참조하는 자식 테이블
+-- 2) 학생(student) 테이블의 학번(s_no)을 참조하는 자식 테이블
+-- 3) 수강신청(enroll) 테이블의 학번(s_no)+과목번호(c_no)를 참조하는 자식 테이블
+CREATE TABLE lecture
+(
+lec_no NUMBER NOT NULL PRIMARY KEY,  -- 강의번호 (기본키)
+p_no NUMBER,  -- 교수번호
+s_no NUMBER,  -- 학번
+c_no NUMBER,  -- 과목번호
+lec_name VARCHAR2(30),  -- 강의이름
+lec_lab VARCHAR2(30),  -- 강의실
+FOREIGN KEY (p_no) REFERENCES professor (p_no),  -- 교수(professor) 테이블의 교수번호(p_no)를 참조하는 외래키
+FOREIGN KEY (s_no) REFERENCES student (s_no),  -- 학생(student) 테이블의 학번(s_no)을 참조하는 외래키
+FOREIGN KEY (s_no, c_no) REFERENCES enroll (s_no, c_no)  -- 수강신청(enroll) 테이블의 학번(s_no)+과목번호(c_no)를 참조하는 외래키
 );
+
+
+
+-- 데이터 입력 : INSERT
+
+-- 1. 교수(professor) 테이블 (교수번호, 교수이름, 전공)
+INSERT INTO professor VALUES (1, 'p_kim', 'kor');
+INSERT INTO professor VALUES (2, 'p_lee', 'eng');
+INSERT INTO professor VALUES (3, 'p_choi', 'mat');
+
+-- 2. 과목(course) 테이블 (과목번호, 과목명, 이수학점)
+INSERT INTO course VALUES (10, '고전문학', 2);
+INSERT INTO course VALUES (20, '생활영어', 3);
+INSERT INTO course VALUES (30, '공학수학', 3);
+
+-- 3. 학생(student) 테이블 (학번, 이름, 주소, 학년, 담당교수번호)
+INSERT INTO student VALUES (10000, 's_kim', 'seoul', 1, 1);
+INSERT INTO student VALUES (20000, 's_lee', 'incheon', 1, 2);
+INSERT INTO student VALUES (30000, 's_choi', 'jeju', 1, 3);
+
+-- 4. 수강신청(enroll) 테이블 (학번, 과목번호, 신청일자)
+INSERT INTO enroll VALUES (10000, 10, SYSDATE);
+INSERT INTO enroll VALUES (10000, 20, SYSDATE);
+INSERT INTO enroll VALUES (10000, 30, SYSDATE);
+INSERT INTO enroll VALUES (20000, 10, SYSDATE);
+INSERT INTO enroll VALUES (20000, 20, SYSDATE);
+INSERT INTO enroll VALUES (20000, 30, SYSDATE);
+INSERT INTO enroll VALUES (30000, 10, SYSDATE);
+INSERT INTO enroll VALUES (30000, 20, SYSDATE);
+INSERT INTO enroll VALUES (30000, 30, SYSDATE);
+
+-- 5. 강의(lecture) 테이블 (강의번호, 교수번호, 학번, 과목번호, 강의이름, 강의실)
+INSERT INTO lecture VALUES (1000, 1, 10000, 10, '강의_고전문학의이해', '101호');
+INSERT INTO lecture VALUES (2000, 2, 20000, 20, '강의_생활영어', '201호');
+INSERT INTO lecture VALUES (3000, 3, 30000, 30, '강의_공학수학', '301호');
 
 
 COMMIT;
-SELECT*FROM ALL_USERS;
-
---1.학번 ,이름, 주소 , 교수이름, 전공
-SELECT s.s_no, s.s_name,s.s_address,p.p_name,p.p_major
-FROM professor p,student s --professor 가 PK를 가지고(index를 가지고)있으므로 driving table이된다.
-WHERE  p.p_no = s.p_no ; --조인조건
-
-SELECT s.s_no, s.s_name,s.s_address,p.p_name,p.p_major
-FROM professor p INNER JOIN student s
-ON p.p_no =s.p_no ; --조인조건
 
 
---2.학번 이름 과목번호 신청일자를 출력한다
---학생테이블 학번 이름
---수강신청 테이블 :과목 번호, 신청일자
-SELECT s.s_no, s.s_name, e.c_no, e.e_date
-FROM student s, enroll e 
-WHERE s.s_no = e.s_no ;
-
-SELECT s.s_no, s.s_name, e.c_no, e.e_date
-FROM student s INNER JOIN enroll e 
-on s.s_no = e.s_no ;
-
-
+SELECT * FROM professor;
+SELECT * FROM course;
+SELECT * FROM student;
+SELECT * FROM enroll;
+SELECT * FROM lecture;

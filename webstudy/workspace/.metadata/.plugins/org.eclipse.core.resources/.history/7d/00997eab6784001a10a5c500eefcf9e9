@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 
+		순서가 없는 목록 태그 : <ul>
+		
+		1. 순서가 없는 목록 = 번호가 없는 목록
+		2. 목록을 나열하여 메뉴를 만드는 용도로 많이 사용한다.
+		3. 각 목록은 자식태그인 <li></li>속
+		4. type 속성
+		   1) disc : 디폴트, 속이 채워진 원(●)
+		   2) circle : 속이 빈 원(○)
+		   3) square : 속이 채원진 정사각형(■)
+	 -->
+	<h1>&lt;순서가 없는 목록 &gt;</h1>
+	<ul type="disc">
+		<!--부모  -->
+		<li>dog</li>
+		<li>bird</li>
+		<li>Cat</li>
+	</ul>
+
+	<hr>
+	<ul type="circle">
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>JAVASCRIPT</li>
+		<li>JQUERY</li>
+	</ul>
+	</hr>
+
+	<ul type="square">
+		<li>JAVA</li>
+		<li>DB</li>
+		<li>jsp</li>
+		<li>spring</li>
+	</ul>
+
+
+	<h1>&lt;만들어보세요 &gt;</h1>
+	<h3><ul type="circle">
+		<li>운동</li></h3>
+	</ul>
+	<h5><ul type="disc">
+		<li>축구</li>
+	</ul><h5>
+	<ul type="square">
+		<li>공격수</li>
+		<li>수비수</li>
+		<li>골키퍼</li>
+	</ul>
+
+	<ul type="circle">
+		<li>야구</li>
+	</ul>
+	<ul type="disc">
+		<li>투수</li>
+	</ul>
+	<ul type="square">
+		<li>포수</li>
+		<li>야수</li>
+		
+	</ul>
+	</hr>
+
+	<ul type="square">
+		<li>JAVA</li>
+		<li>DB</li>
+		<li>jsp</li>
+		<li>spring</li>
+	</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>연습문제 1</h1>
+	<table border="1" style="width:20%">
+		<tr>
+			<th>이름</th>
+			<th>나이</th>
+			<th>주소</th>
+		</tr>
+		<tr>
+			<td >홍길동</td>
+			<td >20세</td>
+			<td>서울시 마포고 노고산동</td>
+		</tr>
+		<tr>
+			<th >특기</th>
+			<td colspan = "2">먹기</td>
+		</tr>
+		<tr>
+			<th rowspan ="3">신체</th>
+		
+		</tr>
+		<tr>
+			<td colspan = "2">180cm</td>
+		</tr>
+		<tr>
+		
+			<td colspan = "2">83kg</td>
+			
+		</tr>
+	</table>
+
+
+	<h1>연습문제2</h1>
+	<table border="1" width="400" height="300" >
+		<tr>
+			<td rowspan = "5" >1</td>
+			<td >2</td>
+			<td >3</td>
+			<td >4</td>
+			<td >5</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td rowspan ="3">10</td>
+			<td>11</td>
+			<td>12</td>
+			<td rowspan ="2">13</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>15</td>
+		</tr>
+		<tr>
+			<td>16</td>
+			<td>17</td>
+			<td>18</td>
+			
+		</tr>
+		<tr>
+			<td colspan = "5">19</td>
+			
+		</tr>
+	</table>
+
+
+
+	<h1>연습문제3</h1>
+	<table border="1" style="width:500px">
+		<tr>
+			<td colspan = "4" >1</td>
+			<td rowspan ="7">2</td>
+			
+		</tr>
+		<tr>
+			<td rowspan = "5" >3</td>
+			<td rowspan ="4">4</td>
+			<td colspan ="2">5</td>
+			
+		</tr>
+		<tr>
+			<td >6</td>
+			<td rowspan="4">7</td>
+		</tr>
+		<tr>
+			<td >8</td>
+
+		</tr>
+		<tr>
+			<td >9</td>
+
+		</tr>
+		<tr>
+			<td colspan = "2" >10</td>
+
+		</tr>
+		<tr>
+			<td colspan = "4" >11</td>
+
+		</tr>
+		
+	</table>
+
+
+	<br/><hr/><br/>
+	<h1>연습문제5</h1>
+	<form action="#" method="post" enctype="multipart/form-data">
+	<input type ="text" placeholder="아이디">
+	<input type ="submit" value="중복확인"><br/>
+	<input type ="password" placeholder="새비밀번호"><br/>
+	<input type ="password" placeholder="비밀번호 확인"><br/>
+	<input type ="email" placeholder="이메일">@
+	<input type="text" list="domain" name= "domain" placeholder="직접입력"/>
+	<datalist id="domain">
+		<option value="gmail.com"/>
+		<option value="naver.com"/>
+		<option value="daum.net"/>
+	</datalist>
+	<br/><br/>
+	
+	
+		
+		<fieldset style="width: 200px">
+			<legend>성별</legend>
+			<input type="radio" name="sex" value="male" /> 남자 
+			<input type="radio" name="sex" value="femal" /> 여자<br />
+		</fieldset>
+		
+		<fieldset style="width: 200px">
+			<legend>관심</legend>
+			<input type="checkbox" name="interst" value="movie" /> IT
+			<input type="checkbox" name="interst" value="music" /> 경영<br />
+			<input type="checkbox" name="interst" value="book" />금융
+			<input type="checkbox" name="interst" value="game" />제조<br />
+			<input	type="checkbox" name="interst" value="fitness" />서비스
+			<input	type="checkbox" name="interst" value="fitness" />기타<br />
+		</fieldset>
+		
+	<br /><br /><br />
+	
+	거주지
+	<input type="text" list="address" name= "address" placeholder="선택하세요"/>
+	<datalist id="address">
+		<option value="서울"/>
+		<option value="대구"/>
+		<option value="부산"/>
+		<option value="대전"/>
+		<option value="인천"/>
+	</datalist>
+	<input type="text">
+
+     <br /><br /><br />
+     
+     
+           자기소개<br/>
+	<textarea rows="10" cols="50" name="content" placeholder="200자 이내 간단히 작성"></textarea>
+     <br /><br />
+       이력서<br/>
+<form action="#" method="post" enctype="multipart/form-data">
+	
+		<input type="file" name="filename" placeholder="찾아보기"/>
+		<input type="submit" value="업로드"/>
+	</form>
+
+
+
+   <br /><br /><br />
+	제출일
+   	<input type="date"/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="button" value="다시입력"/> 
+
+
+
+
+</form>
+
+</body>
+</html>
