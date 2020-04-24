@@ -26,6 +26,7 @@
       <module fileurl="file://$PROJECT_DIR$/part22-network/part22-network.iml" filepath="$PROJECT_DIR$/part22-network/part22-network.iml" />
       <module fileurl="file://$PROJECT_DIR$/part23-thread/part23-thread.iml" filepath="$PROJECT_DIR$/part23-thread/part23-thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/part24-jdbc/part24-jdbc.iml" filepath="$PROJECT_DIR$/part24-jdbc/part24-jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part25-jdbc/part25-jdbc.iml" filepath="$PROJECT_DIR$/part25-jdbc/part25-jdbc.iml" />
     </modules>
   </component>
 </project>
