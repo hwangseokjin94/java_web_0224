@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<!-- 연습문제 -->
+	
+	<h3>연습문제-1</h3>
+	<form action="#" method="post">
+		<label for="ID">아이디: </label>
+		<input id="ID" type="text" placeholder="아이디" autofocus /><br />
+		<label for="PW">비밀번호: </label>
+		<input id="PW" type="password" placeholder="비밀번호" /><br />
+		<input type="submit" value="로그인" /><!--submit은 form action  -->
+		
+	</form>
+	
+	
+	<br/><hr/><br/>
+	
+	
+	<h3>연습문제-2</h3>
+	<form action="#" method="post">
+		<fieldset style="width:400px; text-align:center">
+			<input type="email" name="email" placeholder="example@naver.com" />
+			<input type="password" name="pw" placeholder="비밀번호" />
+			<input type="button" value="로그인" onclick="#" /><!--onclick은 자바스크립트로 submit명령을 직접내린다. 이떄 action도 직접작성한다. -->
+		</fieldset>
+	</form>
+	
+	<h3>연습문제-3</h3>
+	<table border="1" >
+	
+	<thead>
+	    <tr><th colspan= "4">개인정보작성</th></tr>
+	</thead>
+	<tbody>
+		
+			<tr><td>이름</td><td><input type="text"/><br /></td></tr>
+			<tr><td>메일주소</td><td><input type="email"/><br /></td></tr>
+			<tr><td>연락처</td><td><input type="number"/><br /></td></tr>
+			<tr><td>메일주소</td><td ><input type="url"/><br /></td></tr>
+		
+			
+	</tbody>
+	<tfoot style="text-align:center">
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="제출하기" />
+						<input type="reset" value="다시작성" />
+					</td>
+				</tr>
+			</tfoot>
+	
+	</table>
+	
+	
+		<h3>연습문제-3</h3>
+	<form action="#" method="post">
+		<table>
+			<thead>
+				<tr>
+					<th colspan="2">개인 정보 작성</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><label for="username">이름 </label></td>
+					<td><input id="username" type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td><label for="email">메일 주소</label></td>
+					<td><input id="email" type="email" name="email" /></td>
+				</tr>
+				<tr>
+					<td><label for="phone">연락처</label></td>
+					<td><input id="phone" type="tel" name="phone" /></td>
+				</tr>
+				<tr>
+					<td><label for="homepage">블로그/홈페이지</label></td>
+					<td><input id="homepage" type="url" name="homepage" /></td>
+				</tr>
+			</tbody>
+			<tfoot style="text-align:center">
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="제출하기" />
+						<input type="reset" value="다시작성" />
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</form>
+	
+	
+	
+	<br/><br/><br/><br/>
+	
+	
+	
+	<h3>연습문제-4</h3><br/>
+	<h2>설문조사</h1>
+	<h3>몇시에 주무시나요?</h3><br/>
+	<dd>
+		<ol>
+	<li><input type="radio" name="time"value="9"/>9시<br/></li>
+	<li><input type="radio" name="time"value="10"/>10시<br/></li>
+	<li><input type="radio" name="time"value="11"/>11시<br/></li>
+	<li><input type="radio" name="time"value="12"/>12시<br/></li>
+		</ol>
+	<dd>
+	<h3>몇시에일어나시나요?</h3><br/>
+	<ol>
+	<li><input type="radio" name="time1" value="5"/>5시<br/></li>
+	<li><input type="radio" name="time1"value="6"/>6시<br/></li>
+	<li><input type="radio" name="time1"value="7"/>7시<br/></li>
+	<li><input type="radio" name="time1"value="8"/>8시<br/></li>
+	</ol>
+	
+	<input type="button"value="제출하기">
+	
+	
+	<br/><hr/><br/>
+	
+	
+	<h3>연습문제-4</h3>
+	<h1>설문조사</h1>
+	<form action="#" method="post">
+		<dl>
+			<dt>몇 시에 주무시나요?</dt>
+			<dd>
+				<ol>
+					<li><input type="radio" name="time-to-sleep" value="nine" />9시</li>
+					<li><input type="radio" name="time-to-sleep" value="ten" />10시</li>
+					<li><input type="radio" name="time-to-sleep" value="eleven" />11시</li>
+					<li><input type="radio" name="time-to-sleep" value="twelve" />12시</li>
+				</ol>
+			</dd>
+			<dt>몇 시에 일어시나요?</dt>
+			<dd>
+				<ol>
+					<li><input type="radio" name="time-to-wakeup" value="five" />5시</li>
+					<li><input type="radio" name="time-to-wakeup" value="six" />6시</li>
+					<li><input type="radio" name="time-to-wakeup" value="seven" />7시</li>
+					<li><input type="radio" name="time-to-wakeup" value="eight" />8시</li>
+				</ol>
+			</dd>
+		</dl>
+		<input type="submit" value="제출하기" />
+	</form>
+	
+		
+	<h3>연습문제-5</h3>
+	<form action="#" method="post" enctype="multipart/form-data">
+		<input type="text" name="id" placeholder="아이디" />
+		<input type="button" value="중복확인" />
+		<br/><br/>
+		<input type="password" name="pw" placeholder="새 비밀번호" />
+		<br/><br/>
+		<input type="password" name="pw2" placeholder="비밀번호 확인" />
+		<br/><br/>
+		<input type="text" name="email" placeholder="이메일" />
+		@
+		<input list="domain" type="text" name="domain" placeholder="직접 입력" />
+		<datalist id="domain">
+			<option value="gmail.com" />
+			<option value="naver.com" />
+			<option value="daum.net" />
+		</datalist>
+		<br/><br/>
+		<fieldset style="width:300px">
+			<legend>성별</legend>
+			<label><input type="radio" name="gender" value="male" checked />남자</label>
+			<label><input type="radio" name="gender" value="female" />여자</label>
+		</fieldset>
+		<br/>
+		<fieldset style="width:300px">
+			<legend>관심</legend>
+			<label><input type="checkbox" name="interests" value="it" checked />IT</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label><input type="checkbox" name="interests" value="manage" />경영</label>
+			<br/>
+			<label><input type="checkbox" name="interests" value="finance" />금융</label>&nbsp;&nbsp;
+			<label><input type="checkbox" name="interests" value="produce" />제조</label>
+			<br/>
+			<label><input type="checkbox" name="interests" value="service" />서비스</label>&nbsp;&nbsp;
+			<label><input type="checkbox" name="interests" value="etc" />기타</label>
+		</fieldset>
+		<br/><br/>
+		<label for="city">거주지 </label>
+		<select id="city" name="city">
+			<option value="">::선택하세요::</option>
+			<option value="seoul">서울</option>
+			<option value="daejeon">대전</option>
+			<option value="daegu">대구</option>
+			<option value="busan">부산</option>
+			<option value="incheon">인천</option>
+		</select>
+		<input type="text" name="address" />
+		<br/><br/>
+		<label for="info">자기 소개</label>
+		<br/>
+		<textarea id="info" name="info" rows="5" cols="40" placeholder="200자 이내 간단히 작성" ></textarea>
+		<br/><br/>
+		<label for="attach">이력서 </label>
+		<input id="attach" type="file" name="filename" />
+		<br/><br/>
+		<label for="send-date">제출일 </label>
+		<input id="send-date" type="date" name="submission" />
+		<br/><br/>
+		<input type="submit" value="제출" />
+		<input type="reset" value="다시입력" />	
+	</form>
+	
+	
+	
+	
+	
+	
+	
+
+</body>
+</html>

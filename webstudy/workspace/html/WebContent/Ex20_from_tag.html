@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 폼태그
+	1. 사용자로 부터 정보를 입력 받을때 사용한다.
+	2. action속성
+		1)입력 받을 정보를 어디로 보낼것인지 위치나 경로를 지정한다.  
+		2)submit한 정보들이 action의 위치로 전달된다.
+	3.method 속성
+		1)정보를 보내는 방식을 지정한다.
+		2)get 방식
+			(1) 정보를 헤더(header)에 포함시켜서 보낸다.
+			(2) URL에 보내는 정보가 노출된다.-보안이 취약하다.
+			(3) 빠르다. 보안이 필요 하지않는 검색에서 많이 사용된다.
+		3)post방식
+			1)정보를 본문(body)에 포함시켜서 보낸다
+			2)url에보내느 정보가 노출되지않는다. 보안이 강화된다.
+			3)느리다. 보안이 필요한 로그인 회원가입등에서 많이 사용된다.
+	4.enctype속성
+		1) 파일업로드가 필요한경우에 사용한다.
+		2) 파일 업로드시 아래2개 속성을 작성한다.
+		3) enctype="multipart/form-data"
+		4) method ="post"
+	5. 주요 자식 태그
+		1) input : 사용자 정보를 입력받는 태그
+		2) button : 버튼
+		3) select :	사용자 정보를 선택하는 태그
+		4) textarea :많은 양의 정보르 입력 받는 태그, 행과 열을 지정할 수있음.
+		
+						
+		-->
+	<form action="#" method="post" enctype="multipart/form-data">
+		<h1>파일첨부하기</h1>
+		첨부파일<input type="file" name="filename"/>
+		<input type="submit" value="업로드"/>
+	</form>
+	<br/><hr/><br/>
+	
+	<!--파일첨부가 없는 폼  -->
+	<form action="#" method="get" enctype="multipart/form-data">
+		<!-- 1. input 태그
+	 	      1)type 속성 : text,number,email,url,password 등
+	 	      2)name 속성 : 변수명 
+	 	      3)value 속성 :값
+	 	       -->
+		<h1>&lt;input&gt;태그의 텍스트 입력</h1>
+		<ul>
+			<li>일반 텍스트 입력 :<input type="text" name="query" /></li>
+			<li>비밀번호 : <input type="password" name="pw" /></li>
+			<li>숫자 : <input type="number" name="age" /></li>
+			<li>이메일 : <input type="email" name="email" /></li>
+			<li>URL : <input type="url" name="url" /></li>
+			<li>전화번호 : <input type="tel" name="phone" /></li>
+			<li>날짜 <input type="date" name="regdate" /></li>
+			<li>시간 : <input type="time" name="open_time" /></li>
+
+		</ul>
+		<hr />
+		<h1>&lt;input&gt;태그의 버튼</h1>
+		<ul>
+			<li>일반 버튼 : <input type="button" value="일반버튼" /></li>
+			<li>일반 버튼 :
+				<button>일반버튼</button>
+			</li>
+			<li>전송버튼 : <input type="submit" value="전송버튼" /></li>
+			<li>취소버튼 :<input type="reset" value="입력취소" /></li>
+			<li>이미지 submit 버튼:<input type="image" alt="전송버튼"
+				src="assets/images/remove.jpg " width="100" /></li>
+			<li></li>
+		</ul>
+
+		<hr />
+
+
+
+		<!--
+	 그룹화 :<fieldset<
+	 1. checkbox,radio 등을 그룹화 하는 경우 자주 사용된다.
+	 2. 제목을 작성하는<legend>태그가있다.
+		  -->
+
+		<h1>&lt;input&gt;태그의 선택</h1>
+		<fieldset style="width: 200px">
+			<legend>취미</legend>
+			<input type="checkbox" name="hobbies" value="movie" /> 영화<br /> <input
+				type="checkbox" name="hobbies" value="music" /> 음악<br /> <input
+				type="checkbox" name="hobbies" value="book" />독서<br /> <input
+				type="checkbox" name="hobbies" value="game" />게임<br /> <input
+				type="checkbox" name="hobbies" value="fitness" />헬스<br />
+		</fieldset>
+
+		<fieldset style="width: 200px">
+			<legend>지역</legend>
+			<input type="radio" name="region" value="seoul" checked/>서울 <br />  
+			<input type="radio" name="region" value="incheon" />인천<br /> 
+			<input type="radio" name="region" value="jeju" />제주<br /> 
+			<input type="radio" name="region" value="busan" />부산<br />
+			<input type="radio" name="region" value="daegu" />대구<br />
+		</fieldset>
+	
+	
+	<h1>&lt;select&gt;태그의 선택</h1>
+	<select name ="mobile1">
+		<option value="010">010</option>
+		<option value="011">011</option>
+		<option value="019">019</option>
+	</select>
+	<select name ="role"  multiple>
+		<option value="connect">connect</option>
+		<option value="resource">resource</option>
+		<option value="dba">dba</option>
+	</select>
+	
+	<br/><br/>
+	
+	<!--콤보:입력+ 선택  -->
+	<input type="text" list="domain" name= "domain"/>
+	<datalist id="domain">
+		<option value="gmail.com"/>
+		<option value="naver.com"/>
+		<option value="daum.net"/>
+	</datalist>
+	
+		<h1>&lt;textarea&gt;태그의 텍스트 입력</h1>
+		자기소개<br/>
+		<textarea rows="10" cols="100" name="content"></textarea>
+
+	</form>
+
+
+	<br/><hr/><br/>
+	
+	<form action="#">  <!-- method는 생략하면 "get"으로 사용된다. -->
+		이름 <input type="text" name="username" placeholder="이름" autofocus /> <br/>
+		나이 <input type="text" name="userage" placeholder="나이" /> <br/>
+		<input type="image" alt="제출" src="assets/images/remove.jpg" width="50" />
+		<br/><br/>
+		<input type = "button" value="도움말을 보려면 클릭하세요" onclick="alert('도움말이다')"/>
+	</form>
+	
+	<br/><hr/><br/>
+	
+
+	<form action="#">
+		
+		
+		아이디 <input type="text" name="userid" />
+		
+		<br/>
+		
+		<!-- label 태그 -->
+		<label>아이디 <input type="text" name="userid" /></label>
+				
+		<br/>
+		<!-- label 태그 -->
+		<label for="uId">아이디 </label>		
+		<input id="uId" type="text" name="userid" />
+		<br/>
+		<!-- checkbox에 label -->
+		<input id="duk" type ="checkbox" name="favorites" value="떡볶이"/>
+		<label for="duk">떡볶이</label>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input id="soondae" type ="checkbox" name="favorites" value="순대"/>
+		<label for="soondae">순대</label>
+		
+	</form>
+	
+	<br/><hr/><br/>
+		<!--간단 한웹계산기  -->	
+	<form action="">
+		<input type ="text" id = "a" size="5" autofocus/>+
+		<input type ="text" id = "b" size="5"/> =
+		<output name ="result"></output><br/><br/>
+		<input type="button" value="계산" onclick="result.value=parseInt(a.value)+parseInt(b.value)" />
+	
+	<br/><hr/><br/>
+	<form action="#">
+	<!--  서버에 데이터를 전달하기위한 태그
+	사용자에게 입력을 받아서 전달하지 않고
+	서버에 직접전달하는 방식을 inpu type="hidden"을 사용한다.-->
+	<input type="hidden" name="url" value="www.google.com"/>
+	<input type="hidden" name="page" value="3"/>
+	<input type="submit" value="hidden 데이터 보내기"/
+	><br/><hr/><br/>
+	
+	</form>
+	
+	
+	
+	
+	
+	
+	
+		
+	</form>
+
+
+	<h1>연습문제-1</h1>
+	<form action="#">
+	<label for="uId">아이디  :</label>		
+	<input id="uId" type="text" name="userid" />
+		<br/>
+	<label for="uPw">비빌번호 :</label>
+	<input id="uPw" type="password" name="userpw" />	
+	<br/>
+	<label for ="ulog"></label>
+	<input id ="ulog" type="submit"  value ="로그인"name="login"/>
+	
+	
+	</form>
+
+
+
+	<!-- 연습문제 -->
+	
+	<h3>연습문제-1</h3>
+	<form action="#" method="post">
+		<label for="Id">아이디: </label>
+		<input id="Id" type="text" placeholder="아이디" autofocus /><br />
+		<label for="Pw">비밀번호: </label>
+		<input id="Pw" type="password" placeholder="비밀번호" /><br />
+		<input type="submit" value="로그인" />
+		<input type="button" value="로그인" onclick="" />
+	</form>
+	
+    <h2>연습문제-2</h2>
+    <form action="#" method = "post">
+    <label for ="email"></label>
+    <input id = "email" type="email" placeholder="example@naver.com" autofocus/>
+    <label for ="PP"></label>
+    <input id = "PP" type="password" placeholder="비밀번호"/>
+    <input type = "submit" value="로그인"/>
+    
+    </form>
+
+
+
+</body>
+</html>
