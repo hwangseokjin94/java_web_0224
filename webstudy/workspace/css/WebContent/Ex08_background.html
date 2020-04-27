@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+
+	/* 클래스 선택자   .클래스 { 속성:값 } */
+	/* 아이디 선택자   #아이디 { 속성:값 } */
+	
+	.box-style {
+		border: 2px solid orange;  /* 2px 두께의 orange 실선 */
+	}
+	
+	#box1 {
+		background-color: crimson;
+	}
+	#box2 {
+		/* 박스 자체의 크기 조정 */
+		width: 640px;  /* 너비 */
+		height: 426px;  /* 높이 */
+		background-image: url(assets/images/car.jpg);
+		background-size: 640px 426px;  /* 가로크기 세로크기 */
+	}
+	#box3 {
+		width: 500px;
+		height: 400px;
+		background-image: url(assets/images/car.jpg);
+		background-size: cover;  /* 가로:세로비율 유지하며 크기를 맞춤 */
+	}
+	#box4 {
+		width: 1000px;
+		height: 1000px;
+		background-image: url(assets/images/car.jpg);
+		background-repeat: no-repeat;
+		background-position: center;  /* top,bottom,세로가운데는생략   left,center,right */
+	}
+	
+
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- id 속성 값은 같은 페이지에서 중복될 수 없다. -->
+
+	<div id="box1" class="box-style">
+		<h1>BOX-1</h1>
+	</div>
+	
+	<br/><hr/><br/>
+	
+	<div id="box2" class="box-style">
+		<h1>BOX-2</h1>
+	</div>
+
+	<br/><hr/><br/>
+	
+	<div id="box3" class="box-style">
+		<h1>BOX-3</h1>
+	</div>
+	
+	<br/><hr/><br/>
+	
+	<div id="box4" class="box-style">
+		<h1>BOX-4</h1>
+	</div>
+	
+</body>
+</html>
