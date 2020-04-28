@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+
+	/*
+		바깥 여백 : margin (border 바깥쪽)
+		
+		1. margin-top
+		2. margin-bottom
+		3. margin-left
+		4. margin-right
+		5. margin
+		    1) margin: top  right  bottom  left
+		    2) margin: top  right/left  bottom
+		    3) margin: top/bottom  right/left
+		    4) margin: top/right/bottomleft
+		6. margin 의 auto 값
+		    margin: auto;  좌우에 동일한 바깥 여백이 생기면서, 해당 요소가 화면의 가운데에 배치된다.
+	*/
+
+	.box-style {
+		width: 100px;
+		border: 1px solid black;
+		font-size: 20px;
+	}
+	#box1 {
+		margin: 50px 0 0 50px;
+	}
+	#box2 {
+		margin: auto;
+	}
+	
+	#image-box {
+		width: 640px;
+		height: 426px;
+		background-image: url(assets/images/car.jpg);
+		background-size: 640px 426px;
+	}
+	#image-desc-box {
+		font-size: 20px;
+		text-align: center;
+		border-radius: 10px;
+		padding: 10px;  /* 좌우 합쳐서 내부여백 20px */
+		border: 5px solid blue;  /* 좌우 합쳐서 테두리 10px */
+		margin: 10px;  /* 좌우 합쳐서 바깥여백 20px */
+		width: 590px;  /* width + 양쪽내부여백 + 양쪽테두리 + 양쪽바깥여백 = 640px */
+	}
+
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div id="box1" class="box-style">
+		box-1
+	</div>
+	
+	<br/><br/>
+	
+	<div id="box2" class="box-style">
+		box-2
+	</div>
+
+
+	<br/><hr/><br/>
+
+
+	<div id="image-box">
+	</div>
+	
+	<div id="image-desc-box">
+		자동차 이미지
+	</div>
+
+</body>
+</html>

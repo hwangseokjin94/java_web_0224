@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+
+	/* h1 태그 바로 아래 p 태그만 적용 (인접형제) */
+	h1 + p {
+		color: red;
+	}
+	
+	/* h1 태그 아래 모든 p 태그에 적용 (일반형제) */
+	h1 ~ p {
+		background-color: yellow;
+	}
+
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- h1, p 태그는 부모가 body 로 같은 형제들이다. -->
+	<!-- h1 이 형, p 가 동생 -->
+
+	<h1>Title</h1>
+	<p>Content-1</p>
+	<p>Content-2</p>
+	<p>Content-3</p>
+
+</body>
+</html>

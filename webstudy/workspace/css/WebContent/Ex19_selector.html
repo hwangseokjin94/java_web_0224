@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+	
+	/* body 자식(후손 아님) 중 h1 요소에서 첫 번째 요소 */
+	body > h1:first-of-type {
+		color: red;
+	}
+	/* body 자식(후손 아님) 중 h2 요소에서 첫 번째 요소 */
+	body > h2:first-of-type {
+		color: orange;
+	}
+	/* body 자식(후손 아님) 중 h3 요소에서 첫 번째 요소 */
+	body > h3:first-of-type {
+		color: yellow;
+	}
+	
+	
+	/* body 자식(후손 아님) 중 h1 요소에서 마지막 요소 */
+	body > h1:last-of-type {
+		color: purple;
+	}
+	/* body 자식(후손 아님) 중 h2 요소에서 마지막 요소 */
+	body > h2:last-of-type {
+		color: navy;
+	}
+	/* body 자식(후손 아님) 중 h3 요소에서 마지막 요소 */
+	body > h3:last-of-type {
+		color: green;
+	}
+	
+	
+	/* body 자식(후손 아님) 중 div 자식(후손 아님) 중 모든 요소에서 첫 번째 요소 */
+	body > div > *:first-of-type {
+		text-decoration: underline;
+	}
+	/* body 자식(후손 아님) 중 div 자식(후손 아님) 중 모든 요소에서 마지막 요소 */
+	body > div > *:last-of-type {
+		font-style: italic;
+	}
+	/* ul자식(후손 아님)중 li의 1,3,5...번쨰 모든 요소 */
+	ul>li:nth-of-type(2n+1){ /*n=0~,2n+1=1,3,5  */
+		font-weight:bold;
+	}
+	/* ul자식(후손 아님)중 li의 2,4,6...번쨰 모든 요소 */
+	ul>li:nth-of-type(2n+0){/*n:0~,2n+0:2,4,6,  */
+		font-style:italic;
+	}
+	
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- h1, h2, h3 각 2개 -->
+	<h1>header-1</h1>
+	<h2>header-2</h2>
+	<h3>header-3</h3>
+	<h1>header-1</h1>
+	<h2>header-2</h2>
+	<h3>header-3</h3>
+	
+	<div>
+		<h1>div-header-1</h1>
+		<p>content-1</p>
+		<h2>div-header-2</h2>
+		<p>content-2</p>
+		<h3>div-header-3</h3>
+		<p>content-3</p>
+		
+		<h1>div-header-1</h1>
+		<p>content-1</p>
+		<h2>div-header-2</h2>
+		<p>content-2</p>
+		<h3>div-header-3</h3>
+		<p>content-3</p>
+		
+		<h1>div-header-1</h1>
+		<p>content-1</p>
+		<h2>div-header-2</h2>
+		<p>content-2</p>
+		<h3>div-header-3</h3>
+		<p>content-3</p>
+	</div>
+	
+	<br/>
+	
+	
+	<ul>
+		<li>사과</li>
+		<li>포도</li>
+		<li>참외</li>
+		<li>망고</li>
+		<li>딸기</li>
+		<li>수박</li>
+	</ul>
+	
+</body>
+</html>
