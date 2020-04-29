@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	/*
+		1. 수평레이아웃 (float: left)
+		    1) 부모에 overflow: hidden;
+		    2) 부모에 display: flex;
+	*/
+
+	.top-menu > .menu-bar {
+		list-style-type: none;
+		background: black;
+		display: flex;
+	}
+	.top-menu > .menu-bar > li {
+		float: left;
+	}
+	.top-menu > .menu-bar > li > a {
+		display: block;
+		width: 100px;
+		padding: 30px;
+		text-decoration: none;
+		text-align: center;
+		font-weight: bold;
+		color: #FFFFFF;
+	}
+	.top-menu > .menu-bar > li > a:hover {
+		background: lightgray;
+		color: #000000;
+	}
+	.top-menu > .menu-bar > li > a:active {
+		background: darkgreen;
+		color: #000000;
+	}
+	
+</style>
+</head>
+<body>
+
+	<div class="top-menu">
+		<ul class="menu-bar">
+			<li><a href="javascript:void(0)">HOME</a></li>
+			<li><a href="javascript:void(0)">BOARD</a></li>
+			<li><a href="javascript:void(0)">GUEST</a></li>
+			<li><a href="javascript:void(0)">ABOUT</a></li>
+		</ul>
+	</div>
+	
+	<div class="main-menu">
+		본문
+	</div>
+
+</body>
+</html>

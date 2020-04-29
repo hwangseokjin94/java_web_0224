@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	.wrap1 {
+		background: lightgray;
+		margin-bottom: 20px;
+	}
+	.wrap1 > .box1 {
+		width: 200px;
+		height: 200px;
+		border: 1px solid black;
+		float: left;
+	}
+	.wrap1 > .clear {
+		clear: left;
+	}
+	
+	
+	/*
+		1. 부모 (wrap, container)    overflow: hidden;
+		2. 자식 (box)                float: left;
+	*/
+	.wrap2 {
+		background: gray;
+		margin-bottom: 20px;
+		overflow: hidden;
+	}
+	.wrap2 > .box2 {
+		width: 200px;
+		height: 200px;
+		border: 1px solid black;
+		float: left;
+	}
+	
+	
+	/*
+		부모 (wrap, container)    display: flex;
+	*/
+	.wrap3 {
+		background: darkgray;
+		margin-bottom: 20px;
+		display: flex;
+		flex-flow: row nowrap;
+		/* flex-direction(row, column, row-reverse, column-reverse) */
+		/* flex-wrap(nowrap, wrap, wrap-reverse) */
+		justify-content: flex-start;  /* flex-start, flex-end, center, space-between, space-around */
+	}
+	.wrap3 > .box3 {
+		width: 200px;
+		height: 200px;
+		border: 1px solid black;
+		float: left;
+	}
+	
+	
+	
+</style>
+</head>
+<body>
+
+	<div class="wrap1">
+		<div class="box1">A</div>
+		<div class="box1">B</div>
+		<div class="box1">C</div>
+		<div class="clear"></div>
+	</div>
+	
+	
+	<div class="wrap2">
+		<div class="box2">D</div>
+		<div class="box2">E</div>
+		<div class="box2">F</div>
+	</div>
+	
+	
+	<div class="wrap3">
+		<div class="box3">G</div>
+		<div class="box3">H</div>
+		<div class="box3">I</div>
+	</div>
+	
+	
+	<div>바닥글</div>
+	
+
+</body>
+</html>

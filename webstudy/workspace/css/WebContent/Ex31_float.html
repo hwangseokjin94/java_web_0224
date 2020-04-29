@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	* {
+		padding: 0;
+		margin: 0;
+	}
+	div {
+		border: 1px solid black;
+		box-sizing: border-box;
+	}
+	.container {
+		width: 1000px;
+		margin: auto;  /* 가운데 배치 */
+	}
+	.container > .top-menu {
+		width: 100%;  /* .container 의 width 와 같다. */
+		height: 300px;
+		background: pink;
+	}
+	.container > .main-menu {
+		width: 100%;  /* .container 의 width 와 같다. */
+	}
+	.container > .main-menu > .left-menu {
+		float: left;
+		width: 20%;  /* .main-menu 의 width 의 20% 이다. */
+		height: 700px;
+		background: green;
+	}
+	.container > .main-menu > .right-menu {
+		float: left;
+		width: 80%;  /* .main-menu 의 width 의 80% 이다. */
+		height: 700px;
+	}
+	.container > .main-menu > .right-menu > .content {
+		width: 100%;  /* .right-menu 의 width 와 같다. */
+		height: 500px;
+		background: yellow;
+	}
+	.container > .main-menu > .right-menu > .footer {
+		width: 100%;  /* .right-menu 의 width 와 같다. */
+		height: 200px;
+		background: violet;
+	}
+	
+</style>
+</head>
+<body>
+	
+	<div class="container">
+	
+		<div class="top-menu">
+			상단메뉴
+		</div>
+		
+		<div class="main-menu">
+		
+			<div class="left-menu">
+				왼쪽바
+			</div>
+			
+			<div class="right-menu">
+			
+				<div class="content">
+					콘텐츠
+				</div>
+				
+				<div class="footer">
+					바닥글
+				</div>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+	
+</body>
+</html>
+
+
