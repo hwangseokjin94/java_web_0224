@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div {
+		width: 200px;
+		height: 200px;
+		background-color: pink;
+	}
+	div.rotate-box {
+		/* 원래는 벤더 prefix 필요 */
+		transform: rotate(15deg);  /* 시계방향 15도 회전 */
+	}
+	div.translate-box {
+		transform: translate(300px ,50px);  /* 가로(X)방향 300px, 세로(Y)방향 50px */
+	}
+	div.scale-box{
+		transform:scale(1.5,1.5);
+	}
+</style>
+</head>
+<body>
+
+	<h3>회전(rotate)</h3>
+	<div class="rotate-box"></div>
+	
+	<br/><br/><br/>
+	
+	<h3>이동(translate)</h3>
+	<div class="translate-box"></div>
+	
+	<br/><br/><br/>
+	
+	<h3>크기(scale)</h3>
+	<div class="scale-box"></div>
+
+</body>
+</html>

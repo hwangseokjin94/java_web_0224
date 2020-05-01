@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.wrap {
+		width: 1000px;
+		margin: auto;
+		text-align: center;
+		border: 3px solid black;
+	}
+	.wrap > ul.fruit-list {
+		list-style-type: none;
+		padding: 0;
+		border: 3px solid blue;
+	}
+	.wrap > ul.fruit-list > li {
+		/* li는 img, div 의 부모 */
+		/* 부모의 position: relative; 로 주면 자식의 position: absolute; 로 줄 수 있다. */
+		position: relative;
+		padding: 0;
+		margin: 10px;
+		width: 300px;
+		height: 400px;
+		display: inline-block;
+		border: 3px solid red;
+	}
+	.wrap > ul.fruit-list > li > img {
+		width: 300px;
+		height: 200px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.wrap > ul.fruit-list > li > div.description {
+		width: 300px;
+		height: 200px;
+		position: absolute;
+		top: 200px;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.5);  /* 반투명 검정 */
+		color: white;
+		opacity: 0;  /* 완전 투명 (안 보임) */
+		transition: transform 1s, opacity 1s;  /* property duration function delay */
+		/* transition: all 1s;   모든 CSS 속성에 transition 처리한다. */
+	}
+	.wrap > ul.fruit-list > li > img:hover + div.description {
+		opacity: 1;  /* 완전 불투명 (보임) */
+		transform: translate(0, -200px);
+	}
+	
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="fruit-list">
+			<li>
+				<img src="assets/images/fruit1.jpg" alt="블루베리 이미지">
+				<div class="description">
+					<h1 class="description-title">블루베리</h1>
+					맛있는 블루베리<br/>
+					가격: 10,000원
+				</div>
+			</li>
+			<li>
+				<img src="assets/images/fruit2.jpg" alt="아보카도 이미지">
+				<div class="description">
+					<h1 class="description-title">아보카도</h1>
+					맛있는 아보카도<br/>
+					가격: 20,000원
+				</div>
+			</li>
+			<li>
+				<img src="assets/images/fruit3.jpg" alt="바나나 이미지">
+				<div class="description">
+					<h1 class="description-title">바나나</h1>
+					맛있는 바나나<br/>
+					가격: 5,000원
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	<br/>
+	
+	<div style="line-height: 50px; height: 50px; border: 1px solid black;">
+		메뉴
+	</div>
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>

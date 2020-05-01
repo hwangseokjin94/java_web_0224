@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	.wrap {
+		position: relative;
+		width: 600px;
+		height: 600px;
+		border: 1px solid black;
+	}
+
+	.wrap > .box {
+		width: 100px;
+		height: 100px;
+		border: 1px dotted black;
+	}
+	
+	.wrap > #red-box {
+		position: static;  /* static : 기본값, top, bottom, left, right 지정 안 됨 */
+		top: 50px;  /* 적용 안 됨 */
+		bottom: 50px;  /* 적용 안 됨 */
+		left: 50px;  /* 적용 안 됨 */
+		right: 50px;  /* 적용 안 됨 */
+	}
+	
+	.wrap > #red-box {
+		position: relative;  /* 알아서 배치, top, bottom, left, right 지정됨 */
+		top: 50px;
+		left: 50px;
+		background: red;
+	}
+	
+	
+	
+	
+	.wrap > #red-box {
+		position: absolute;
+		/* 부모 중 position 이 relative 또는 absolute 인 요소가 기준 */
+		/* top, bottom, left, right 직접 지정함 */
+		top: 10px;
+		left: 10px;
+		background: red;
+	}
+	
+	.wrap > #orange-box {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		background: orange;
+	}
+	
+	.wrap > #yellow-box {
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+		background: yellow;
+	}
+	
+	.wrap > #blue-box {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		background: blue;
+	}
+	
+	
+</style>
+</head>
+<body>
+
+	<div class="wrap">
+		<div class="box" id="red-box"></div>
+		<div class="box" id="orange-box"></div>
+		<div class="box" id="yellow-box"></div>
+		<div class="box" id="blue-box"></div>
+	</div>
+
+</body>
+</html>

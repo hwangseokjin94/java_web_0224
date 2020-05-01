@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+	
+	input[type=text] {
+		border: 3px solid limegreen;
+	}
+	input[type=text]:focus {
+		border: 3px solid red;
+	}
+	
+	fieldset {
+		width: 200px;
+	}
+	fieldset legend {
+		display: none;
+	}
+	input[type=checkbox]:checked+span{
+	font-weight:bold;
+	}
+	input:disabled{
+		border:0;
+	}
+	
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="#">
+		검색 <input type="text" /><br/>
+		<fieldset>
+			<legend>성별</legend>
+			<input type="checkbox" name="gender" /><span>남</span>
+			<input type="checkbox" name="gender" /><span>여</span>			
+		</fieldset>
+		<br/>
+		이부분은 수정하지마시오<br/>
+		<input type = "text" value="010-1111-2222" disabled/>
+	</form>
+
+</body>
+</html>
+
+
+

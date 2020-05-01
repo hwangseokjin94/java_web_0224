@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style type="text/css">
+ 	form input[type]{
+ 		font-size: 20px;
+ 		broder:1px solid black;
+ 	}
+ 	form input[readonly]{
+ 		background-color:lightgray;
+ 	}
+ 	form input[type = text]{
+ 		background-color:yellow;
+ 	}
+ 	form input[type=password]{
+ 		border-radius: 10px;
+ 	}
+ 	form input:not([type=number]){
+ 	 	width: 500px;
+ 	}
+ 	img[src$=jpg]{
+ 	width:200px;
+ 	}
+ 	img[src$=png]{
+ 	width:400px;
+ 	}
+</style>
+
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#">
+	 	일반 텍스트 <input type="text"/><br/>
+	 	비빌번호<input type="password"/><br/>
+	 	이메일<input type="email" value="vpdnsldk@naver.com" readonly/><br/>
+	 	숫자<input type="number"/><br/>
+	</form>
+	
+	<br/><br/>
+	<h3>이미지1</h3>
+	<img alt="이미지1" src="assets/images/seoul.jpg"><br/>
+	<h3>이미지2</h3>
+	<img alt="이미지2" src="assets/images/seoul.png"><br/>
+
+
+
+
+
+
+	
+</body>
+</html>

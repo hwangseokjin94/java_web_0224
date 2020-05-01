@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.container {
+		width: 100%;
+	}
+	.left-box, .right-box {
+		width: 200px;
+		height: 200px;
+		border: 1px solid black;
+		margin: 10px;
+	}
+	.left-box {
+		float: left;
+	}
+	.outer-box{
+		width: 200px;
+		height: 200px;
+		border: 1px solid black;
+		clear :left;/*left,right,both :이전 float속성을 없앤다  */
+	}
+
+</style>
+</head>
+<body>
+
+	<div class="container">
+	
+		<div class="left-box" style="background: red;">RED</div>
+		<div class="left-box" style="background: orange;">ORANGE</div>
+		<div class="left-box" style="background: yellow;">YELLOW</div>
+		<div class="left-box" style="background: green;">GREEN</div>
+		<div class="left-box" style="background: blue;">BLUE</div>
+		<div class="left-box" style="background: navy;">NAVY</div>
+		<div class="left-box" style="background: purple;">PURPLE</div>
+	
+	</div>
+
+	<div class="outer-box">
+		OUTER-BOX
+		
+	</div>
+
+
+</body>
+</html>

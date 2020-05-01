@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.wrap {
+		width: 1000px;
+		margin: auto;
+		text-align: center;
+	
+		
+	}
+	.wrap > ul.fruit-list {
+		list-style-type: none;
+		
+	}
+	.wrap > ul.fruit-list > li {
+		/* li는 img, div 의 부모 */
+		/* 부모의 position: relative; 로 주면 자식의 position: absolute; 로 줄 수 있다. */
+		position: relative;
+		padding: 0;
+		width: 300px;
+		height: 200px;
+		display: inline-block;
+	
+	
+	}
+	
+	.wrap > ul.fruit-list > li>img{
+		width: 300px;
+		height: 200px;
+		position: absolute;
+		top:0;
+	}
+	.wrap > ul.fruit-list > li>div.description{
+		width: 300px;
+		height: 200px;
+		position: absolute;
+		top:200px;
+		left:150px;
+		background-color:  #e6e6e6;
+		opacity: 0.1;
+		transition :transform 1s,opacity 1s;
+		transition-property: transform;
+	
+		transition-timing-function: ease-in;
+		text-align: center;
+			font-weight:bold;
+			
+	}
+	
+	div.description:hover{
+ 
+ transform: translate(0px ,-200px);
+ opacity: 1;
+ }
+
+	
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="fruit-list">
+			<li>
+				<img src="assets/images/fruit1.jpg" alt="블루베리 이미지">
+				<div class="description">
+					<h1 class="description-title">블루베리</h1>
+					맛있는 블루베리<br/>
+					가격: 10,000원
+				</div>
+			</li>
+			<li>
+				<img src="assets/images/fruit2.jpg" alt="아보카도 이미지">
+				<div class="description">
+					<h1 class="description-title">아보카도</h1>
+					맛있는 아보카도<br/>
+					가격: 20,000원
+				</div>
+			</li>
+			<li>
+				<img src="assets/images/fruit3.jpg" alt="바나나 이미지">
+				<div class="description">
+					<h1 class="description-title">바나나</h1>
+					맛있는 바나나<br/>
+					가격: 5,000원
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

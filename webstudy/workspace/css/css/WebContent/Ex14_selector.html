@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+	
+	/* 1. 후손 선택자(모든 자식 및 자손) */
+	#header h1 {  /* #header 아래 모든 h1 */
+		color: red;
+	}
+	#article h1 {  /* #article 아래 모든 h1 */
+		color: blue;
+	}
+	
+	/* 2. 자식 선택자(바로 아래 자식)
+	#header > h1 {  #header 바로 아래 h1 만
+		color: red;
+	}
+	#article > h1 {  #article 바로 아래 h1 만
+		color: blue;
+	}
+	*/
+	
+	/* #header h1, div : #header 의 후손 h1, 모든 div */
+	/* #header h1, #header div : #header 의 후손 h1, #header 의 후손 div */
+	
+	/* table 태그 아래 tbody 태그가 자동 삽입되면서 table 의 자식인 tr 은 존재하지 않게 된다. */
+	table > tr {
+		background-color: yellow;
+	}
+	
+	/* table 태그 아래 모든 tr 태그에 적용이므로 tbody 태그가 추가되어도 적용이 된다. */
+	table tr {
+		background-color: yellow;
+	}
+	
+</style>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div id="header">
+		<h1>Title-1</h1>
+		<div id="nav">
+			<h1>Title-2</h1>
+		</div>
+	</div>
+	
+	<div id="article">
+		<h1>Title-3</h1>
+		<p>Content</p>
+	</div>
+	
+	<br/><br/>
+	
+	<table style="border: 1px solid black;">
+		<tr>
+			<td>성명</td>
+			<td>주소</td>
+		</tr>
+		<tr>
+			<td>앨리스</td>
+			<td>서울시 마포구 서교동</td>
+		</tr>
+		<tr>
+			<td>제임스</td>
+			<td>서울시 마포구 공덕동</td>
+		</tr>
+	</table>
+
+</body>
+</html>
+
+
+
+
+
+

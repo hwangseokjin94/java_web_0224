@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.transition-box {
+		width: 10px;
+		background: pink;
+		
+		transition-property: width;  /* width 속성에 적용한다. */
+		transition-delay: 1s;  /* 1초 후에 */
+		transition-duration: 5s;  /* 5초 동안 */
+		transition-timing-function: ease;  /* ease(디폴트), ease-in, ease-out, linear */
+	}
+	.transition-box:hover {
+		width: 500px;
+	}
+	
+	.rotate-box {
+		width: 100px;
+		height: 100px;
+		background-color: green;
+		
+		transition-property: transform;
+		transition-duration: 3s;
+		transition-timing-function: ease-in;
+	}
+	.rotate-box:hover {
+		transform: rotate(360deg);
+	}
+	.r{
+	width: 100px;
+		height: 100px;
+	transition-property: transform;
+		transition-duration: 3s;
+		transition-timing-function: ease-in;
+	}
+	.r:hover{
+	transform: rotate(360deg);
+	}
+</style>
+</head>
+<body>
+
+	<h3>마우스를 대면 1초 후에 5초 동안 너비가 500px 로 커지는 박스</h3>
+	<div class="transition-box">BOX</div>
+
+	<br/><br/><br/>
+
+	<h3>마우스를 대면 3초 동안 180도 회전하는 박스</h3>
+	<div class="rotate-box">180도</div>
+	<h3>Mr.cha</h3>
+	<img alt="차" src="assets/images/cc.jpg" class="r"></img>
+	
+
+</body>
+</html>

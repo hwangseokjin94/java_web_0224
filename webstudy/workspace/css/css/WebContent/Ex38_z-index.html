@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div.wrap {
+		width: 300px;
+		height: 300px;
+		border-radius: 20px;
+		background: skyblue;
+		position: relative;
+		z-index: 10;
+	}
+	div.wrap > div.box {
+		width: 150px;
+		height: 150px;
+		border-radius: 10px;
+		position: absolute;
+	}
+	div.wrap > #red-box {
+		background: red;
+		top: 50px;
+		left: 50px;
+		z-index:10;
+	}
+	div.wrap > #green-box {
+		background: green;
+		top: 100px;
+		left: 100px;
+		z-index:2;
+	}
+</style>
+</head>
+<body>
+
+	<div class="wrap">
+		<div id="red-box" class="box"></div>
+		<div id="green-box" class="box"></div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	span {
+		border: 1px solid black;
+		background: lightgray;
+	}
+
+	#none {
+		display: none;  /* 화면에서 사라진다. 구역도 없어진다. */
+	}
+	
+	#inline {
+		/* inline 레벨 태그 : <span>, <a> */
+		display: inline;  /* 인라인레벨 */
+		width: 1000px;  /* 적용되지 않는다. */
+		height: 1000px;  /* 적용되지 않는다. */
+		
+		text-align: center;  /* 적용되지 않는다. */
+		vertical-align: middle;  /* 적용되지 않는다.(테이블만 적용) */
+	}
+	
+	#block {
+		/* block 레벨 태그 : <div>, <ul>, <ol>, <li>, <h1> */
+		display: block;  /* 블록레벨 */
+		width: 500px;  /* 블록레벨은 width, height 적용이 된다. */
+		height: 50px;
+		
+		text-align: center;  /* 적용된다. */
+		vertical-align: middle;  /* 적용되지 않는다.(테이블만 적용) */
+	}
+	
+	#inline-block {
+		display: inline-block;  /* 인라인레벨에서 블록레벨(width, height) 속성이 가능하다 */
+		width: 500px;  /* 블록레벨은 width, height 적용이 된다. */
+		height: 50px;
+		
+		text-align: center;  /* 적용된다. */
+		vertical-align: middle;  /* 적용되지 않는다.(테이블만 적용) */
+	}
+
+</style>
+</head>
+<body>
+
+	<h1>display: none</h1>
+	<p>여기는 <span id="none">첫 번째</span> 문단이다.</p>
+	
+	<h1>display: inline</h1>
+	<p>여기는 <span id="inline">두 번째</span> 문단이다.</p>
+	
+	<h1>display: block</h1>
+	<p>여기는 <span id="block">세 번째</span> 문단이다.</p>
+	
+	<h1>display: inline-block</h1>
+	<p>여기는 <span id="inline-block">네 번째</span> 문단이다.</p>
+
+</body>
+</html>

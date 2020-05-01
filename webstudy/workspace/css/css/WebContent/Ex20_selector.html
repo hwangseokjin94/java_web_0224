@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	/* body 자식(후손아님) 중 첫 번째 자식이 p 태그이면 적용된다. */
+	body > p:first-child {
+		color: red;
+	}
+	/* body 자식(후손아님) 중 마지막 자식이 p 태그이면 적용된다. */
+	body > p:last-child {
+		color: blue;
+	}
+	
+	
+	/* ol 자식(후손아님) 중 첫 번째 자식이 li 태그이면 적용된다. */
+	ol > li:first-child {
+		color: red;
+	}
+	/* ol 자식(후손아님) 중 마지막 자식이 li 태그이면 적용된다. */
+	ol > li:last-child {
+		color: blue;
+	}
+	/* ol 자식(후손아님) 중 3, 6, 9번째 자식이 li 태그이면 적용된다. */
+	ol > li:nth-child(3n+0) {
+		font-weight: bold;
+	}
+	
+</style>
+</head>
+<body>
+
+	<div>div-1</div>
+	<p>p-1</p>
+	<p>p-2</p>
+	<p>p-3</p>
+	<p>p-4</p>
+	<div>div-2</div>
+	
+	<br/>
+	
+	<ol>
+		<li>떡볶이</li>
+		<li>튀김</li>
+		<li>순대</li>
+		<li>떡꼬치</li>
+		<li>핫도그</li>
+		<li>주먹밥</li>
+	</ol>
+
+</body>
+</html>

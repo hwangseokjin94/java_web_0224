@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 구글 폰트를 @import 한 ex23.css -->
+<link style="text/css" rel="stylesheet" href="assets/style/ex23.css">
+
+<style type="text/css">
+	
+	.multi-column {
+		
+		/* 구글 폰트 */
+		 font-family: 'Poppins', sans-serif;
+		
+		/*
+			브라우저 prefix
+			1.-webkit-:chrome
+			2.-moz-=:firefox
+			3.-o-:opera
+			4.-ie-:ie
+	sssss		-webkit-column-count: 3;
+			-moz-column-count: 3;
+			-o-column-count: 3;
+			-ie-column-count: 3;
+		 */
+		/* 다단 문서 (3단 문서) */
+		column-count: 3;
+		column-gap: 50px;  /* 단 사이 간격 */
+		column-rule: 1px solid black;  /* 구분선 */
+		column-width: auto;
+	}
+	
+</style>
+
+</head>
+<body>
+
+	<h1>다단 문서</h1>
+	<div class="multi-column">
+		Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse lobortis sit amet metus vitae blandit. Nam porta ornare augue cursus maximus. Ut laoreet ipsum quis egestas lacinia. Etiam vel rhoncus ipsum. Aliquam quis ultrices massa. Pellentesque id sodales tortor. Donec pellentesque leo at augue placerat bibendum sed a turpis. Nulla facilisi. Curabitur dictum sagittis enim, in consequat odio tincidunt nec. Nunc gravida rhoncus leo, eget rutrum metus. Curabitur lacinia leo sit amet massa dignissim finibus. Ut eleifend lorem dolor. Vestibulum laoreet dui sed risus interdum bibendum. Etiam efficitur lorem vitae tincidunt vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+	</div>
+
+</body>
+</html>
