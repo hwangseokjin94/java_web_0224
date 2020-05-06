@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>성적 확인</h1>
+	<ul>
+		<li>학생명 : <span id="name"></span></li>
+		<li>평균 : <span id="average"></span>점</li>
+		<li>학점 : <span id="grade"></span>학점</li>
+	</ul>
+
+	<script type="text/javascript">
+	
+		/* 11~13번 라인에서 id가 결정된다. id가 결정된 뒤에 getElementById를 사용할 수 있다. */
+		
+		/* 입력대화상자 : 학생명, 국어, 영어, 수학 */
+				
+var name = prompt('학생명을 입력하세요');
+var userKor = Number(prompt(' 국어점수를입려하세요'));
+var userEng = Number(prompt(' 영어점수를입려하세요'));
+var userMath = Number(prompt(' 수학점수를입려하세요'));
+	
+	var average = (userKor+userEng+userMath)/3;
+	var grade;
+
+	
+	if ( average >= 90 ) {
+		grade = 'A';
+	} else if ( average >= 80 ) {
+		grade = 'B';
+	} else if ( average >= 70 ) {
+		grade = 'C';
+	} else if ( average >= 60 ) {
+		grade = 'D';
+	} else {
+		grade = 'F';
+	}
+
+
+	
+	// 4. 화면 출력
+	document.getElementById('name').innerHTML = name;
+	document.getElementById('average').innerHTML = average;
+	document.getElementById('grade').innerHTML = grade;
+	</script>
+</body>
+</html>

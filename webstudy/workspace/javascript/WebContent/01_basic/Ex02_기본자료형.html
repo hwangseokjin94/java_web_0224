@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/* 1. 기본자료형(type) */
+	// 1) 숫자 : number
+	// 2) 문자열 : string
+	// 3) 논리 : boolean
+	// 4) 널 : null (타입은 아는데 저장된 값이 없다.)
+	// 5) 언디파인드 : undefined (타입을 모른다.)
+	// 6) 객체 : object
+	
+	
+	/* 2. 변수(variable) */
+	// 1) 변수 선언 시 자료형(타입)을 명시하지 않는다.
+	// 2) 선언 방법
+	//    var 변수명;
+	// 3) 타입은 최초로 저장되는 값에 의해서 자동으로 결정된다.
+	//    var a = 10;   number 타입 결정
+	//    var b = 'abc';   string 타입 결정
+	//    var c = false;   boolean 타입 결정
+	//    var d = null;   null 타입 결정
+	//    var e;
+	//    document.write(e);   undefined 타입
+	// 4) 변수 선언이 없어도 사용할 수 있다.
+	// 5) 기본 초기화
+	//    (1) 숫자 : 0
+	//    (2) 문자열 : null
+	//    (3) 논리 : false
+	//    (4) 객체 : null
+	// 6) 공백문자 안 된다.
+	// 7) 숫자로 시작은 안 된다. 포함은 된다.
+	// 8) 특수문자(_, $)는 일부만 사용이 된다
+	
+	
+	/* 3. 리터럴 */
+	// 1) 숫자 : 10, 1.5
+	// 2) 문자열 : '문자열' 또는 "문자열" (자바와 다름)
+	// 3) 논리 : false, true
+	// 4) 널 : null
+	
+	
+	
+	var a;  // 변수 a 선언
+	document.write(a + '<br/>');
+	document.write(typeof(a) + '<br/>');
+	
+	
+	b = null;  // 선언 없이 사용한 변수 b
+	document.write(b + '<br/>');
+	document.write(typeof(b) + '<br/>');
+	
+	
+	document.write("'Hello' javascript" + '<br/>');  // 자바에서는  \'Hello\' javascript
+	document.write('"Hello" javascript' + '<br/>');  // 자바에서는  \"Hello\" javascript
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
