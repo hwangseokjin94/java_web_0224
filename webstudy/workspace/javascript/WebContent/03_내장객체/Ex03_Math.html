@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	console.log('파이 Math.PI: ' + Math.PI);
+	console.log('제곱 Math.pow(2, 3): ' + Math.pow(2, 3));
+	console.log('제곱 2 ** 3: ' + 2 ** 3);
+	console.log('절대값 Math.abs(-5): ' + Math.abs(-5));
+	console.log('최대값 Math.max(1, 2, 3): ' + Math.max(1, 2, 3));
+	console.log('최소값 Math.min(1, 2, 3): ' + Math.min(1, 2, 3));
+	
+	console.log('정수 반올림 Math.round(123.456): ' + Math.round(123.456));
+	console.log('정수 올림 Math.ceil(123.456): ' + Math.ceil(123.456));
+	console.log('정수 내림 Math.floor(123.456): ' + Math.floor(123.456));
+	
+	// Math.round(123.456 * 10) / 10 : 123.5 (소수 1자리 반올림)
+	// Math.round(123.456 * 100) / 100 : 123.46 (소수 2자리 반올림)
+	// Math.round(123.456 * 1000) / 1000 : 123.456 (소수 3자리 반올림)
+	
+	// 소수 n자리 반올림
+	// Math.round(123.456 * (10 ** n)) / (10 ** n)
+	// Math.round(123.456 * Math.pow(10, n)) / Math.pow(10, n)
+	
+	// 소수 n자리 올림
+	// Math.ceil(123.456 * (10 ** n)) / (10 ** n)
+	// Math.ceil(123.456 * Math.pow(10, n)) / Math.pow(10, n)
+	
+	// 소수 n자리 내림
+	// Math.floor(123.456 * (10 ** n)) / (10 ** n)
+	// Math.floor(123.456 * Math.pow(10, n)) / Math.pow(10, n)
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

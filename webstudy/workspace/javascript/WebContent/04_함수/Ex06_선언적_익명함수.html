@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+	// 호출 가능한 함수만 호출해 본다.
+	// '함수정의' 전에 호출가능한 것은 '선언적함수'이다.
+	// view4() 의 경우 함수 f가 view4 에 저장되는 시점은 두 번째 실행시점이므로,
+	// 변수에 저장한 뒤에 호출할 수 있다. (line: 38)
+	view3();
+
+	
+	// 1. 익명함수 정의
+	// 1) 일반 익명함수
+	var view1 = function () {
+		console.log('view1() 호출');
+	}
+	// 2) 화살표함수
+	var view2 = () => {
+		console.log('view2() 호출');
+	}
+	view1();
+	view2();
+	
+
+	// 2. 선언적함수 정의
+	// 1) 함수정의
+	function view3() {
+		console.log('view3() 호출');
+	}
+	// 2) 함수정의 + 변수저장
+	var view4 = function f() {
+		console.log('view4() 호출');
+	}
+	view4();
+	
+	
+	view();  // 선언적함수 호출
+	
+	function view() {  // 선언적함수
+		console.log('A');
+	}
+	
+	var view = function () {  // 익명함수
+		console.log('B');
+	}
+	
+	view();  // 익명함수 호출
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

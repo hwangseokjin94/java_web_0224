@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#">
+		<div id ="counter"></div>
+		<input type="button" value="증가버튼" onclick="show_increment()"/>
+	</form>
+	<script type="text/javascript">
+		//호출할때마다 1씩 증가된 순번을 리턴하는 increment()함수를 구현한다.
+		
+		//1.실패
+		//1)정의
+		function increment(){
+			var no = 0 ;
+			no++;
+			return no;  // no(지역변수)는 리턴 후에 소멸되기 때문에 값이 유지되지 않는다.  
+		}
+		
+		//2) 호출
+		console.log("1st: "+increment());
+		console.log("2nd: "+increment());
+		console.log("3th: "+increment());
+		
+		
+		
+		/*//2.실패(클로져 이용 increment 함수가 다른 함수(익명함수)를 리턴)
+		function increment(){
+			var no = 0 ; 
+			return function () { return ++no; };
+		}
+		
+		console.log("1st: "+increment());
+		console.log("2nd: "+increment());
+		console.log("3th: "+increment());
+		
+		
+		/*
+		var a = function(){};
+		a();
+		
+		var b = function(){ return function(){}; }();
+		b();
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// 2. 성공(클로저 이용: increment 함수가 다른 함수(익명함수)를 리턴)
+		// 1) 정의
+		var increment = function () {
+			var no = 0;
+			return () => {
+				no++;
+				return no;
+			};  // 함수에 변수를 담아서 리턴하면 그 변수는 값이 유지된다.
+		}();
+		// 2) 호출
+		console.log("1st: " + increment());
+		console.log("2nd: " + increment());
+		console.log("3th: " + increment());
+		
+		
+		
+		
+		
+		
+		/*
+		var a = function(){ return 1; };
+		var res = a();  // res = 1;
+		
+		var b = function(){ n = 0; return function(){ n++; return n + 2; }; }();
+		var res = b();  // res = 3;  리턴되는 익명함수의 n은 값을 1로 유지하고 있다.
+		var res = b();  // res = 4;  리턴되는 익명함수의 n은 값을 2로 유지하고 있다.
+		*/	
+		
+		//버튼을 클릭할때마다 show_increment()함수가 호출된다.
+		function show_increment(){
+			document.getElementById('counter').innerHTML=increment();
+		}
+	</script>
+</body>
+</html>

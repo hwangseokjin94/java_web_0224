@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+		클로저
+		
+		1. 함수가 함수를 리턴할 때 나타나는 특징이다.
+		2. 함수를 리턴 받는 영역에서 리턴되는 함수의 영역을 사용할 수 있도록,
+		   리턴되는 함수의 값을 소멸시키지 않고 유지하는 것을 클로저라고 한다.
+	*/
+	
+	// 외부함수
+	function outerFunc(a) {
+		// 내부함수
+		function innerFunc(b) {
+			return a + b;
+		}
+		return innerFunc;
+	}
+	
+	// 외부함수 호출
+	var res = outerFunc(10);  // outerFunc(10) 의 리턴은 innerFunc 함수이다. 따라서, res는 함수를 저장한 변수이다.
+	console.log(res(20));  // res(20) 호출 => innerFunc(20) 호출
+	
+	
+	
+	function func() {
+		var a = 10;
+		return function(b) { a = b; console.log(a); }
+	}
+	
+	var res = func();//func함수의 호출이 끝나면 func함수의 변수 a는 소멸되어야하는데 소멸이되지않음
+					//함수로 리턴되고 있기 때문에 값을 유지하고 있어서 a를 계속 사용할수 있다.
+	res(20);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

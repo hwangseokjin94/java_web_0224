@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+		타이머함수
+		
+		1. 특정 시간 후에 특정한 함수를 실행시킨다.
+		2. 파라미터 : 실행할 함수, 실행할 시간
+		
+		3. 한 번만 동작하는 setTimeout 함수
+		4. setTimeout 함수를 중지시키는 clearTimeout 함수
+
+			var id = setTimeout(함수, 시간(밀리초))
+			clearTimeout(id);
+		
+	*/
+
+	// 5초 후에 '펑'
+	/*
+	var id = setTimeout( function () { 
+		alert('펑');
+	}, 5000 );
+	
+	if ( confirm('폭탄을 해제할까요?') ) {
+		clearTimeout(id);
+	}
+	*/
+	
+	// 5, 4, 3, 2, 1 (5초 타이머)
+	
+	var count = 5;
+	function timer() {
+		setTimeout(function () {
+			if (count == 0) {
+				document.write('<h1>펑</h1>');
+				return;  // 함수 종료
+			}
+			document.write('<h1>' + (count--) + '</h1>');
+			timer();  // 자신이 자신을 부르는 재귀호출
+		}, 1000);
+	}
+	
+	timer();
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+

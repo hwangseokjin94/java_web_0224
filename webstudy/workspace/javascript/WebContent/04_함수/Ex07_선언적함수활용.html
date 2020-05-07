@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function makeRandom() {
+		var array  = [];
+		for(var i = 0 ; i <3; i++){
+			array[i] = parseInt((Math.random() * 100)+1);
+			 
+		}
+		document.write('array:'+array+"<br/>");
+	}
+</script>
+
+</head>
+
+
+
+<body>
+	<form action="#">
+		<input type="button" value="난수발생" onclick="makeRandom()"/>
+		
+	</form>
+</body>
+</html>
