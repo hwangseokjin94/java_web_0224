@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+// A -> C -> B
+// 타이머함수는 다른 코드가 끝나기 전에는 실행되지 않는다.
+	console.log('A');
+	
+	setTimeout(function () {
+	console.log('B');
+		
+	},0);
+	
+	console.log('C');
+
+	//문제.setTimeout함수를 이용해 1,2,3출력
+	for(var n =1 ; n<=3; n ++){
+		setTimeout(function () {
+			console.log(n);
+		},0);
+	}
+	
+	//해결.자체적으로 클로저를 지원하는 forEach() 메소드를 이용해서 해결
+	
+	
+	// 해결. 자체적으로 클로저를 지원하는 forEach() 메소드를 이용해서 해결
+	var array = [1, 2, 3];
+	array.forEach(function (e) {
+		setTimeout(function () {
+			console.log(e);
+		}, 0);
+	});
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

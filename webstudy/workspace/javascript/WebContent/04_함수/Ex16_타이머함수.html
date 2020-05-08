@@ -16,7 +16,14 @@
 
 			var id = setTimeout(함수, 시간(밀리초))
 			clearTimeout(id);
-		
+		5. 반복해서 동작하는 setInterval 함수
+		6. setInterval 함수를 중지시키는 clearInterval 함수
+
+			var id = setInterval(함수, 시간(밀리초))
+			clearInterval(id)
+		7.setInterval 함수는 지정된시간마다 함수가 스택에쌓이는데. 많이싸이면 지정된시간에 동작이 안될수있다.
+			setInterval 대신 setTimeout을 재귀호출로 많이사용한다.
+			
 	*/
 
 	// 5초 후에 '펑'
@@ -31,7 +38,7 @@
 	*/
 	
 	// 5, 4, 3, 2, 1 (5초 타이머)
-	
+	/*
 	var count = 5;
 	function timer() {
 		setTimeout(function () {
@@ -45,8 +52,20 @@
 	}
 	
 	timer();
+	*/
+	//setInterval함수를 이용한 5초 타이머
+	var count=5;
+	var id =  setInterval(function () {
+		if (count == 0) {
+			clearInterval(id);
+			document.write('<h1>펑</h1>');
+		}
+		document.write('<h1>' + (count--) + '</h1>');
+	}
 	
+	,1000);
 	
+	id()();
 	
 	
 	
