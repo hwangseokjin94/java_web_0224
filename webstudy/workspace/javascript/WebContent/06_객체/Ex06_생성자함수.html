@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+		생성자 함수
+		
+		1. 객체를 생성하는 함수이다.
+		2. 기존 함수 호출부에 new 연산자를 붙여서 호출한다.
+		3. 첫 글자는 대문자로 표기한다. (일반함수와 구분하기 위해서 관례로 따르고 있다.)
+		4. 같은 프로퍼티를 가지는 여러 객체를 생성하는데 유리하다.
+	*/
+	
+	
+	// 1. 생성자 함수 정의
+	function Person (name) {
+		// 프로퍼티는 this를 활용한다.
+		// name : 매개변수
+		// this.name : 프로퍼티
+		this.name = name;
+		this.birthday = new Date();
+		this.age = new Date().getFullYear() - this.birthday.getFullYear() + 1;
+	}
+	
+	
+	// 2. 객체 생성
+	var person1 = new Person('앨리스');
+	var person2 = new Person('제임스');
+	
+	
+	// 3. 객체를 구성하는 프로퍼티(속성) 확인
+	document.write('<h3>이름: ' + person1.name + '</h3>');
+	document.write('<h3>나이: ' + person1.age + '살</h3>');
+	document.write('<h3>생일: ' + person1.birthday + '</h3>');
+	
+	document.write('<h3>이름: ' + person2.name + '</h3>');
+	document.write('<h3>나이: ' + person2.age + '살</h3>');
+	document.write('<h3>생일: ' + person2.birthday + '</h3>');
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

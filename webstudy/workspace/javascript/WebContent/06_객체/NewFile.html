@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function myCar(tank) {
+	this.tank = tank;
+	var speed =70;
+	
+	this.__proto__.speedUp =function () {
+		speed +=10;
+		tank -=5;
+		return document.write("speedUp !!차량현재속도는 "+speed+"차량의 연료는"+tank+'<br/>');
+	}	
+	this.__proto__.speedDown =function () {
+		speed -=10;
+		return document.write("speedDown !!차량현재속도는 "+speed+"차량의 연료는"+tank+'<br/>');
+	}	
+	this.__proto__.panel =function () {
+		return document.write("차량의 속도는 "+speed+"차량의 연료는"+tank+'<br/>');
+	}
+}
+
+
+var mycar = new myCar(prompt("연료를 넣어주세요"));
+
+mycar.panel();
+mycar.speedUp();
+mycar.speedUp();
+mycar.speedDown();
+mycar.panel();
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

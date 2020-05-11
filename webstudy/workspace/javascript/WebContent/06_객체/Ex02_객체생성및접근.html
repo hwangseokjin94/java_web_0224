@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//1.객체생성
+	var car = {
+		model : "e-class",
+		price :7500,
+		year:'2020-05-05',
+		company:{
+			name:'benz',
+			country:'독일'
+		}, //company프로퍼티는 객체
+		tires:['frontLeft','frontRight','backLeft','backRight'],//tires프로퍼티는 배열
+		drive: function () { document.write("Let's go"); }  // drive
+		//dirve: function () { document.write("Let's go"); }//drive 프로퍼티는 함수
+	};
+	//2.객체를 구성하는 프로퍼티 확인
+	// 마침표 표기법
+	document.write('<h3>');
+	document.write('model:'+car.model+'<br/>');
+	document.write('price:'+car.price+'<br/>');
+	document.write('year:'+car.year+'<br/>');
+	
+	document.write("company's name:"+car.company.name+'<br/>');
+	document.write("company's country:"+car.company["country"]+'<br/>');
+	
+	for ( var i = 0, len = car.tires.length; i < len; i++ ) {
+		document.write('tires[' + i + ']: ' + car.tires[i] + '<br/>');
+	}
+	
+	car.drive();
+	
+	
+	document.write('</h3>');
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
