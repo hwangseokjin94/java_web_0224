@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/*
+		DOM	
+	
+		1. Document Object Model
+		2. 문서 객체 보델을 통해 HTML구성요소들을 획득 추가 변경 삭제 등이 가능하다.
+		3. 주요 선택자
+			1)document.getElementById('아이디')
+			2)document.getElementsByTagName('태그')
+			3)document.getElementsByClassName('클래스')
+			4)document.querySelector('선택자')
+				document.querySelector('#id'):
+			5)document.querySelectorAll('선택자')
+					(1)document.querySelectorAll('.class'):클래스 선택자를 이용
+					(2)document.querySelectorAll('tag'):태그선택자를 이용
+		4.주요메소드
+			1)innerHTML : 내부 HTML 변경
+			2)style.css : 스타일 변경
+			  style[css]		
+			3)attribute
+				(1)setAttribute(속성 , 값): 기존의 속성값을 변경할때
+				(1)getAttribute(속성 ) : 기존의 속성값을 알아올때
+	*/
+	
+	//window.onload :body 태그의 load가 모두 끝나면
+	//window.onload =function () { }
+	//window.onload = () => { }
+	//window 객체는 일반적으로 생략한다.
+	window.onload = function () {
+		
+	var link = document.getElementById('aa');
+		link.innerHTML ='클릭해주세여';
+		link.style['text-decoration'] = 'none';
+		link.style.color = 'black';
+		link.setAttribute('href','https://www.google.com');
+	}
+</script>
+</head>
+<body>
+	<a id = "aa" > </a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

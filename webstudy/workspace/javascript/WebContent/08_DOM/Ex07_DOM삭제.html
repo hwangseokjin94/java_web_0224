@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	onload = () => {
+		
+		var h1 = document.getElementsByTagName('h1');
+		
+		// console.log(h1);
+		// console.log(h1[0]);
+		
+		// <h1>태그의 부모는 <body>태그이므로
+		// body에서 removeChild 를 호출한다.
+		document.body.removeChild(h1[0]);
+		
+		
+		// 1.삭제 대상의 부모 알아내기
+		var box = document.getElementById('outer-box');
+		var box = document.querySelector('#outer-box');
+		
+		// 2. 삭제 대상 알아내기
+		//1)아이디속성
+		var p2 = document.getElementById('p2');
+		var p2 = document.querySelector('#p2');
+		//2)태그
+		var paragraphs= document.getElementsByTagName('p');
+		
+		// 삭제
+		//1)아이디속성
+		box.removeChild(p2);
+		//2)태그
+		box.removeChild(paragraphs[1]);
+	}
+	
+</script>
+</head>
+<body>
+	<h1>안녕하세요</h1>
+	<div id="outer-box">
+		<p id="p1">첫 번째 문단</p>
+		<p id="p2">두 번째 문단</p>
+		<p id="p3">세 번째 문단</p>
+	</div>
+</body>
+</html>
