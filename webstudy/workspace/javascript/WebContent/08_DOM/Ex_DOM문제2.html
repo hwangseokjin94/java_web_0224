@@ -18,6 +18,9 @@ function changeColor(){
 		//색깔변화
 		for(var i = 0 ; i<color.length; i++){	
 			box.style['background-color']=color[i];
+			document.getElementById("box") = text[i];
+
+			
 		}
 		
 		changeColor();
@@ -40,6 +43,9 @@ color: white;
 </style>
 </head>
 <body>
-	<div id = "box">빨</div>
+	<div id = "box">
+		<p id ="content">빨</p>
+		
+	</div>
 </body>
 </html>

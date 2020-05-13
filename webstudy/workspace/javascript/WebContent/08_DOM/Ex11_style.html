@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+onload = () => { 
+		var colors = ['red','orange','yellow','green','blue','navy','purple'];
+		var contents=['빨','주','노','초','파','남','보'];
+		
+		//배열 인덱스가 0~6이반복되도록구현
+		//i++;
+		//i %= 7;
+		
+		var box = document.querySelector('#box');
+		var content =document.querySelector('#content');
+		
+		box.style.width = '500px';
+		box.style.height = '500px';
+		box.style.textAlign = 'center'; //가로가운데
+		box.style.lineHeight = '500px';  // height와 line-height가 같으면 세로 가운데
+		box.style.color ='white';
+		box.style.fontSize = '10em';
+		
+		i = 0 ;
+		setInterval(() => {
+			box.style.backgroundColor = colors[i];
+			content.textContent = contents[i];//content.innerHTML 가능
+			i++;
+			i %= 7; //(if == 7){i =0 ;}
+		}, 1000);
+		
+		
+}
+
+*/
+//2.setTimeout함수
+
+	onload = () =>{
+		
+		var colors = ['red','orange','yellow','green','blue','navy','purple'];
+		var contents=['빨','주','노','초','파','남','보'];
+		
+		//배열 인덱스가 0~6이반복되도록구현
+		//i++;
+		//i %= 7;
+		
+		var box = document.querySelector('#box');
+		var content =document.querySelector('#content');
+		
+		box.style.width = '500px';
+		box.style.height = '500px';
+		box.style.textAlign = 'center'; //가로가운데
+		box.style.lineHeight = '500px';  // height와 line-height가 같으면 세로 가운데
+		box.style.color ='white';
+		box.style.fontSize = '10em';
+		
+		i=0;
+		//1.재귀호출 구조-1
+		function rainbow() {
+			setTimeout(() => {
+			box.style.backgroundColor = colors[i];
+			content.textContent = contents[i];//content.innerHTML 가능
+			i++;
+			i %= 7; //(if == 7){i =0 ;}
+			//작업
+			rainbow();
+			},1000)
+		}
+		
+	/*	//2.재귀호출 구조 -2
+		function rainbow() {
+			//작업
+			setTimeout( rainbow , 1000);
+		}  */
+		rainbow();
+		
+	}
+
+</script>
+</head>
+<body>
+	<div id="box">
+		<p id="content">빨</p>
+	</div>
+</body>
+</html>

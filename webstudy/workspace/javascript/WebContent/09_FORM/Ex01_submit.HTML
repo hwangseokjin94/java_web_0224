@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta charset="utf-8">
+<title>  </title>  
+  <script>
+    /* 
+      form 요소 획득하기
+      1. form의 name속성 이용하기: document.forms.폼name.요소name
+       1) 마침표 (.)표기법 : document.forms['폼name']['요소name']
+       2) 대괄호 ([])표기법
+      2.form의 각 요소의 id속성 이용하기
+       1) document.getElementById
+       2) document.querySelector
+       
+    */
+    function goSearch(){
+      //검색창이 비어 있으면 return false ; (서브밋하지 않는다.)
+      var query = document.forms.myForm.query; //input type = "text"자체
+      if(query.value == ''){//query.valuie 입력된값
+       alert('검색어를 입력하세요');
+      query.focus();
+      return false;
+      }
+      return true;
+    }
+  </script>
+  </head>
+  <body>
+  <form name ="myForm" action="#" onsubmit="return goSearch()"><!--onsubmit: submit버튼을 누르면 
+   실행하는 자바 스크립트 코드를 작성한다.-->
+    <label for="serach">검색</label>
+      <input id="serach" type="text" name="query"/>
+      <input type="submit" value="검색"/>
+    </form>
+  </body>
+</html>
+
+
