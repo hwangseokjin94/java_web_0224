@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+	// 숫자 정규식
+	var regExp = /^\d+$/g;  // 숫자(\d)가 1번 이상 나타나고, 숫자로 시작(^)하고, 숫자로 끝($)난다.
+	var regExp = /^[0-9]+$/g;  // 숫자([0-9])가 1번 이상 나타나고, 숫자로 시작(^)하고, 숫자로 끝($)난다.
+	
+	
+	var str = '123456789';
+
+	
+	// 1. match()
+	// 정규식 패턴과 일치하는 문자열을 배열로 반환한다.
+	// 없으면 null 을 반환한다.
+	if ( str.match(regExp) != null ) {
+		console.log('숫자이다.');
+	} else {
+		console.log('숫자가 아니다.');
+	}
+	
+	
+	// 2. exec()
+	// 정규식 패턴과 일치하는 문자열을 배열로 반환한다.
+	// 없으면 null 을 반환한다.
+	if ( regExp.exec(str) ) {
+		console.log('숫자이다.');
+	} else {
+		console.log('숫자가 아니다.');
+	}
+	
+	
+	// 3. search()
+	// 정규식 패턴과 일치하는 문자열의 인덱스를 반환한다.
+	// 없으면 -1 을 반환한다.
+	if ( str.search(regExp) != -1 ) {
+		console.log('숫자이다.');
+	} else {
+		console.log('숫자가 아니다.');
+	}
+	
+	
+	// 4. test()
+	// 정규식 패턴과 일치하는 문자열의 존재 여부를 true/false 로 반환한다.
+	if ( regExp.test(str) ) {
+		console.log('숫자이다.');
+	} else {
+		console.log('숫자가 아니다.');
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

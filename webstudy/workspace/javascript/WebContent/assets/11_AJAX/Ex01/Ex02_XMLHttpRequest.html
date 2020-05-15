@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	
+	 
+	onload = () => {
+		
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', 'DATA.html', false);  // false (동기통신)
+		xhr.send();
+		document.querySelector('#info').innerHTML = xhr.responseText;
+		
+	}
+	
+</script>
+</head>
+<body>
+	<h3>개인정보 출력</h3>
+	<span id ='info'></span>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

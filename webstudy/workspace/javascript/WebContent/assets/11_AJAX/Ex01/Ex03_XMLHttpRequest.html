@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	onload = () => {
+		
+		/*
+			onreadystatechange 이벤트 속성
+			
+			1. 각 진행 단계를 확인하는 이벤트 속성이다.
+			2. '비동기통신'을 위해서 사용해야 한다.
+			3. readyState 값
+				1) 데이터의 전송 결과를 의미한다.
+				2) 종류
+					(1) 0 : XMLHttpRequest.UNSENT
+					(2) 1 : XMLHttpRequest.OPENED
+					(3) 2 : XMLHttpRequest.HEADERS_RECEIVED
+					(4) 3 : XMLHttpRequest.LOADING
+					(5) 4 : XMLHttpRequest.DONE (성공)
+			4. status 값
+				1) 전송 오류에 관련된 값을 의미한다.
+				2) 종류
+					(1) 404 : 서버에 데이터가 존재하지 않는다.
+					(2) 5XX : 서버 측 오류이다.
+					(3) 200 : 오류가 없다.
+		*/
+		
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', 'DATA.html', true);  // true(비동기통신)
+		xhr.send();
+		
+		xhr.onreadystatechange = function () {
+			
+			alert(xhr.readyState + ", " + xhr.status);
+			
+			if ( xhr.readyState == 4 ) {
+				if ( xhr.status == 200 ) {
+					alert('성공');
+					document.querySelector('#info').innerHTML = xhr.responseText;
+				}
+			}
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+	<h3>개인정보출력</h3>
+	<span id="info"></span>
+</body>
+</html>

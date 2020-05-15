@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1 id="title">클릭하기 전</h1>
+	
+	<script type="text/javascript">
+		
+		// 1. 이벤트 이름 : click
+		// 2. 이벤트 속성 : onclick
+		// 3. 이벤트 리스너 : function changeTitle() { }
+	
+		// 4. 이벤트 객체 :title(이벤트 리스너가 등록된 객체)
+		//이벤트 리스너 내부에서는
+		//이벤트 객체를 this 라고 부를수 있다.
+	
+		var title = document.querySelector('#title');
+		
+		function changeTitle () {
+			
+			//title.innerHTML = '클릭한 후';
+			this.innerHTML = '클릭한 후';
+			this.style.color = 'red';
+			
+		}
+		
+		title.onclick = changeTitle;  // 이벤트 연결
+		
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

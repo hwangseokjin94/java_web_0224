@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	onload = () => {
+		
+		// 전체선택
+		var checkAll = document.querySelector('#checkAll');
+		checkAll.addEventListener('click', () => {
+			var chk_list = document.querySelectorAll('.chk');
+			for ( i = 0, len = chk_list.length; i < len; i++ ) {
+				chk_list[i].checked = checkAll.checked;
+			}
+		});
+		
+		
+		//개별항목의 선택헤제
+		
+		var chk_list = document.querySelectorAll('.chk');
+			for ( i = 0, len = chk_list.length; i < len; i++ ) {
+				chk_list[i].addEventListener('click', () => {
+				var checkAll = document.querySelector('#checkAll');		
+				for (  j= 0, len = chk_list.length; j < len; j++ ) {
+					if(chk_list[j].checked == false)	{
+						checkAll.checked = false;
+						return;
+					}	
+				
+				}//end for j
+				checkAll.checked =true;
+			});
+			}
+				
+	}
+	
+</script>
+</head>
+<body>
+	<form action="#">
+		<input type="checkbox" id="checkAll" />전체선택
+		<hr/>
+		<input type="checkbox" class="chk" />항목1<br/>
+		<input type="checkbox" class="chk" />항목2<br/>
+		<input type="checkbox" class="chk" />항목3<br/>
+		<input type="checkbox" class="chk" />항목4<br/>
+		<input type="checkbox" class="chk" />항목5<br/>
+	</form>
+</body>
+</html>

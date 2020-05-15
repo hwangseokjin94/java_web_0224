@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+	var count=0;
+	var hp=100;
+
+	do{
+		alert('공격');
+		var attack= Math.random()*20;
+		alert(attack);
+		count++;
+		hp= hp-attack;
+	}while(hp < 0);
+	alert(count+'번 만에 해치움');
+	*/
+	/*
+	적을 쓰러뜨려라.
+	1. 적은 에너지 100을 가지고 있다.
+	2. 한 번 공격마다 0 ~ 19 사이의 에너지를 닳게 한다.
+	3. 모든 공격을 자동으로 진행된다.
+	4. 몇 번 만에 적을 쓰러뜨렸는지 함께 출력한다.
+*/
+/*
+적을 쓰러뜨려라.
+1. 적은 에너지 100을 가지고 있다.
+2. 한 번 공격마다 0 ~ 19 사이의 에너지를 닳게 한다.
+3. 모든 공격을 자동으로 진행된다.
+4. 몇 번 만에 적을 쓰러뜨렸는지 함께 출력한다.
+*/
+
+document.write('<h1>적을 쓰러뜨려라.</h1>');
+
+// 1) 초기화 처리
+var hp = 100;  // 적의 에너지
+var attack = 0;  // 공격력
+var count = 0;  // 공격 횟수
+var graph = '';  // 남은 에너지를 그래프로 표현
+
+i = 0;
+do {
+graph += '■';
+i++;
+} while (i < hp);
+
+document.write('적의 에너지 : ' + graph + '(' + hp + ')<br/>');
+
+
+// 2) 공격
+do {
+attack = parseInt(Math.random() * 20);  // 공격력 0 ~ 19 생성
+hp -= attack;  // 공격
+count++;
+ hp = hp < 0 ? 0 : hp;
+
+i = 0;
+graph='';
+do {
+	graph += '■';
+	i++;
+} while (i < hp);
+document.write('적의 에너지 : ' + graph + '(' + hp + ')<br/>');
+} while (hp > 0);
+
+document.write('<h3>' + count + '번 만에 쓰러뜨렸다.</h3>');
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

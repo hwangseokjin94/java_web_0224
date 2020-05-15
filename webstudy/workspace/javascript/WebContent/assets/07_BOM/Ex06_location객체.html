@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function withHistory() {
+		location.href = 'https://www.google.com';
+		//location.assign('https://www.naver.com');
+		location.assign('https://www.naver.com');
+	}
+	function withoutHistory() {
+		location.replace('https://www.daum.net');
+	}
+
+</script>
+</head>
+<body>
+	<h3>location객체</h3>
+	<form action = "#">
+		<input type = "button" value="histoy남기고 이동" onclick="withHistory()">
+		<input type = "button" value="histoy 안남기고남기고 이동" onclick="withoutHistory()">
+	</form>
+</body>
+</html>

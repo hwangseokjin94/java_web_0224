@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+ onload = () => {
+	 
+	 var list = [{name:'앨리스',age:20},{name:'제임스',age:25}];
+	 var table = document.createElement('table');
+	document.body.appendChild(table);
+	
+	
+	var tr = document.createElement('tr');
+	table.appendChild(tr);
+	
+	var titles = ['이름' ,'나이'];
+	for(i= 0 ; i <titles.length; i++){
+		var th = document.createElement('th');
+		th.textContent = titles[i];
+		tr.appendChild(th);
+	th.style.border = '1px solid black';
+	}
+	
+	for(var i =  0 ; i < list.length ; i ++){
+		//배열요소 list[i]는 객체이다.
+		//list[i].name == list[i]['name']
+		//list[i].age == list[i]['age']
+		//객체 순회는 for - in 문으로 한다.
+		var tr = document.createElement('tr');
+		table.appendChild(tr);
+		for( var property in list[i]){
+			var td = document.createElement('td');
+			td.textContent = list[i][property];
+			tr.appendChild(td)
+	td.style.border = '1px solid black';
+		}
+	}
+
+	table.style.border ='1px solid black';
+	table.style['border-collapse'] ='collapse';
+	
+	
+	
+		
+ }
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

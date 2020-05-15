@@ -1,0 +1,81 @@
+정규표현식
+
+1. regular expression
+
+2. 특정 문자의 매칭 결과를 판단하기 위한 방식이다.
+
+3. 생성방법
+	1) 정규식 패턴이 변하지 않는 경우(/정규식/)
+		var regexp = /ab+/;
+	2) 정규식 패턴이 변하는 경우(new RegExp('정규식'))
+		var regexp = new RegExp('ab+');
+
+4. Meta 문자
+	1) var regexp = /x/;  x
+	2) var regexp = /x|y/;  x 또는 y
+	3) var regexp = /.x/;  .(임의의 한 문자) x로 끝남
+	4) var regexp = /^x/;  x 로 시작
+	5) var regexp = /x$/;  x 로 끝
+	6) var regexp = /x*/   x 를 0번 이상 반복
+	7) var regexp = /x+/;  x 를 1번 이상 반복
+	8) var regexp = /(xy)/;  xy 그룹화
+	9) var regexp = /x{n}/;  x를 n번 반복
+	10) var regexp = /x{n,}/;  x를 n번 이상 반복
+	11) var regexp = /x{n,m}/;  x를 n번 이상 m번 이하 반복
+	
+5. 주요 Flag
+	1) Flag : 정규식 뒤에 덧붙이는 명령
+	2) g : global, 문자열 전체에서 모든 패턴을 찾는다.
+	3) i : ignore case, 대소문자의 구분 없이 패턴을 찾는다.
+	4) m : multiple line, 문자열의 줄이 바뀌어도 패턴을 찾는다.
+	5) 예시
+		var regexr = /a+/g;
+		var regexr = /a+/i;
+		var regexr = /a+/m;
+		var regexr = /a+/gi;
+	
+6. 문자클래스	
+	1) var regexr = /[xy]/;  x, y 중 하나
+	2) var regexr = /[^xy]/;  x, y 를 제외한 문자 중 하나
+	3) var regexr = /^[xy]/;  x, y 중 하나로 시작
+	4) var regexr = /[a-z]/;  a ~ z 중 하나 (소문자)
+	5) var regexr = /[A-Z]/;  A ~ Z 중 하나 (대문자)
+	6) var regexr = /[0-9]/;  0 ~ 9 중 하나 (숫자)
+	7) var regexr = /[가-힣]/;  0 ~ 9 중 하나 (한글)
+	8) var regexr = /[a-zA-Z]/;  a ~ z 또는 A ~ Z 중 하나 (영문)
+	
+	 9) var regexr = /\s/;  space  공백문자
+	10) var regexr = /\S/;  not space  공백문자 아님
+	11) var regexr = /\d/;  digit  0 ~ 9 숫자
+	12) var regexr = /\D/;  not digit  0 ~ 9 숫자 아님
+	13) var regexr = /\w/;  word  대문자, 소문자, 밑줄(_)
+	14) var regexr = /\W/;  not word  대문자, 소문자, 밑줄(_) 아님
+
+
+
+7.그룹핑
+	var str = 'hello hey hehehe he';
+	1) var regExp = /he+/g;
+	2) var regExp = /(he)+/g;
+	
+	var str = 'tomato';
+	
+	1)var regExp = /(to)(ma)(to)/g;
+	2)var regExp = /(to)(?:ma)(to)/g;
+	3)var regExp = /to(?=ma)/g;
+	4)var regExp = /to(?!ma)(to)/g;
+	
+	
+	
+	
+간단 테스트
+1.a를 최소 1번이상 포함하고잇는가?   /a+/ 
+2. 영문을 최소 0범니상 포함하고있느가?/[A-Za-z]*/   또는 /[A-Z]*/i;
+
+3.소문자 또는 숫자있는가? /[a-z]|/[0-9]/  또는  /[a-z]\d/
+
+4. 소문자가 아닌가?    /[^a-z]/      /^[a-z]/<<=이거는 소문자로시작 
+
+4.p가 연속 2번 나타나는가?  /p{2}/
+	
+	

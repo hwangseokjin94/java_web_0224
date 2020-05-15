@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta charset="utf-8">
+<title>  </title>  
+  <script>
+    function goToSite() {
+      var url = document.forms.myForm.site;
+      if(url.value == '' ){
+        alert('추천사이트를 선택하세요.')     
+        return false;
+      }
+      
+      //새창에열기
+      open(url.value,'','');
+      
+      //주소이동
+      //location.assign(url.value);
+      //location.href=url.value;
+      return true;
+       
+    }
+  
+  </script>
+  </head>
+  <body>
+   
+    <form  name ="myForm" action="#" onsubmit="return goToSite()">
+     <select name="site">
+          <option value="">추천사이트</option>
+          <option value="https://www.google.com">구글</option>
+          <option value="https://www.naver.com">네이버</option>
+          <option value="https://www.daum.net">다음</option>
+     </select>
+       
+      <input type="submit" value="GO"/>
+      
+	
+	
+    </form>
+  </body>
+</html>
+
+

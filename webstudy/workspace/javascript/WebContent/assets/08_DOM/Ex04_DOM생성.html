@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	onload = () => {
+		var title = document.createElement('h1');
+		title.textContent = '영화목록'; //createTextNode대신 textContent사용
+		document.body.appendChild(title);
+
+		var ul = document.createElement('ul');
+		document.body.appendChild(ul);
+		
+		var movies = ['에이리언', '터미네이터', '타이타닉'];
+		
+		
+		for ( i = 0, len = movies.length; i < len; i++ ) {
+			
+			
+			var li = document.createElement('li');
+			li.textContent = movies[i];
+		
+			ul.appendChild(li);		
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+		display: flex;
+	}
+	body > div {
+		width: 300px;
+		height: 300px;
+		margin-right: 50px;
+		border: 1px solid black;
+	}
+	
+</style>
+<script type="text/javascript">
+
+	function func1() {
+		document.querySelector('#box1').innerHTML='안녕하세요';
+		document.querySelector('#box1').style.backgroundColor='pink';
+	}
+	function func2() {
+		document.querySelector('#box2').innerHTML='반갑습니다';
+		document.querySelector('#box2').style.backgroundColor='orange';
+		
+	}
+	function func3(obj) {
+		obj.innerHTML='마우스 반갑습니다.';
+		obj.style.backgroundColor='green';
+			
+	}
+	function func4(obj) {
+		obj.innerHTML='마우스 안녕히 가세요.';
+		obj.style.backgroundColor='gray';
+	}		
+</script>
+</head>
+<body>
+	<div id="box1" onclick="func1()"></div>
+	<div id="box2" onclick="func2()"></div>
+	<div id="box3" onmouseover="func3(this)"></div><!-- 여기서 this 는 현재 div 자체를 의미한다. -->
+	<div id="box4" onmouseout="func4(this)"></div>
+</body>
+</html>

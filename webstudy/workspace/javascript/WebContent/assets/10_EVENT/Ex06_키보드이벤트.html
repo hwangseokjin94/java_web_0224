@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#pw-result{
+background-color:pink; 
+}
+body {
+	margin: 100px;
+}
+input{
+background-color:lime;
+}
+</style>
+
+<script type="text/javascript">
+	function idCheck(userID) {
+		//userID가 존재하는 데이터인지 검사
+		var list = ['admin','user1','user2','user3'];
+		for( i = 0 , len = list.length; i< len; i++ ){
+			if(userID.value == list[i] ){
+				alert(userID.value+'는 로그인이 가능한 아이디 입니다.')
+			}
+		}
+	}
+	function pwCheck(userPW) {
+		var pw_result = document.querySelector('#pw-result');
+		if(userPW.value.length<4){
+			pw_result.innerHTML = '사용할수없는 비밀번호이다.';
+		}else{
+			pw_result.innerHTML = '사용할수있는 비밀번호이다.';
+		}
+	}
+
+
+</script>
+
+</head>
+<body>
+	<form method = "post">
+		<input type="text" name="userID" placeholder="ID" onkeyup="idCheck(this)" autofocus/>
+		<br/>
+				<input type="password" name="userPW" placeholder="●●●●" onkeyup="pwCheck(this)" /><span id="pw-result"></span>
+		<br/>
+		<input type = "button" value ="로그인"/>
+	
+	</form>
+</body>
+</html>

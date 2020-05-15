@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	//1. 이벤트 연결
+	//1) 익명함수  onload = () => {}	
+	//2)선언적함수
+	function init() {
+		document.body.style.backgroundColor= 'skyblue';
+	}
+	onload = init; //함수의 이름마ㅣㄴ 이벤트에 연결한다. 괄호없다.
+	
+</script>
+	
+</head>
+<body>
+	<!--인라인이벤트연결  -->
+	<h1 onclick="location.href='http://www.google.com'">구글로 이동</h1>
+	
+	<!--  이벤트 해제-->
+	<input  id = "btn" type="button" value = "미션확인"/>
+	<script type="text/javascript">
+		var btn = document.querySelector('#btn');
+		btn.onclick = () => {alert('이번 미션은 임파서블하다.'); 
+		btn.value = '펑';
+		btn.onclick=null;
+		}
+		
+	</script>
+</body>
+</html>

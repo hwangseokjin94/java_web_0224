@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+/* 1.현재 시간을 기준으로 다음을 출력하시오.
+	1)11시까지:아침 먹자
+	2)15시까지:점심먹자
+	3)20시까지:저녁먹자
+	4)나머지:야식먹자
+*/
+
+ var now = new Date();
+	
+	var hour = now.getHours();//var hour =new Date().getHours();
+if(hour<=11 && hour<=20){
+	alert('아침먹자');	
+}else if(hour<=15 && hour<=20){
+	alert('점심먹자');
+}else if(hour<=20 && hour<=11){
+	alert('저녁먹자');
+}else{
+	alert('야식먹자');
+}
+
+/*
+2.현재 날짜 기준으로 요일(일요일...토요일)을 출력하시오 
+*/
+
+
+var weeknum = new Date().getDay();
+if ( weeknum == 0 ) { alert('오늘은 일요일이다.'); }
+else if ( weeknum == 1 ) { alert('오늘은 월요일이다.'); }
+else if ( weeknum == 2 ) { alert('오늘은 화요일이다.'); }
+else if ( weeknum == 3 ) { alert('오늘은 수요일이다.'); }
+else if ( weeknum == 4 ) { alert('오늘은 목요일이다.'); }
+else if ( weeknum == 5 ) { alert('오늘은 금요일이다.'); }
+else { alert('오늘은 토요일이다.'); }
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

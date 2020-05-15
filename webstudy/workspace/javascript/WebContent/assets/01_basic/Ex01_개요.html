@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/* 1. C언어, JAVA 의 주석과 동일한 주석을 사용한다. */
+	// 이 주석도 사용이 가능하다.
+
+	
+	/* 2. 본래명칭 : ECMAScript */
+	
+	
+	/* 3. 작성위치 */
+	// 1) <head> 내부
+	// 2) <body> 내부
+	
+	
+	/* 4. 출력 방식 */
+	// 1) 경고창(alert)
+	window.alert('Hello javascript');
+	alert('Hello ECMAScript');
+	
+	// 2) 콘솔창(console)
+	// 확인: 크롬-개발자도구(F12)-console
+	console.log('Hello javascript');
+	
+	// 3) 화면(make html)
+	document.write('Hello');
+	document.write('javascript');
+	document.write('<h1>Hello ECMAScript</h1>');
+	
+	
+	/* 5. 주요 선택 메소드 (DOM) */
+	// 1) document.getElementById('아이디')
+	// 2) document.getElementsByTagName('태그')
+	// 3) document.querySelector(선택자) : 아이디선택자(#아이디) 등
+	// 4) document.querySelectorAll(선택자) : 클래스선택자(.클래스) 등
+	
+	
+	/* 6. 주요 속성 */
+	// 1) 선택.innerHTML = new content (내부 텍스트 변경)
+	// 2) 선택.style.property = new style (새로운 스타일(CSS) 지정)
+	// 3) 선택.setAttribute(attribute, new value) (새로운 속성과 값을 지정)
+	
+	
+	/* 7. 자바스크립트 실행순서 */
+	// 코드가 작성된 순서대로 해석/처리한다.
+	// body 내부에 <span id="answer"></span> 부분이 나타난 뒤에 아래 코드가 있어야 해석이 가능하다.
+	document.getElementById('answer').innerHTML = '어린이 날';
+	
+</script>
+</head>
+<body>
+
+	<h3>5월 5일은?</h3>
+	정답은 <span id="answer"></span>입니다.
+
+	<script type="text/javascript">
+		// 실행이 되는 코드이다.
+		document.getElementById('answer').innerHTML = '어린이 날';
+		
+		// 스타일
+		document.getElementById('answer').style.color = 'red';  //  #answer { color: red; }
+		
+		// 속성
+		document.getElementById('answer').setAttribute('class', 'answer-class');  // <span class="answer-class" id="answer"></span>
+		
+	</script>
+
+</body>
+</html>

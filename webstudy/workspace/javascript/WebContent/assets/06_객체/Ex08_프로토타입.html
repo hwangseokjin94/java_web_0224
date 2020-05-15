@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+		프로토타입
+		
+		1. 모든 객체들이 접근하는 하나의 공간이다.
+		2. 객체들이 같은 값을 가지는 경우 prototype 프로퍼티에 저장할 수 있다. 
+	*/
+
+	
+	// 1. 생성자 함수 정의
+	function Student(name) {
+		// 모든 객체들의 name 은 다르다.
+		this.name = name;
+		// 모든 객체들의 school 은 같다.
+		// 이런 경우 아래와 같이 구성하면 "공간 낭비"이다.
+		// this.school = '서강대학교';
+		// 모든 객체의 공통값은 prototype 프로퍼티에 저장한다.
+	}
+	
+	// 2. prototype 프로퍼티 사용
+	Student.prototype.school = '서강대학교';
+	
+	
+	// 3. 객체 생성 
+	var student1 = new Student('앨리스');
+	var student2 = new Student('사만다');
+	
+	
+	// 4. 객체의 프로퍼티 확인
+	for ( var property in student1 ) {
+		document.write(property + ': ' + student1[property] + '<br/>');
+	}
+	for ( var property in student2 ) {
+		document.write(property + ': ' + student2[property] + '<br/>');
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

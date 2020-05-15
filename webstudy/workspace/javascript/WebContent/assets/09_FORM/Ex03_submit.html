@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function goLogin(f) {
+		
+		// myForm 이 곧 f 이다.
+		
+		// 1. 아이디의 길이가 6 ~ 16 사이이다.
+
+		// var userID = document.forms.myForm.userID;
+		var userID = f.userID;
+		
+		if ( userID.value.length < 6 || userID.value.length > 16 ) {
+			alert('아이디를 확인하세요.');
+			userID.focus();
+			return;  // 함수의 종료
+		}
+
+		
+		// 2. 이메일은 '@'와 '.'이 반드시 포함되어야 한다.
+		
+		// var userEmail = document.forms.myForm.userEmail;
+		var userEmail = f.userEmail;
+		
+		if ( userEmail.value.indexOf('@') == -1 || userEmail.value.indexOf('.') == -1 ) {
+			alert('이메일을 확인하세요.');
+			userEmail.focus();
+			return;
+		}
+		
+		
+		// 서브밋하라.
+		// document.forms.myForm.submit();
+		f.submit();
+
+	}
+	
+</script>
+</head>
+<body>
+	<form name="myForm" action="#">
+		<input type="text" name="userID" placeholder="ID" /> <br/>
+		<input type="text" name="userEmail" placeholder="EMAIL" /> <br/>
+		<input type="button" value="전송" onclick="goLogin(this.form)" />  <!-- submit 역할을 수행할 button -->
+	</form>
+</body>
+</html>

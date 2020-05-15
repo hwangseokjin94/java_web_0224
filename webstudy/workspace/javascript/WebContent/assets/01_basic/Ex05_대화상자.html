@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/* 대화상자 */
+	// 1) alert('경고메시지')
+	// 2) prompt('입력메시지')
+	// 3) confirm('확인메시지')
+	//    (1) 확인 : true
+	//    (2) 취소 : false
+	
+	
+	// prompt 의 결과는 언제나 '문자열'이다.
+	// 숫자는 '형변환'을 통해야 한다.
+	var name = prompt('이름을 입력하세요');
+	var age = Number(prompt('나이를 입력하세요'));
+	alert('이름은 ' + name + '이고, 내년에는 ' + (age + 1) + '살이다.');
+	
+	
+	var yesNo = confirm('계속 진행할까요?');
+	alert(yesNo ? '계속합니다.' : '중지합니다.');
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

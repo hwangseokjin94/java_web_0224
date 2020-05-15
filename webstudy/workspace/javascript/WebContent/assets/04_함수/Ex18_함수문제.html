@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../assets/script/function.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+/*
+	//문제. 반올림 ,올림 ,내림 함수처리
+	//1)반올림: point(123.456,2) = 123.46
+	//2)올림 :pointUp(123.456,2) =123.46
+	//3)올림 :pointDown(123.456,2) =123.45
+	
+	//소수2자리
+	//소수1자리
+	//정수
+	//일의자리
+	//십으자리
+	function point(num , n){
+		return Math.round(num*Math.pow(10, n)) / Math.pow(10, n);
+	}
+	function pointUp(num , n){
+		return Math.round(num*Math.pow(10, n)) / Math.pow(10, n);
+	}
+	function pointDown(num , n){
+		return Math.round(num*Math.pow(10, n)) / Math.pow(10, n);
+	}
+	console.log(point(123.456,2));
+	
+	
+	
+	
+	function point(number, digit) {
+		return Math.round(number * Math.pow(10, digit)) / Math.pow(10, digit);
+	}
+	function pointUp(number, digit) {
+		return Math.ceil(number * Math.pow(10, digit)) / Math.pow(10, digit);
+	}
+	function pointDown(number, digit) {
+		return Math.floor(number * Math.pow(10, digit)) / Math.pow(10, digit);
+	}
+	*/
+	var number = 1234.5678;
+	for (var digit = 2; digit > -3; digit--) {
+		console.log('반올림(' + digit + '): ' + point(number, digit));
+	}
+	for (var digit = 2; digit > -3; digit--) {
+		console.log('올림(' + digit + '): ' + pointUp(number, digit));
+	}
+	for (var digit = 2; digit > -3; digit--) {
+		console.log('내림(' + digit + '): ' + pointDown(number, digit));
+	}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

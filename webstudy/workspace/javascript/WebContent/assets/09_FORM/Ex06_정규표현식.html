@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	var str = 'hello hey hehehe hee';
+	//1) var regExp = /he+/g;     
+	 var regExp = /he+/g;
+	 var array = str.match(regExp); //정규식 패턴을 만족하는 문자열이 배열로 반환된다.
+	console.log(array.toString());   //he,he,he,he,he,hee -->he e가한번이상
+	
+	
+	
+	//2) var regExp = /(he)+/g;
+	 var regExp = /(he)+/g;
+ 	var array = str.match(regExp); //정규식 패턴을 만족하는 문자열이 배열로 반환된다.
+	console.log(array.toString());   //he,he,hehehe,he -->he가한번이상
+	
+	
+	var str = 'tomato';
+	
+	//1)var regExp = /(to)(ma)(to)/g;
+	var regExp = /(to)(ma)(to)/g;
+	console.log(regExp.exec(str));
+	
+	//2)var regExp = /(to)(?:ma)(to)/g;
+	 var regExp = /(to)(?:ma)(to)/g;
+		console.log(regExp.exec(str));
+	 
+	 //3)var regExp = /to(?=ma)/g;
+	var regExp = /to(?=ma)/g;
+	console.log(regExp.exec(str));
+	
+	//4)var regExp = /to(?!ma)/g;
+	var regExp = /to(?!ma)/g;
+	console.log(regExp.exec(str));
+	 	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+		BOM
+		
+		1. Browser Object Model, 브라우저 객체 모델
+		2. 브라우저를 구성하는 요소를 객체로 처리하는 모델이다.
+		
+		
+		window 객체
+		
+		1. 브라우저 내장 객체 중에서 최상위 객체이다.
+		2. 모든 전역 객체, 함수, 변수 등을 자동으로 window 객체에 포함된다.
+		3. window.객체, window.변수, window.함수() 과 같은 방식으로 사용된다.
+		4. window 객체는 보통 생략한다.
+			1) window.alert();  alert();
+			2) window.confirm();  confirm();
+		5. 주요 메소드
+			1) open('URL', 'name', 'feature');
+			   (1) URL : 주소, 파일의 경로
+			   (2) name :이름 <a>태그의 target속성으로 사용할수있다.
+			   (3) feature: 창의크기 , 위치(offset)
+			   
+			2) close() : 닫기
+			3) focus() :선택
+			4) moveBy(x,y):현재 창의 위치를 기준으로x,y방향이동
+			5) moveTo(x,y):스크린 기준으로 x,y방향이동.
+			
+		
+	*/
+	//1.widow객체의 프로퍼티 확인하기
+	for(var property in window){
+		document.write('<h3>'+property+':'+window[property]+'</h3>');
+	}
+	//2.새창 만들기
+	var popUp = open('','','width=400,height=300,top=100,left=200');
+	
+	//1)if로 팝업 처리
+		if(popUp){
+		popUp.document.write('<h3>팝업창</h3>');		
+		}else{
+			alert('팝업차단을 해제해주세요');
+		}
+	//2) try-catch 로 팝업 처리
+	try {
+		popUp.document.write('<h3>팝업창</h3>');
+	} catch (e) {
+		alert('팝업차단을 해제해주세요');
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

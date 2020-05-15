@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	document.write('<h3>');
+	
+	var str= 'sqlsession';
+	
+	document.write('"sqlseesion".length='+str.length+'<br/>');
+	document.write('"sqlsession".ccc= ' + str.charAt(0) + '<br/>');
+	document.write('"sqlsession".indexOf("s") = ' + str.indexOf('s') + '<br/>');  // 첫 번째 's'의 인덱스를 반환한다.
+	document.write('"sqlsession".indexOf("S") = ' + str.indexOf('S') + '<br/>');  // 대문자와 소문자 구분을 한다. 없으면 -1을 반환한다.
+	document.write('"sqlsession".lastIndexOf("s") = ' + str.lastIndexOf('s') + '<br/>');  // 마지막 's'의 인덱스를 반환한다.
+	document.write('"sqlsession".toLowerCase() = ' + str.toLowerCase() + '<br/>');  // 소문자를 반환한다.
+	document.write('"sqlsession".toUpperCase() = ' + str.toUpperCase() + '<br/>');  // 대문자를 반환한다.
+	document.write('"sqlsession".replace("sqls", "SQLS") = ' + str.replace('sqls', 'SQLS') + '<br/>');  // 기존 텍스트를 새로운 텍스트로 치환한다.
+	document.write('"sqlsession".replace("s", "") = ' + str.replace('s', '') + '<br/>');  // s를 모두 삭제한다.
+//	document.write('"sqlsession".replaceAll("s", "") = ' + str.replaceAll('s', '') + '<br/>');  // s를 모두 삭제한다.(자바스크립트 String 객체의 메소드가 아니다 개발자가 추가해서 사용할수있다.)
+	
+	document.write('"sqlsession".substring(3) = ' + str.substring(3) + '<br/>');  // 인덱스 3부터 끝까지 추출한다.
+	document.write('"sqlsession".substring(0, 3) = ' + str.substring(0, 3) + '<br/>');  // 인덱스 0 이상(포함) 3 미만(불포함)을 추출한다. substring(시작인덱스, 종료인덱스)
+	document.write('"sqlsession".substr(3) = ' + str.substr(3) + '<br/>');  // 인덱스 3부터 끝까지 추출한다.
+	document.write('"sqlsession".substr(0, 3) = ' + str.substr(0, 3) + '<br/>');  // 인덱스 0부터 3글자를 추출한다. substr(시작인덱스, 글자수)
+	document.write('"sqlsession".substr(3, 7) = ' + str.substr(3, 7) + '<br/>');  // 인덱스 3부터 7글자를 추출한다.	
+	
+	var str = '  hello  ';
+	document.write('"  hello  ".trim() = ' + str.trim() + '<br/>');  // 앞뒤(좌우) 공백 제거한다.
+	document.write('"  hello  ".trim().length = ' + str.trim().length + '<br/>');  // 앞뒤(좌우) 공백 제거 후 글자수를 반환한다.
+	document.write('"  hello  ".trimLeft() = ' + str.trimLeft() + '<br/>');  // 앞(좌) 공백 제거한다.
+	document.write('"  hello  ".trimStart() = ' + str.trimStart() + '<br/>');  // 앞(좌) 공백 제거한다.
+	document.write('"  hello  ".trimRight() = ' + str.trimRight() + '<br/>');  // 뒤(우) 공백 제거한다.
+	document.write('"  hello  ".trimEnd() = ' + str.trimEnd() + '<br/>');  // 뒤(우) 공백 제거한다.
+	
+	var list = ['hello','java','student'];
+	var str = list.join(' ');//list 배열의 모든요소들 사이에 ' '을 추가해서 연결한다.
+	document.write('["hello","java","student"].join(" ") = ' + str+ '<br/>');
+	
+	 var str = 'hello java student';
+	 var list = str.split(' ');//str문자열을 ' '으로 분리하여 각각을 밸열의 요소로 저장
+	 
+	document.write('"hello java student".split(" ") = [' + list+ ']<br/>');
+	
+	
+	//replaceAll함수를 만들어서 모든 String 이 사용할수있도록 String 객체의 prototype에 추가한다.
+	String.prototype.replaceAll= function (before,after) {
+		return this.split(before).join(after);
+		// 1) split('c')
+		//'abcabcabcab'.split('c') : ['ab','ab','ab']
+		// 2) join('0')
+		//['ab','ab','ab'].join('o'):aboaboaboab
+			
+	}
+	var str ='sqsession';
+	document.write('"sqlsession".replaceAll("s", "") = ' + str.replaceAll('s', '') + '<br/>');  // s를 모두 삭제한다.(자바스크립트 String 객체의 메소드가 아니다 개발자가 추가해서 사용할수있다.)
+	/*
+	
+	a = function name() {
+		alert('호출');		
+	}
+	a();
+	*/
+	
+	document.write('</h3>');
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
