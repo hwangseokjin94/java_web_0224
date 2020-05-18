@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	/*
+		data = xhr.responseText
+			앨리스,20,서울시 마포구 공덕동,010-1234-5678
+			제임스,25,서울시 마포구 서교동,010-5678-1234
+			
+		dataList = data.split('\n');
+			['앨리스,20,서울시 마포구 공덕동,010-1234-5678',
+			 '제임스,25,서울시 마포구 서교동,010-5678-1234']
+		
+		dataProperties = dataList[0].split(',');
+			['앨리스', '20', '서울시 마포구 공덕동', '010-1234-5678']
+		
+		for () {
+			dataProperties[i] : 개별 요소 값
+		}
+	*/
+	
+	onload = () => {
+		
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', 'DATA2.csv', true);
+		xhr.send();
+		xhr.onreadystatechange = () => {
+			if ( xhr.readyState == 4 ) {
+				if ( xhr.status == 200 ) {
+					var data = xhr.responseText;
+					var dataList = data.split('\n');
+					var message = '';
+					for ( i = 0, len = dataList.length; i < len; i++ ) {
+						message += '<tr>';
+						var dataProperties = dataList[i].split(',');
+						for ( j = 0, len2 = dataProperties.length; j < len2; j++ ) {
+							message += '<td>' + dataProperties[j] + '</td>';
+						}
+						message += '</tr>';
+					}
+					document.querySelector('#content').innerHTML = message;
+				}
+			}
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>성명</th>
+				<th>나이</th>
+				<th>주소</th>
+				<th>연락처</th>
+			</tr>
+		</thead>
+		<tbody id="content"></tbody>
+	</table>
+</body>
+</html>

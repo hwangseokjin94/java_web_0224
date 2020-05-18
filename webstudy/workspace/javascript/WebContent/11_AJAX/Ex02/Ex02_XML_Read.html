@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	onload = () => {
+		
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET','DATA.xml',true);
+		xhr.send();
+		xhr.onreadystatechange = () => {
+			if(xhr.readyState == 4){
+				if(xhr.status ==200){
+					
+				// 1.xhr.responseText : 문자열을 읽어 들임
+				// 2. xhr.responseXML : XML을 읽어들임
+				var XMLData = xhr.responseXML;
+				// alert(XMLData.childNodes[0].nodeName);  // people
+				// alert(XMLData.childNodes[0].childNodes[1].nodeName);  // person
+				//alert(XMLData.childNodes[0].childNodes[1].childNodes[1].nodeName);  // name
+				//alert(XMLData.childNodes[0].childNodes[1].childNodes[1].nodeValue);  // name
+				//alert(XMLData.childNodes[0].childNodes[1].childNodes[1].childNodes[0].nodeName);  // #text (textNode)
+				//alert(XMLData.childNodes[0].childNodes[1].childNodes[1].childNodes[0].nodeValue);  // 앨리스 (값)
+				
+				var name = XMLData.childNodes[0].childNodes[1].childNodes[1].childNodes[0].nodeValue;  // 앨리스
+				var age = XMLData.childNodes[0].childNodes[1].childNodes[3].childNodes[0].nodeValue;
+				var address = XMLData.childNodes[0].childNodes[1].childNodes[5].childNodes[0].nodeValue;
+				var phone = XMLData.childNodes[0].childNodes[1].childNodes[7].childNodes[0].nodeValue;
+				document.body.innerHTML = name + ', ' + age + ', ' + address + ', ' + phone;
+				}
+			}
+			
+
+			
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

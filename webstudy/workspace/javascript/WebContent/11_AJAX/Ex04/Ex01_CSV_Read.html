@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../assets/lib/json2.js"  type="text/javascript">
+</script>
+<script type="text/javascript">
+	onload = () => {
+		
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET','DATA.csv',true);
+		xhr.send();
+		xhr.onreadystatechange = () => {
+			if (xhr.readyState == 4){
+				if(xhr.status == 200){
+					
+					var data=  JSON.parse(xhr.responseText);	
+					var dataProperties =data.split(',');
+					var message = '';
+					
+					message += '<ul>';
+					for(i = 0 , len =dataProperties.length ; i <len ; i++){
+						message +='<li>'+dataProperties[i]+'</li>';
+					}
+					
+					message += '</ul>';
+			 				document.body.innerHTML = message;
+					
+				}
+			}
+		}
+		
+		
+	}
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

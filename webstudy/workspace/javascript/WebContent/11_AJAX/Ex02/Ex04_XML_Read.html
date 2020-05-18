@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function fn_getXML() {
+		
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', 'DATA2.xml', true);
+		xhr.send();
+		xhr.onreadystatechange = () => {
+			if ( xhr.readyState == 4 ) {
+				if ( xhr.status == 200 ) {
+					getXML(xhr);
+				}
+			}
+		}
+		
+	}  // fn_getXML()
+	
+	
+	function getXML(xhr) {
+		var XMLData = xhr.responseXML;
+		var nameList = XMLData.getElementsByTagName('name');
+		var categoryList = XMLData.getElementsByTagName('category');
+		var versionList = XMLData.getElementsByTagName('version');
+		var priorityList = XMLData.getElementsByTagName('priority');
+		var message = '';
+		for ( i = 0, len = nameList.length; i < len; i++ ) {
+			// nameList[i] : <name>HTML</name>
+			// nameList[i].firstNode.nodeValue : HTML
+			// nameList[i].childNodes[0].nodeValue : HTML
+			message += '언어명: ' + nameList[i].childNodes[0].nodeValue + '<br/>';
+			message += '카테고리: ' + categoryList[i].childNodes[0].nodeValue + '<br/>';
+			message += '버전: ' + versionList[i].childNodes[0].nodeValue + '<br/>';
+			message += '우선순위: ' + priorityList[i].childNodes[0].nodeValue + '<br/>';
+		}
+		// document.getElementById('content').innerHTML = message;
+		document.querySelector('#content').innerHTML = message;
+	}
+	
+</script>
+</head>
+<body>
+	<h1>language 정보</h1>
+	<input type="button" value="정보 가져오기" onclick="fn_getXML()" />
+	<br/><br/>
+	<div id="content"></div>
+</body>
+</html>

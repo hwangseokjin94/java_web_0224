@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	onload = () => {
+		
+		// 1. GET 버튼을 클릭하는 경우
+		document.querySelector('#get').onclick = () => {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'DATA.html', true);
+			xhr.send();
+			xhr.onreadystatechange = () => {
+				if ( xhr.readyState == 4 ) {
+					if ( xhr.status == 200 ) {
+						document.querySelector('#info').innerHTML = xhr.responseText;
+					}
+				}
+			}
+		}
+		
+		// 2. POST 버튼을 클릭하는 경우
+		document.querySelector('#post').onclick = () => {
+			
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', 'DATA.html', true);
+			xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+			xhr.send();
+			xhr.onreadystatechange = () => {
+				if ( xhr.readyState == 4 ) {
+					if ( xhr.status == 200 ) {
+						document.querySelector('#info').innerHTML = xhr.responseText;
+					}
+				}
+			}
+			
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+	<h3>개인정보출력</h3>
+	<span id="info"></span>
+	<br/>
+	<input id="get" type="button" value="GET" />
+	<input id="post" type="button" value="POST" />
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	onload  = ()=> {
+		
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET','DATA.xml',true);
+		xhr.send();
+		xhr.onreadystatechange = () => {
+			
+			if(xhr.readyState == 4){
+				if(xhr.status ==200){
+					
+			
+			var XMLData = xhr.responseXML;
+			var nameList = XMLData.getElementsByTagName('name');
+			var ageList = XMLData.getElementsByTagName('age');
+			var addressList = XMLData.getElementsByTagName('address');
+			var phoneList = XMLData.getElementsByTagName('phone');
+			
+			 
+			var message = '';
+			for (i = 0 , len =nameList.length; i<len ; i++){
+				message += '<ul>';				
+				message += '<li>'+nameList[i].childNodes[0].nodeValue+'</li>';
+				message += '<li>'+ageList[i].childNodes[0].nodeValue+'</li>';
+				message += '<li>'+addressList[i].childNodes[0].nodeValue+'</li>';
+				message += '<li>'+phoneList[i].childNodes[0].nodeValue+'</li>';
+				message += '</ul>';
+			}
+			document.body.innerHTML = message;
+				}//(xhr.status ==200)
+			}//if(xhr.readyState == 4)
+		}//onreadystatechange 
+		
+		
+	}//onload
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

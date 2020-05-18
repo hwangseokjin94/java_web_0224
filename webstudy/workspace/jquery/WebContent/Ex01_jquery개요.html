@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+
+<!-- jQuery 는 라이브러리를 포함해야 사용할 수 있다. -->
+
+
+<!-- 1. 오프라인으로 jQuery 라이브러리 추가하기 -->
+<script src="assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+
+<!-- 2. 온라인 CDN 으로 jQuery 라이브러리 추가하기 -->
+<!-- jQuery.com 에서 다운로드 - 'Using jQuery with a CDN' 에서 적당한 CDN 선정 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+	//자바스크립트의 페이지 로드 이벤트
+	//onload = function(){}
+	
+	// jQuery의 페이지 로드 이벤트
+	//1.$(document).ready(function(){});
+	//2.$.ready(function(){});
+	//3.$(function(){});
+	
+	//선택자(css 선택자)
+	//1.태그선택자      $('태그') $('table')
+	//2.클래스 선택자  $('.클래스') $('.wrap')
+	//3.아이디 선택자  $('#아이디') $('#content')
+	//4.그룹 선택자     $('#태그,태그 .클래스,  #아이디') $('th,td')
+	//5.모두 선택자     $('*')
+	
+	//페이지가 로드되면  id ="content"에 '안녕하세요'넣기
+	$(document).ready(function(){
+		$('#content').text('d안녕하세요');
+	});
+	
+	onload = function(){
+		document.querySelector('#content').textContent = '안녕하세요';
+	}
+</script>
+
+</head>
+<body>
+<div id ="content"></div>
+
+</body>
+</html>

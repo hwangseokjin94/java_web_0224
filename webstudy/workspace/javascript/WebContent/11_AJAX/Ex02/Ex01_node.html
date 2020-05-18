@@ -1,0 +1,49 @@
+<!DOCTYPE html><!--document.childNodes[0] :첫번쨰 자식요소 -->
+<html><!--document.childNodes[1] :두번쨰 자식요소 -->
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+	/*
+		<!DOCTYPE html>   document.childNodes[0] :첫번쨰 자식요소 
+		<html>     document.childNodes[1] :두번쨰 자식요소 
+			<head>  document.childNodes[1].childNodes[0] :HTML의 첫번쨰 자식요소 (HEAD)
+				<meta>
+				<title>
+			</head>
+			<body> document.childNodes[1].childNodes[1] :HTML의 두번쨰 자식요소 (BODY)
+			
+			</body>
+		</html>	
+	  */
+
+
+	onload = () => {
+		
+		
+		// 1. document : 현재문서
+		// 2. document.childNodes : 현재문서의 자식 노드들
+		
+		// node 프로퍼티
+		// 1. nodeName :해당 태그 이름 대문자 (element node) 
+		// 2. nodeValue : undefined(element node) ,해당 속성텍스트 (attribute node)
+		// 3. nodeType :해당 태그 이름 대문자 (element node)
+		
+		
+		document.querySelector('#nodeName').innerHTML =document.childNodes[2].nodeName;
+		document.querySelector('#nodeValue').innerHTML =	document.childNodes[2].nodeValue;
+		document.querySelector('#nodeType').innerHTML =document.childNodes[2].nodeType;
+		
+	}
+</script> 
+
+</head>
+<body>
+	<h3>nodeNanme: <span id = "nodeName"></span></h3>
+	<h3>nodeValue: <span id = "nodeValue"></span></h3>
+	<h3>nodeType: <span id = "nodeType"></span></h3>
+
+</body>
+</html>
