@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+	//페이지로드 이벤트
+	$(document).ready(function () {
+		
+		//이벤트 등록
+		//1.$().on('이벤트이름',이벤트 리스너);
+		//2.$().이벤트이름(이벤트리스너);
+		
+	//	$('.answer').css('display','none');//css로 숨기기
+	//	$('.answer').hide(); //숨기기
+		$('.answer').fadeOut();//점점 숨기기 
+		
+		
+		
+		$(':button').on('click',function(){
+//			$('.answer').css('display','block'); //css로표시
+ //			$('.answer').show(); //표시
+			$('.answer').fadeIn();//점점표시 
+		});
+	});
+
+</script>
+</head>
+<body>
+	<h3>퀴즈 : 우리나라 수도는? </h3>
+	<input type ="button" value="정답보기" />
+	<p class = "answer">서울</p>
+</body>
+</html>

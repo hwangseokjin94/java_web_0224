@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		
+		var person = {
+			name : '에밀리',
+			age: 25,
+			address: '서울시 마포구 공덕동'			
+		};
+		
+		//객체의 각 프로퍼티 (name,age,address)순회 , $each를 이용한다.
+		$.each(person , function(property,value){
+			console.log(property+ ',' +value);
+		});
+		
+	});
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

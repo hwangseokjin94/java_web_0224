@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src= "../../assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	$.ajax({
+		url:'DATA2.xml',
+		dataType: 'xml',
+		type: 'GET',
+		success :function(data){
+			var message = '';
+			
+			 $(data).find('language').each(function(){
+				 //$(data).find('language') == $(this)
+				 var name =  $(this).find('name').text();
+				 var category =  $(this).find('category').text();
+				 var version =  $(this).find('version').text();
+				 var priority =  $(this).find('priority').text();
+				 
+				 message +='<tr><td>'+ name +'</td>';
+				 message +='<td>'+ category +'</td>';
+				 message +='<td>'+ version +'</td>';
+				 message +='<td>'+ priority +'</td></tr>';
+					 
+			 });
+			 $('#content').append(message);
+		}
+	});
+</script>
+</head>
+<body>
+<table border ='1'>
+		<thead>
+			<tr>
+				<th>언어</th>
+				<th>카테고리</th>
+				<th>버전</th>
+				<th>우선순위</th>
+			</tr>		
+		</thead>
+		<tbody id='content'>
+		
+		</tbody>
+		
+	</table>
+</body>
+</html>

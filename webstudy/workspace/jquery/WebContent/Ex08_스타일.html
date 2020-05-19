@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+		//페이지로드 이벤트
+		$(document).ready(function(){
+
+			// setter 의 역할 (css 속성의 값을 새로 설정하기)
+			// 1. $().css(속성명,값)
+			// 2. $().css({속성명:값,속성명:값,....})
+			
+			$('h1').css('text-align','center');
+			$('h1').css({'color':'white','background':'black'});
+		});
+</script>
+</head>
+<body>
+	<h1>TITLE</h1>
+</body>
+</html>

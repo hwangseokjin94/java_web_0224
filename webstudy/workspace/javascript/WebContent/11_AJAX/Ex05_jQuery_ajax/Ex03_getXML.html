@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	$.ajax({
+		url:'DATA.xml',
+		dataType: 'xml',// XML문서(생략가능)
+		type:'POST',
+		success: function(data){
+			
+			//data : responseXML
+			
+			//getter의 역활 :텍스트 노드 가져오기
+			//$().text()
+			
+			//setter의 역활 : 텍스트 노드 지정하기
+			//$().text(값)
+			
+			var person = $(data).find('person');
+			var name = $(person).find('name').text();
+			var age = $(person).find('age').text();
+			var address = $(person).find('address').text();
+			var phone = $(person).find('phone').text();
+			
+			var message = '';
+				message +='<tr><td>'+name+'</td>';
+				message +='<td>'+age+'</td>';
+				message +='<td>'+address+'</td>';
+				message +='<td>'+phone+'</td></tr>';
+				
+				
+			$('#content').append(message);
+		}
+	});
+</script>
+
+</head>
+<body>
+	<table border ='1'>
+		<thead>
+			<tr>
+				<th>성명</th>
+				<th>나이</th>
+				<th>주소</th>
+				<th>연락처</th>
+			</tr>		
+		</thead>
+		<tbody id='content'>
+		
+		</tbody>
+		
+	</table>
+</body>
+</html>

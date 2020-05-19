@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	$.ajax(
+		'DATA.html',  // URL
+		{
+			success: function( data ) {
+				// data : responseText
+				$('#box1').append(data);
+			}
+		}
+	);
+	$.ajax({
+		url:'DATA.html',
+		success: function( data ) {
+			$('#box2').append(data);
+		}
+	});
+</script>
+</head>
+<body>
+	
+	<div id="box1"></div>
+	<div id="box2"></div>
+	
+</body>
+</html>

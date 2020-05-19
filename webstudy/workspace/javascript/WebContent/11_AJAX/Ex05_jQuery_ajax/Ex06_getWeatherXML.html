@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$.ajax({
+//		url:'http://www.kma.go.kr/XML/weather/sfc_web_map.xml',
+		url:'we.xml',
+		dataType:'xml',
+		type:'GET',
+		success:function(data){
+			var year = $(data).find('weather').attr('year');
+			var month = $(data).find('weather').attr('month');
+			var day = $(data).find('weather').attr('day');
+			var hour = $(data).find('weather').attr('hour');
+			$('#year').text(year);
+			$('#month').text(month);
+			$('#day').text(day);
+			$('#hour').text(hour);
+			
+			
+			
+			var message = '';
+			$(data).find('local').each(function () {
+				//$(data).find('local')==$(this)
+				var region = $(this).text();
+				var desc =$(this).attr('desc');
+				var ta = $(this).attr('ta');
+				message +='<tr>';
+				message +='<td>'+region+'</td>';
+				message +='<td>'+desc+'</td>';
+				message +='<td>'+ta+'</td>';
+				message +='</tr>';
+			});
+			
+			$('#content').append(message);
+			
+		},
+		error:function(){
+			alert('통신이 원활하지않음');
+		}
+	});
+
+</script>
+</head>
+
+<body>
+
+	<h1>
+		<span id= "year"></span>년
+		<span id= "month"></span>월
+		<span id= "day"></span>일
+		<span id= "hour"></span>시 전국날씨
+	
+	</h1>
+
+
+	<table border = "1">
+		<thead>
+			<tr>
+				<td>지역명</td>
+				<td>날씨</td>
+				<td>현재온도</td>
+				
+			</tr>
+		</thead>
+		<tbody id = "content"></tbody>
+	
+	</table>
+</body>
+</html>

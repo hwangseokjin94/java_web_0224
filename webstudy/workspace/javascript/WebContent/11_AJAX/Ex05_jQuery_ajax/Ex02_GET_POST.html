@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+	//1. GET방식
+	$.get(
+		'DATA.html',
+		function(data){
+			$('#box1').append(data);
+			
+		}
+	);
+	//2.POST방식
+	$.post(
+		'DATA.html',
+		function(data){
+			$('#box1').append(data);
+		}
+	);
+	
+	// 3. $.ajax를 통해서 직접지정
+	$.ajax({
+		url:'DATA.html',
+		type:'GET', //GET(디폴트) POST 지정
+		success: function(data){
+			$('#box3').append(data);
+		}
+	});
+
+
+</script>
+
+</head>
+<body>
+
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	
+</body>
+</html>

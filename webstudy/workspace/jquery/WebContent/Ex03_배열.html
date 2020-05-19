@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+	//페이지 로드 이벤트
+	$(document).ready(function(){
+		
+		var array=[];
+		var person1 = {name:"앨리스",age:20};
+		var person2 = {name:"제임스",age:25};
+		array.push(person1);
+		array.push(person2);
+		
+		var message ='';
+		//$.each(array,(index,item) => {});
+		$.each(array,function(index,item){
+			//index : 0,1
+			//item :person1, person2
+			//이름 item.name 또는 item['name']
+			//나이 item.age  또는 item['age']
+			message +='<tr>';
+			message +='<td>' +(index+1) + '</td>';
+			message +='<td>' +item.name + '</td>';
+			message +='<td>' +item.age + '</td>';
+			message +='</tr>';
+			
+		});
+		
+		$('#content').html(message);
+		
+		
+		
+	});
+
+
+
+</script>
+</head>
+<body>
+	<table border = '1'>
+		<thead>
+			<tr>
+				<td>순번</td>
+				<td>성명</td>
+				<td>나이</td>
+			</tr>
+		</thead>
+		<tbody id='content'>
+		
+		</tbody>
+	</table>
+</body>
+</html>
+
+

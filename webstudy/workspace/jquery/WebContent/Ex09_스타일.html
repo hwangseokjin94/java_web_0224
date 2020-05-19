@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	// 페이지 로드 이벤트
+	$(document).ready(function(){
+		
+		$('body').css('display','flex');
+		// 클래스 속성 추가
+		// $().addClass(속성명)
+		
+		$('body').addClass('centered');
+		$('div').addClass('box');		
+		
+		$('div').each(function(index,item){
+			
+			//index:0,1,2
+			//item : 각 dic
+			
+			//각 div의 호출방법
+			//1. $(item)
+			//2. $(this)
+			$(this).addClass('color-'+(index+1));
+			
+		/*
+			<div class='box color-1'><div>
+			<div class='box color-2'><div>
+			<div class='box color-3'><div>
+		*/
+			
+		//클래스 속성제거
+		//$().removeClass(속성명)
+		
+		$('#box2').removeClass('box');
+		
+		
+		
+		});
+		
+		
+	});
+	
+</script>
+<style type="text/css">
+	
+	.centered {
+		text-align: center;
+		line-height: 300px;
+	
+		}
+	.box {
+		width: 300px;
+		height: 300px;
+		border: 1px solid black;
+		margin: 10px;
+	}
+	.color-1{
+		background: green;
+	}
+	.color-2{
+		background: yellow;
+	}
+	.color-3{
+		background: red;
+	}
+</style>
+</head>
+<body>
+
+	<div id="box1">box1</div>
+	<div id="box2">box2</div>
+	<div id="box3">box3</div>
+
+</body>
+</html>
