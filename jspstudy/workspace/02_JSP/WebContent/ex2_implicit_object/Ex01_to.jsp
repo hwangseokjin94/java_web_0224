@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+    	
 <%
 	//request 는 인코딩 먼저한다.
 	request.setCharacterEncoding("utf-8");
