@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../assets/lib/jquery-3.5.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+	
+	$.getJSON(
+		'DATA.json',
+		function(data) {
+			var message = '';
+			message += '<tr>';
+			$.each(data, function(property, value){
+				message += '<td>' + value + '</td>';
+			});
+			message += '</tr>';
+			$('#content').append(message);
+		}
+	);
+	
+	$.ajax({
+		url :'DATA2.json',
+		dataType:'json',
+		type :'GET',
+		success : function(data){
+			var message = '';
+			$.each(data, function(property , value){
+				//console.log(this);  ->>>>>>>>>>>>data에 저장된 각 JSON객체
+				message +='<tr>';
+				message += '<td>'+this.name+'</td>';
+				message += '<td>'+this.age+'</td>';
+				message += '<td>'+this.address+'</td>';
+				message += '<td>'+this.phone+'</td>';
+				message +='</tr>';
+				
+			});
+			$('#content').append(message);
+		}
+	});
+	
+	
+	
+	
+</script>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>성명</th>
+				<th>나이</th>
+				<th>주소</th>
+				<th>연락처</th>
+			</tr>
+		</thead>
+		<tbody id="content"></tbody>
+	</table>
+</body>
+</html>

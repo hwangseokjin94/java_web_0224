@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.wrap {
+		width: 500px;
+		margin: auto;
+		padding: 20px;
+		border-radius: 5px;
+		background-color: lightgray;
+	}
+	.wrap input, .wrap select {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 20px;
+		border-radius: 5px;
+		border: 1px solid gray;
+	}
+	
+	.wrap input[type=submit] {
+		margin-top: 50px;
+		color: white;
+		background-color: red;
+		border: 1px solid red;
+		font-weight: bold;
+	}
+	
+	.wrap input[type=submit]:hover {
+		background-color: darkred;
+		border: 1px solid darkred;
+	}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<form action="#">
+			<label for="name">이름</label>
+			<input id="name" type="text" name="name" placeholder="이름" />
+			<label for="age">나이</label>
+			<input id="age" type="text" name="age" placeholder="나이" />
+			<label for="address">주소</label>
+			<select id="address" name="address">
+				<option value="">::주소선택::</option>
+				<option value="서울">서울</option>
+				<option value="인천">인천</option>
+				<option value="경기">경기</option>
+				<option value="강원">강원</option>
+			</select> 
+			<input type="submit" value="전송" />
+		</form>
+	</div>
+</body>
+</html>

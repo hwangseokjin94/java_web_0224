@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function fn_send() {
+	var f = document.forms.myForm;
+	f.name.valuel
+	
+}
+
+</script>
+
+
+</head>
+<body>
+	<form  name = "myForm" action="/01_SERVLET/Ex01_a" onsubmit="return fn_send()">
+		<label for = "name">이름</label>
+		<input type = "text" name = "name" id="name"/><br/>
+		<label for = "age">나이</label>
+		<input type = "text" name = "age" id="age"/><br/>
+		<input type= "submit" value = "전송/">
+		
+		
+	</form>
+</body>
+</html>

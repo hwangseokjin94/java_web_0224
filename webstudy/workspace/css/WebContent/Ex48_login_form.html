@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+		background-color: gray;
+		box-sizing: border-box;
+	}
+	
+	fieldset {
+		width: 350px;
+		margin: 20px auto;  /* 상하 20px, 좌우 auto */
+		border-radius: 5px;
+		border: 1px solid lightgray;
+		background-color: lightgray;
+	}
+	
+	fieldset .screen-out {
+		/* 1) display */
+		/* display: none; */
+		/* 2) overflow */
+		position: absolute;
+		width: 0px;
+		height: 0px;
+		overflow: hidden;
+	}
+	
+	fieldset #login-id, fieldset #login-pw {
+		width: 100%;
+		padding: 20px;
+		box-sizing: border-box;
+	}
+	
+	fieldset > button {
+		width: 100%;
+		margin-top: 50px;
+		padding: 20px;
+		border-radius: 5px;
+		border: 1px solid gray;
+		background-color: gray;
+		font-size: 1.2em;  /* 1.2배 */
+	}
+	
+	fieldset > button:hover {
+		color: white;
+		background-color: black;
+	}
+	
+	fieldset > .login-append {
+		margin-top: 20px;
+		overflow: hidden;
+	}
+	
+	fieldset > .login-append > .login-check {
+		float: left;
+	}
+	
+	fieldset > .login-append > .login-find {
+		float: right;
+	}
+	
+	fieldset > .login-append > .login-find > .login-find-link {
+		text-decoration: none;
+		color: black;
+	}
+	
+	fieldset > .login-append > .login-find > .login-find-link:hover {
+		color: red;
+	}
+	
+</style>
+</head>
+<body>
+	<form action="#" method="post">
+		<fieldset>
+			<legend class="screen-out">로그인 정보 입력폼</legend>
+			<label for="login-id" class="screen-out">로그인</label>
+			<input id="login-id" type="email" name="email" placeholder="example@naver.com" />
+			<label for="login-pw" class="screen-out">비밀번호</label>
+			<input id="login-pw" type="password" name="pw" placeholder="password" />
+			<button>로그인</button>
+			<div class="login-append">
+				<div class="login-check">
+					<input id="keep-login" type="checkbox" name="keep-login" />
+					<label for="keep-login">로그인 유지</label>
+				</div>
+				<div class="login-find">
+					<a href="#" class="login-find-link">아이디 찾기</a>
+					&nbsp;/&nbsp;
+					<a href="#" class="login-find-link">비밀번호 찾기</a>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function fn_send() {
+		var f = documet.forms.myForm;
+		if( f.name.value == ''){
+			alert('이름을 입력하세요');
+			f.name.focus();
+			return false;
+		}
+		if(parseInt(f.age.value) <=0 || parseInt(f.age.value)>100){
+			alert("나이는 1~100사이이다.");
+			f.age.value= '';
+			f.age.focus();
+			return false;			
+		}
+		if(f.address.value ==''){
+			alert('주소를 입력하세요');
+			f.address.focus();
+			return false;
+		}
+		return true;
+	}
+
+
+</script>
+</head>
+<body>
+			<!--중요 input 태그의 name 속성이 "parameter"이다.  -->
+			<!--중요 action : "/컨텍스트 패스/URLMapping -->
+			
+	<form name ="myForm" action="/01_SERVLET/Ex03_request" onsubmit="return fn_send()">
+		<table>
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="name" autofocus/></td>
+			</tr>
+			<tr>
+				<td>나이</td>
+				<td><input type = "text" name = "age" autofocus/></td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" name ="address" autofocus/></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="전송" />
+				</td>
+				
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

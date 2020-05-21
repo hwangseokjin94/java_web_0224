@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.dropbtn{
+ background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown{
+ position: relative;
+ display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a{
+	color:black;
+	paddong:12px 16px;
+	text-decoration: none;
+	display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+</head>
+<body>
+<h1>Drop down</h1>
+<p>마우스를 가저가대면 링크들이 펼친다</p>
+<div class="dropdown">
+	<button class="dropbtn">요기</button>
+	<div class="dropdown-content">
+		<a href="www.google.com">구글</a>
+		<a href="www.naver.com">네이버</a>
+		<a href="www.daum.net">다음</a>
+		<img alt="차" src="assets/images/cc.jpg">
+	</div>
+</div>
+</body>
+</html>

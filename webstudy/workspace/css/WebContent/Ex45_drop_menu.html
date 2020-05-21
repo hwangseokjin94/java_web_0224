@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	/* 추가 */
+	* {
+		box-sizing: border-box;
+	}
+	
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;  /* overflow: hidden 대신 */
+		background-color: #333;
+	}
+	li {
+		/* float: left;  부모가 display: flex; 로 변경되어 필요 없음 */
+	}
+	li a, .dropbtn {
+		display: block;  /* 굳이 inline-block 이유 없음 */
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		width: 100px;  /* 추가 : 없을 때와 차이를 비교해 보세요. */
+		text-decoration: none;
+	}
+	
+	li a:hover, .dropdown:hover .dropbtn {
+		background-color: red;
+	}
+	
+	/* 제거 (li a 를 대상으로 이미 display: block; 처리를 위에서 했음)
+	li.dropdown {
+		display: inline-block;
+	}
+	*/
+	
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		width: 160px;  /* 최소 너비(min-width)도 되고, 고정 너비(width)도 되고 */
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	}
+	
+	.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		width: 100%;   /* 추가 : 없으면 링크 영역이 작음 */
+		text-align: left;
+	}
+	
+	.dropdown-content a:hover {
+		background-color: #f1f1f1;
+	}
+	
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+</style>
+</head>
+<body>
+
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">News</a></li>
+		<li class="dropdown">
+			<a href="#" class="dropbtn">Dropdown</a>
+			<div class="dropdown-content">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+		</div>
+		</li>
+	</ul>
+	
+	<h3>Dropdown Menu inside a Navigation Bar</h3>
+	<p>Hover over the "Dropdown" link to see the dropdown menu.</p>
+
+</body>
+</html>

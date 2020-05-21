@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<form>
+		<fieldset style ="width: 300px;">
+			<legend>성적관리</legend>
+			<label for ="korean">국어</label>
+			<input type="text" name="kor" id ="korean"/><br/>
+			
+			<label for ="english">영어</label>
+			<input type="text" name="eng" id ="english"/><br/>
+			
+			<label for ="math">수학</label>
+			<input type="text" name="mat" id ="math"/><br/>
+			
+		
+		</fieldset>
+	</form>
+</body>
+</html>

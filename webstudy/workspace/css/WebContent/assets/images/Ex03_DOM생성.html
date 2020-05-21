@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	onload = () => {
+		
+		// 1. <ul> 만들기
+		var ul = document.createElement('ul');
+		
+		// 2. <body>에 <ul> 넣기
+		document.body.appendChild(ul);
+		
+		// 3. 배열 생성
+		var fruits = ['apple', 'banana', 'orange', 'pineapple', 'watermelon'];
+		
+		// 4. 배열 순회
+		for ( i = 0, len = fruits.length; i < len; i++ ) {
+			
+			// 5. <li> 태그 만들기
+			var li = document.createElement('li');
+			
+			// 6. <ul> 태그에 <li> 태그 넣기
+			ul.appendChild(li);
+			
+			// 7. 배열로 텍스트 노드 만들기
+			var fruitName = document.createTextNode(fruits[i]);
+			
+			// 8. <li> 태그에 텍스트 노드 넣기
+			li.appendChild(fruitName);
+			
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

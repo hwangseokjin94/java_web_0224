@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.wrap {
+		width: 800px;
+		margin: auto;
+	}
+	.wrap > .header-title {
+		color: red;
+	}
+	.wrap .centered {
+		text-align: center;
+	}
+	.wrap > .contents .content-row {
+		padding: 3px 6px;  /* 상하3px, 좌우6px */
+	}
+	.wrap > .contents .blind {
+		display: none;
+	}
+	.wrap > .contents .content-row > .label-title {
+		float: left;
+		display: inline-block;
+		width: 100px;
+		font-weight: bold;
+	}
+	.wrap > .contents .content-row > input, .wrap > .contents .content-row > textarea {
+		width: 300px;
+		padding: 2px 5px;
+	}
+	.wrap > .contents .content-row > input:focus {
+		background: yellow;
+	}
+	.wrap > .contents ul.order-list {
+		list-style-type: none;
+		padding: 0;
+		overflow: hidden;  /* 수평레이아웃(부모) */
+	}
+	.wrap > .contents ul.order-list > li {
+		float: left;    /* 수평레이아웃(자식) */
+		margin-right: 20px;
+	}
+	.wrap > .contents ul.order-list > li > input[type=text] {
+		width: 50px;
+	}
+	.wrap > .contents ul.order-list > li > input[type=checkbox]:checked + label {
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+
+	<div class="wrap">
+		<h1 class="header-title centered">상품주문서</h1>  <!-- header-title 과 centered 클래스를 모두 가짐 -->
+		<div class="contents">
+			<form action="#">
+				<h3>주문자 정보</h3>
+				<fieldset>
+					<legend class="blind">주문자 정보</legend>
+					<div class="content-row">
+						<label class="label-title" for="user-name">이름</label>
+						<input type="text" id="user-name" name="uName" placeholder="여백없이입력(필수)" required />
+					</div>
+					<div class="content-row">
+						<label class="label-title" for="">연락처</label>
+						<input type="text" id="user-contact" name="uContact" placeholder="연락가능번호" />
+					</div>
+				</fieldset>
+				<h3>배송지 정보</h3>
+				<fieldset>
+					<legend class="blind">배송지 정보</legend>
+					<div class="content-row">
+						<label class="label-title" for="user-addr">주소</label>
+						<input type="text" id="user-addr" name="uAddr" />					
+					</div>
+					<div class="content-row">
+						<label class="label-title" for="user-comment">배송메모</label>
+						<textarea id="user-comment" name="uComment" rows="5"></textarea>
+					</div>
+				</fieldset>
+				<h3>주문</h3>
+				<fieldset>
+					<legend class="blind">주문</legend>
+					<ul class="order-list">
+						<li>
+							<input type="checkbox" id="order1" name="orders" />
+							<label for="order1">인도네시아(100g)</label>
+							<input type="text" name="order1_num" />
+						</li>
+						<li>
+							<input type="checkbox" id="order2" name="orders" />
+							<label for="order2">과테말라(100g)</label>
+							<input type="text" name="order2_num" />
+						</li>
+						<li>
+							<input type="checkbox" id="order3" name="orders" />
+							<label for="order3">콜롬비아(100g)</label>
+							<input type="text" name="order3_num" />
+						</li>
+					</ul>
+				</fieldset>
+				<div class="centered">
+					<input type="submit" value="주문하기" />
+					<input type="reset" value="다시작성" />
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

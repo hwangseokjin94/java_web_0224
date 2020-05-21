@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+			<!--중요 input 태그의 name 속성이 "parameter"이다.  -->
+			<!--중요 action : "컨텍스트 패스/URLMapping -->
+			
+	<form action="/01_SERVLET/Ex03_request">
+		<table>
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="name" autofocus/></td>
+			</tr>
+			<tr>
+				<td>나이</td>
+				<td><input type = "text" name = "age" autofocus/></td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" name ="address" autofocus/></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="전송" />
+				</td>
+				
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
