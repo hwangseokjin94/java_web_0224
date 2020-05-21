@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function fn_send() {
+		var f = document.forms.myForm;
+		if( f.name.value == '' || f.age.value == '' ){
+			alert('모든 정보를 입력하세요');
+			return false;
+		}
+		return true;
+	}
+
+</script>
+
+
+</head>
+<body>
+	<form  name = "myForm" action="/01_SERVLET/Ex02_redirect" onsubmit="return fn_send()">
+		<label for = "name">이름</label>
+		<input type = "text" name = "name" id="name"/><br/>
+		<label for = "age">나이</label>
+		<input type = "text" name = "age" id="age"/><br/>
+		<input type= "submit" value = "전송/">
+		
+		
+	</form>
+</body>
+</html>
