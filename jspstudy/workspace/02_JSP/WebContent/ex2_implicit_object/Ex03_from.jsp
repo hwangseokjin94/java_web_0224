@@ -48,7 +48,7 @@
 			<label for="travel">여행</label>
 			<input type="checkbox" name="hobbies" value="운동" id="fitness" />
 			<label for="fitness">운동</label>
-			<input type="checkbox" name="hobbies" value="기타" id="etc_chk" />
+			<input type="checkbox" name="hobbies"  id="etc_chk" />
 			<label for="etc_chk">기타</label>
 			<input type="text" name="etc" /><br/>
 			
