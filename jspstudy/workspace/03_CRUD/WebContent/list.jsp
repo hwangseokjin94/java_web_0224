@@ -12,6 +12,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link style="text/css" rel ="stylesheet" href="assets/style/common.css">
+<style type="text/css">
+ a:link { color: red; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: blue; text-decoration: underline;}
+td:nth-of-type(1){width: 50px;}
+td:nth-of-type(2){width: 100px;}
+td:nth-of-type(3){width: 100px;}
+td:nth-of-type(4){width: 100px;}
+td:nth-of-type(5){width: 300px;}
+td:nth-of-type(6){width: 100px;}
+thead >tr {
+	background: red;
+}
+</style>
 </head>
 <body>
  <%
@@ -53,7 +67,7 @@
  				<% do{ %>
  					<tr>
  						<td><%=rs.getInt("NO") %></td>
- 						<td><%=rs.getString("ID") %></td>
+ 						<td><a href="/03_CRUD/view.jsp?id=<%=rs.getString("ID") %>"><%=rs.getString("ID") %></a></td>
  						<td><%=rs.getString("name") %></td>
  						<td><%=rs.getInt("AGE") %></td>
  						<td><%=rs.getString("ADDRESS") %></td>

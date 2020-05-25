@@ -6,6 +6,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link style="text/css" rel ="stylesheet" href="assets/style/common.css">
+<style type="text/css">
+	thead > tr:first-of-type {
+		color: white;
+		background: red;
+	}
+	tfoot > tr:first-of-type {
+		text-align: center;
+	}
+	td:nth-of-type(1) {
+	width: 150px;
+	}
+	td:nth-of-type(2) {
+	width: 600px;
+	}
+</style>
 <script type="text/javascript">
 
 	function fn_insert(f) {
