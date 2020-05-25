@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.wrap {
+		width: 800px;
+		margin: auto;
+	}
+	table {
+		width: 750px;
+		margin: auto;
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	thead > tr:first-of-type {
+		color: white;
+		background: red;
+	}
+	tfoot > tr:first-of-type {
+		text-align: center;
+	}
+	th, td {
+		border: 1px solid black;
+		padding: 5px 10px;  /* 상하5, 좌우10 */
+	}
+
+	input[type=text],input[type=password] {
+		width: 550px;
+		padding: 5px;
+	}
