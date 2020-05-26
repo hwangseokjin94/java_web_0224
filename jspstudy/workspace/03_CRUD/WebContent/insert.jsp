@@ -18,7 +18,7 @@
    	int result =0;
    	
    	try{
-   		conn =DBConnect.getConndection();
+   		conn =DBConnect.getConnection();
    		sql ="INSERT INTO RED (NO, ID , PW, NAME ,AGE ,ADDRESS,REGDATE)VALUES" +
    				"(RED_SEQ.NEXTVAL,?,?,?,?,?,SYSDATE)";
    		ps =conn.prepareStatement(sql);

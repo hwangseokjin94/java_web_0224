@@ -13,18 +13,18 @@
 <title>Insert title here</title>
 <link style="text/css" rel ="stylesheet" href="assets/style/common.css">
 <style type="text/css">
- a:link { color: red; text-decoration: none;}
- a:visited { color: black; text-decoration: none;}
- a:hover { color: blue; text-decoration: underline;}
-td:nth-of-type(1){width: 50px;}
-td:nth-of-type(2){width: 100px;}
-td:nth-of-type(3){width: 100px;}
-td:nth-of-type(4){width: 100px;}
-td:nth-of-type(5){width: 300px;}
-td:nth-of-type(6){width: 100px;}
-thead >tr {
-	background: red;
-}
+	 a:link { color: red; text-decoration: none;}
+	 a:visited { color: black; text-decoration: none;}
+	 a:hover { color: blue; text-decoration: underline;}
+	td:nth-of-type(1){width: 50px;}
+	td:nth-of-type(2){width: 100px;}
+	td:nth-of-type(3){width: 100px;}
+	td:nth-of-type(4){width: 100px;}
+	td:nth-of-type(5){width: 300px;}
+	td:nth-of-type(6){width: 100px;}
+	thead >tr {
+		background: red;
+	}
 </style>
 </head>
 <body>
@@ -35,7 +35,7 @@ thead >tr {
  	String sql = null;
  	
  	try {
- 		conn = DBConnect.getConndection();
+ 		conn = DBConnect.getConnection();
  		sql = "SELECT * FROM RED ORDER BY NO DESC" ; // no 내림차순의 목록
  		ps = conn.prepareStatement(sql);
  		rs = ps.executeQuery();//select 문 전용 메소드
@@ -47,6 +47,12 @@ thead >tr {
  
  <div class="wrap">
  	<h1>테이블 전체목록</h1>
+ 	<br/>
+ 	<input type="button" value="가입하기" onclick= "location.href='/03_CRUD/insertPage.jsp'"/> 
+ 	
+	 	
+ 	
+ 	<br/><br/>
  	<table>
  		<thead>
  			<tr>

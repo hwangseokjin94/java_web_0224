@@ -1,0 +1,25 @@
+쿠키 (Cookie)
+
+	1. 클라이언트(웹 브라우저)가 관리하는 정보이다.
+		- 쿠키는 클라이언트가 관리, 세션은 서버가 관리한다.
+		- 쿠키는 서버가 만든다. 만든 쿠키를 클라이언트에게 보내면 클라이언트가 보관한다. 즉 서버는 쿠키를 보관하고 있지 않다.
+	2. javax.servlet.http 패키지의 Cookie 클래스를 사용한다.
+	3. 보안에 취약하다. (중요 정보는 세션으로 관리)
+	4. 구성 요소 : 이름, 값, 유효기간
+	5. 활용
+		1) 아이디 기억하기
+		2) 팝업 창 : 오늘 이 창을 다시 보지 않음
+	6. 주요 메소드
+		1) void addCookie(String) : 쿠키 추가하기
+		2) Cookie[] getCookies() : 전체 쿠키 가져오기
+		3) void setValue(String) : 쿠키 값 저장하기
+		4) String getValue() : 쿠키 값 가져오기
+		5) String getName() : 쿠키 이름 가져오기
+		6) void setDomain(String) : 쿠키 도메인 지정하기
+		7) String getDomain() : 쿠키 도메인 가져오기
+		8) void setPath(String) : 쿠키 전송 경로 지정하기
+		9) String getPath() : 쿠키 전송 경로 가져오기
+		10) void setMaxAge(int) : 쿠키 유효시간 지정하기(초 단위, -1: 브라우저 종료 시점까지)
+		11) int getMaxAge() : 쿠키 유효시간 가져오기
+	7. 쿠키 확인 (크롬 기준)
+		설정 - 고급 - 개인정보 및 보안 - 사이트 설정 - 쿠키 및 사이트 데이터 - 모든 쿠키 및 사이트 데이터 보기 - localhost 검색
