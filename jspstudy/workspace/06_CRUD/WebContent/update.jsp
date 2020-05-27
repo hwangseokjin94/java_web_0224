@@ -5,9 +5,9 @@
     pageEncoding="UTF-8"%>
 
 <%request.setCharacterEncoding("utf-8"); %>
-	<jsp:useBean id="red" class="bean.Red"/>
 	
-	<<jsp:setProperty property="*" name="red"/>
+	<jsp:useBean id="red" class="bean.Red"/>	
+	<jsp:setProperty property="*" name="red"/>
 
 <!-- 
 	String id = request.getParameter("id");

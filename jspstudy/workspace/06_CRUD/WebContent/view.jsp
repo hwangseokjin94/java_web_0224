@@ -109,7 +109,7 @@
 						</tr>
 						<tr>
 							<td>가입일</td>
-							<td><input type="text" name="regdate" value="<%=(new SimpleDateFormat("yyyy/MM/dd E요일")).format(rs.getDate("REGDATE")) %>" readonly /></td>
+							<td><%=(new SimpleDateFormat("yyyy/MM/dd E요일")).format(rs.getDate("REGDATE")) %>"/></td>
 						</tr>
 					<% } else { %>
 						<tr>
