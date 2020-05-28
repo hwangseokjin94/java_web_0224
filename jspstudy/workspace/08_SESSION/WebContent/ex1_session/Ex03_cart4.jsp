@@ -9,6 +9,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function fn_pay() {
+		if(confirm('결제할까요?')){
+			alert('결제되었습니다');
+			location.href='Ex03_cart2.jsp';
+		}else{
+			alert('취소되었습니다.');
+		}
+		
+	}
+</script>
 </head>
 <body>
 	<h1>결제 화면</h1>
@@ -30,8 +41,11 @@
 			}
 		}
 	}
-	
 		
 	%>
+	<br/><br/>
+	<input type="button" value="결제하기" onclick="fn_pay()"/>
+	<input type="button" value="계속쇼핑하기" onclick="location.href='Ex03_cart2.jsp'"/>
+	
 </body>
 </html>

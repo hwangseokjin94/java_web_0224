@@ -1,0 +1,51 @@
+EL (표현언어)
+
+	1.Expression Language
+	2.JSP에서 사용하는 새로운 스크립트 언어이다.
+	
+	3.표현식을 대체하는 ㄴ역활이다.
+		<%=표현식 %>    ->   %{표현언어 }
+	4.4가지 영역에서 사용될수있다.
+		pageContext ,request, session, application
+		
+	5.4가지 영역의 우선순위와  각 영역의 스코프를 사용할수있다.
+		1)우선순위
+			pageContext >  request >session > application
+		2)스코프
+			pageScope
+			requestScope
+			sessionScope
+			applicationScope
+				
+ 	6.request의  "parameter"로 전달되는 데이터는  param 또는 paramValues를 사용한다.
+ 	 ${param.id}   단일변수
+ 	 ${paramValues.array[0]}  배열
+ 	 ${paramValues.array[1]}  배열
+ 	 
+ 	7.EL연산자
+ 		1) +
+ 		2) -
+ 		3) *
+ 		4) /, div :나누기
+ 		5) %, mod :나머지 
+ 		6) >, gt :크다
+ 		7) >=, ge :크거나같다
+ 		8) <, lt :작다
+ 		9) <=, le :작거나같다
+ 		10) == ,eq : 같다
+ 		11) != , ne :같지않다.
+ 		12) and :그리고
+ 		13) or : 또는
+ 		14) not : 아니다.
+ 		15) empty : 비어있다.
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		 

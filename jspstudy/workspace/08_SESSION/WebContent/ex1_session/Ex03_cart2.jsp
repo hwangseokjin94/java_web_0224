@@ -15,12 +15,13 @@
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
-		User user = new User();
-		user.setId(id);
-		user.setPw(pw);
-		
-		session.setAttribute("USER", user);
-		
+		if(session.getAttribute("USER") == null){
+			User user = new User();
+			user.setId(id);
+			user.setPw(pw);
+			
+			session.setAttribute("USER", user);
+		}
 	
 	%>
 	<h1><%=((User)session.getAttribute("USER")).getId()%> 님 반값습니다. </h1>
