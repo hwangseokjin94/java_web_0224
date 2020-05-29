@@ -11,6 +11,7 @@
 <form action="Ex04_choose2.jsp">
 	나이<input type="text"name="age" autofocus/>
 	<input type="submit" value="전송">
+	
 </form>
 </body>
 </html>
