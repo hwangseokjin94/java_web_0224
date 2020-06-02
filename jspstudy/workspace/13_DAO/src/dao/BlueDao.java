@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import dto.BlueDto;
 
@@ -93,8 +94,142 @@ public class BlueDao {
 		
 	}//insert
 	
-
+	/*************4. idCheck()*********/
+	public boolean idCheck(String id) {
+		boolean result =false;
+		
+		try {
+			conn = getConnection();
+			sql = "SELECT ID FROM BLUE WHERE ID = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			if( !rs.next()) {//검색된 결과 집합이 없으면 (해당아이디를 가진 회원이 없다.)
+				result = true;
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(conn, ps, rs);
+		}
+		return result;
+	}//
 	
+	/***************5.list()************ResultSet결과집합***/
+	public ArrayList<BlueDto> list() {
+		ArrayList<BlueDto> list = new ArrayList<BlueDto>();
+		try {
+			conn =getConnection();
+			sql ="SELECT NO, ID, PW, NAME, AGE, EMAIL, REG_DATE FROM BLUE";
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				BlueDto bDto = new BlueDto();
+				bDto.setNo(rs.getInt("NO"));
+				bDto.setId(rs.getString("ID"));
+				bDto.setPw(rs.getString("PW"));
+				bDto.setName(rs.getString("NAME"));
+				bDto.setAge(rs.getInt("AGE"));
+				bDto.setEmail(rs.getString("EMAIL"));
+				bDto.setReg_date(rs.getDate("REG_DATE"));
+				list.add(bDto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, ps, rs);
+		}
+		return list;
+	}
+	/*********6 view*******/
+	public BlueDto view(String id) {
+		BlueDto bDto = null;
+		try {
+			conn =getConnection();
+			sql = "SELECT NO, ID, PW, NAME, AGE, EMAIL, REG_DATE FROM BLUE WHERE ID =?";
+			ps= conn.prepareStatement(sql);
+			ps.setString(1, id);
+			rs= ps.executeQuery();
+			if( rs.next() ) {
+				bDto = new BlueDto(); //검색결과가 있어야 만들기.
+				bDto.setNo(rs.getInt("NO"));
+				bDto.setId(rs.getString("ID"));
+				bDto.setPw(rs.getString("PW"));
+				bDto.setName(rs.getString("NAME"));
+				bDto.setAge(rs.getInt("AGE"));
+				bDto.setEmail(rs.getString("EMAIL"));
+				bDto.setReg_date(rs.getDate("REG_DATE"));
+			}
+			
+		}  catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, ps, rs);
+		}
+		return bDto;
+	}//view
+	
+	/**********7.delete()*******/
+	
+	public int delete(String id) {
+		int result = 0;
+		try {
+			conn = getConnection();
+			sql = "DELETE FROM BLUE WHERE ID = ?";
+			ps= conn.prepareStatement(sql);
+			ps.setString(1, id);
+			result=ps.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, ps, null);
+		}
+		return result;
+	}
+		
+	/**********8.update()*******/
+	
+	public int update(BlueDto bDto) {
+		int result = 0;
+		try {
+			conn = getConnection();
+			sql = "UPDATE BLUE SET NAME =?,AGE =?,EMAIL =? WHERE ID = ?";					
+			ps= conn.prepareStatement(sql);			
+			ps.setString(1, bDto.getName());
+			ps.setInt(2, bDto.getAge());
+			ps.setString(3, bDto.getEmail());
+			ps.setString(4, bDto.getId());
+			result=ps.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, ps, null);
+		}
+		return result;
+	}
+		
+	
+	
+	
+	/**********9.updatePw()*******/
+	
+	public int updatePw(BlueDto bDto) {
+		int result = 0;
+		try {
+			conn = getConnection();
+			sql = "UPDATE BLUE SET PW =? WHERE ID = ?";					
+			ps= conn.prepareStatement(sql);			
+			ps.setString(1, bDto.getPw());
+			ps.setString(2, bDto.getId());
+			result=ps.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(conn, ps, null);
+		}
+		return result;
+	}
 	
 	
 	

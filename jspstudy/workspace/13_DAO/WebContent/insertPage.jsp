@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,10 +29,23 @@
 	}
 </style>
 <script type="text/javascript">
+	//var chk = false ;
+	
+	
 	function fn_insert(f) {
-		f.action = 'insert.jsp';
-		f.submit();
+		//if( chk ){			
+			f.action = 'insert.jsp';
+			f.submit();
+	//	}else{
+		//	alert('반드시 아이디 중복 체크를 진행하세요');
+		//	f.idCheckBtn.focus();
+		//}
 		
+	}
+	function fn_idCheck(f) {
+//		chk =true;
+		f.action = 'idCheck.jsp'
+		f.submit();
 	}
 </script>
 </head>
@@ -42,9 +56,13 @@
 			<table>
 				<tr>
 					<td>아이디*</td>
-					<td>					
-						<input type="text" name="id" autofocus />					
-						<input type="button" value="중복확인" onclick="idcheck(this.form)"/>
+					<td>		
+						<%if (request.getParameter("id") == null) {%>
+							<input type="text" name="id" autofocus />	
+						<%}else{ %>				
+							<input type="text" name="id" value="<%=request.getParameter("id") %>" autofocus />
+							<%} %>	
+						<input type="button" name="idCheckBtn" value="중복확인"  onclick="fn_idCheck(this.form)"/>
 					</td>
 				</tr>
 				<tr>

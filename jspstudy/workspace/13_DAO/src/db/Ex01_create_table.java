@@ -17,11 +17,11 @@ public class Ex01_create_table {
 			conn =DBConnect.getConnection();
 			sql = "CREATE TABLE BLUE("+
 						"NO NUMBER PRIMARY KEY,"+
-						"ID VARCHAR2(20) NOT NULL UNIQUE,"+
-						"PW VARCHAR2(20) NOT NULL ,"+
-						"NAME VARCHAR2(20) NOT NULL,"+
+						"ID VARCHAR2(100) NOT NULL UNIQUE,"+
+						"PW VARCHAR2(100) NOT NULL ,"+
+						"NAME VARCHAR2(100) NOT NULL,"+
 						"AGE NUMBER ,"+
-						"EMAIL VARCHAR2(20) UNIQUE,"+
+						"EMAIL VARCHAR2(100) NOT NULL UNIQUE,"+
 						"REG_DATE DATE"+
 					")";
 			ps =conn.prepareStatement(sql);
