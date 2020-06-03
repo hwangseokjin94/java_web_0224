@@ -29,21 +29,22 @@
 	}
 </style>
 <script type="text/javascript">
-	//var chk = false ;
+	var chk = '${param.chk}' ;
 	
 	
 	function fn_insert(f) {
-		//if( chk ){			
+		if( !chk ){			
+			alert('반드시 아이디 중복 체크를 진행하세요');
+			f.idCheckBtn.focus();
+			return;
+		}else{
 			f.action = 'insert.jsp';
 			f.submit();
-	//	}else{
-		//	alert('반드시 아이디 중복 체크를 진행하세요');
-		//	f.idCheckBtn.focus();
-		//}
+		
 		
 	}
 	function fn_idCheck(f) {
-//		chk =true;
+
 		f.action = 'idCheck.jsp'
 		f.submit();
 	}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+	<Resource
+		name="jdbc/oracle"
+		type="javax.sql.DataSource"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+		username="JAVAWEB0224"
+		password="1111"
+		maxTotal="8"
+		maxIdle="2"
+		maxWaitMillis="5000"
+	/>
+	
+	<!--  
+		주요속성
+		1. name : 현재 Resource를 등록할 이름으로 원하는 이름을 준다.
+		2. type : Connection Pool을 관리하는 클래스 타입이다.
+		3. maxTotal : maxActive,생성해둘 Connnection갯수이다.
+		4. maxIdel : 사용하지 않고 대기하는 Connection의 갯수이다.(음수로 설정하면 제한이없다.)
+		5. maxWaitMills : 최대대기시간이다.(음수로설정하면 제한이 없다.)
+		
+		 
+	
+	-->
+</Context>

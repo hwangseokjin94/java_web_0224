@@ -9,7 +9,7 @@
 		out.println("<script>");
 	if ( bDao.idCheck(id) ){
 		out.println("alert('사용가능한 아이디입니다.');");
-		out.println("location.href='insertPage.jsp?id="+id+"'");
+		out.println("location.href='insertPage.jsp?id="+id+"&chk=true'");
 	}else{
 		out.println("alert('사용불가능한 아이디입니다.');");
 		out.println("history.back()");
