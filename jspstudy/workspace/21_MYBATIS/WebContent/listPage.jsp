@@ -28,9 +28,8 @@
 				<c:if test="${not empty LIST }">
 					<c:forEach var="bDTO" items="${LIST }">
 					<tr>
-					<td>${bDTO.no }</td>
-					<td><a href="/20_MYBATIS/view.do?no=${bDTO.no }">${bDTO.title }</a></td>
-					
+					<td>${bDTO.no }</td>										
+					<td>${bDTO.title }</td>
 					<td>${bDTO.content.length() > 10 ? bDTO.content.substring(0,10) :bDTO.content }</td>
 					<td>${bDTO.postdate }</td>
 					</tr>

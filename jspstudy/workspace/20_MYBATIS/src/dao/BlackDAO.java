@@ -50,6 +50,38 @@ public class BlackDAO {
 		sqlSession.close();
 		return list;
 	}
+	//3.selectOne()
+	public BlackDTO selectOne(int no){
+		//openSession(); select 용
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		BlackDTO bDTO = sqlSession.selectOne("mybatis.black.selectOne",no);
+		//BlackDTO bDTO = sqlSession.selectOne("mapper의 id",파라미터);
+		sqlSession.close();
+		return bDTO;
+	}
+	
+	//4.delete()
+	public int delete(int no) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int result= sqlSession.delete("mybatis.black.delete", no);
+		if(result >0 ) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
+	//5.update
+	public int update(BlackDTO bDTO) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(false);
+		int result= sqlSession.update("mybatis.black.update",bDTO);
+		if(result >0 ) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+		
+	}
+	
 	
 
 }

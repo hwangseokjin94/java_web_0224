@@ -9,9 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import command.Command;
+import command.DeleteCommand;
 import command.InsertCommand;
 import command.InsertPageCommand;
 import command.ListCommand;
+import command.UpdateCommand;
+import command.UpdatePageCommand;
+import command.ViewCommand;
  
 @WebServlet("*.do")
 public class MyController extends HttpServlet {
@@ -42,10 +46,22 @@ public class MyController extends HttpServlet {
 	 case "/insertPage.do":
 		 command = new InsertPageCommand();
 		 break;
+	 case "/view.do":
+		  command = new ViewCommand();
+		 break;
+	 case "/delete.do":
+		 command = new DeleteCommand();
+		 break;
+	 case "/updatePage.do":
+		 command = new UpdatePageCommand();
+		 break;
+	 case "/update.do":
+		 command = new UpdateCommand();
+		 break;
 	 }	 
 	String path = command.execute(request, response);
 	 request.getRequestDispatcher(path).forward(request, response);
-	 
+	// 
 	}
 
  

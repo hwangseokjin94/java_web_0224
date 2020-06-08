@@ -13,4 +13,19 @@
      SELECT NO,TITLE, CONTENT, POSTDATE
      FROM BLACK
   </select>
+  <select id="selectOne" parameterType="int" resultType="dto.BlackDTO">
+     SELECT NO,TITLE, CONTENT, POSTDATE
+     FROM BLACK
+     WHERE NO = #{no}
+  </select>
+  <delete id="delete" parameterType="int">
+    DELETE
+    FROM BLACK
+    WHERE NO = #{no}
+  </delete>
+  <update id="update" parameterType="dto.BlackDTO">
+  UPDATE BLACK
+  SET TITLE =#{title}, CONTENT = #{content}
+  WHERE NO = #{no}
+  </update>
 </mapper>

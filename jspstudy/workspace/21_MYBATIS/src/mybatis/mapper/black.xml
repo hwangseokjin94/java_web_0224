@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.black">
+	<select id="search_title" parameterType="String" resultType="dto.BlackDTO">
+	SELECT NO, TITLE, CONTENT, POSTDATE
+	FROM BLACK
+	WHERE TITLE LIKE '%' || #{q} || '%'
+	</select>
+	<select id="search_content" parameterType="String" resultType="dto.BlackDTO">
+	SELECT NO, TITLE, CONTENT, POSTDATE
+	FROM BLACK
+	WHERE CONTENT LIKE CONCAT(CONCAT('%',#{q}),'%')
+	</select>
+	<select id="search_both" parameterType="String" resultType="dto.BlackDTO">
+	SELECT NO, TITLE, CONTENT, POSTDATE
+	FROM BLACK
+	WHERE TITLE LIKE #{q} || '%' OR CONTENT LIKE #{q}
+	</select>
+
+
+</mapper>
