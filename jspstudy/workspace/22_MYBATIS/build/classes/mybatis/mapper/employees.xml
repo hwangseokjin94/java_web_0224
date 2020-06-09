@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.employees">
+  
+  <select id="selectList" resultType="dto.EmployeesDTO">
+  SELECT *
+  FROM EMPLOYEES
+  </select>
+
+  <select id="selectDept" parameterType="Map" resultType="dto.EmployeesDTO">
+  SELECT *
+  FROM EMPLOYEES
+  WHERE DEPARTMENT_ID IN
+  <foreach item="item" collection="department_id" open="(" separator="," close=")">
+  	#{item} 
+  </foreach>
+  </select>
+  
+  <select id="selectDynamic" parameterType="Map" resultType="dto.EmployeesDTO">
+	  SELECT *
+	  FROM EMPLOYEES
+	  WHERE ${column} = #{query}
+  </select>
+  
+  
+  
+  
+ <!--  
+  
+  <select id="selectDynamic" parameterType="Map" resultType="dto.EmployeesDTO">
+	  SELECT *
+	  FROM EMPLOYEES
+	  <if test="column == 'EMPLOYEE_ID'">WHERE EMPLOYEE_ID = #{query}</if>
+	  <if test="column == 'LAST_NAME'">WHERE LOWER(LAST_NAME) = #{query}</if>
+  </select>
+  --> 
+</mapper>
