@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.guestbook">
+
+	  <select id="selectList" resultType="dto.GuestbookDTO">
+	  	SELECT *
+ 	  	FROM GUESTBOOK
+ 	  	ORDER BY NO DESC
+	  </select>
+	<insert id="insert" parameterType ="dto.GuestbookDTO">
+	 INSERT INTO GUESTBOOK
+	 VALUES(GUESTBOOK_SEQ.NEXTVAL,#{writer},#{email},#{title},#{content},#{pw},#{filename},SYSDATE)
+	</insert>
+	
+	<select id="selectByNo" parameterType="int" resultType="dto.GuestbookDTO">
+		SELECT *
+ 	  	FROM GUESTBOOK
+ 	  	WHERE NO =#{no}
+	</select>
+	<update id="update" parameterType="dto.GuestbookDTO">
+		UPDATE GUESTBOOK 
+		SET TITLE = #{title}, CONTENT = #{content}, EMAIL = #{email}
+		WHERE NO = #{no}
+	</update>
+	
+</mapper>
