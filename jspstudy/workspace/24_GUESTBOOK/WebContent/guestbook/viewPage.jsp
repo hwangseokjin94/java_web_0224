@@ -29,6 +29,11 @@ color: red;
 			return false;
 		}
 	}
+	
+	function fn_deletePage(f) {
+		f.action= '/24_GUESTBOOK/deletePage.guest';
+		f.submit();
+	}
 
 </script>
 </head>
@@ -58,7 +63,7 @@ color: red;
 							없음
 						</c:if>
 						<c:if test="${gDTO.filename ne null}">
-							<a href="">${gDTO.filename }</a>
+							<a href="/24_GUESTBOOK/download.guest?filename=${gDTO.filename }">${gDTO.filename }</a>
 						</c:if>
 							
 						</td>
@@ -71,10 +76,15 @@ color: red;
 					<tr>
 						<td colspan="2">
 							<input type="hidden" name="no" value="${gDTO.no }"/>
+							<input type="hidden" name="pw" value="${gDTO.pw }"/>
 							
 							<input type="submit" value="변경사항수정하기"/>
+							<input type="button" value="삭제하기" onclick="fn_deletePage(this.form)"/>
+							
 							<input type="reset" value="다시작성하기"/>
-							<input type="button" value="목록으로 이동하기" onclick="location.href='/24_GUESTBOOK/listPage.guest'"/>
+							
+							<input type="button" value="전체목록으로 이동하기" onclick="location.href='/24_GUESTBOOK/listPage.guest'"/>
+							<input type="button" value="결과목록으로 이동하기" onclick="history.back()"/>
 						</td>
 					</tr>
 				</tbody>

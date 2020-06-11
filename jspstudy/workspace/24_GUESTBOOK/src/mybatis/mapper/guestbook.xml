@@ -25,4 +25,16 @@
 		WHERE NO = #{no}
 	</update>
 	
+  <delete id="delete" parameterType="int">
+	    DELETE
+	    FROM GUESTBOOK
+	    WHERE NO = #{no}
+  </delete>
+  <select id="selectByQuery" parameterType="String" resultType="dto.GuestbookDTO">
+	  SELECT * FROM GUESTBOOK
+	  WHERE TITLE LIKE '%' || #{query} || '%'
+	  OR CONTENT LIKE '%' || #{query} || '%'
+	  ORDER BY NO DESC
+  </select>
+	
 </mapper>

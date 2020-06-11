@@ -6,6 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+.wrap{
+border: 1px solid black;
+padding: 10px;
+margin: auto;
+border-collapse: collapse;
+
+}
+</style>
 </head>
 <body>
  <div class="wrap">
@@ -13,7 +22,7 @@
  	<br/>
  	<a href="/24_GUESTBOOK/insertPage.guest">방명록 작성하기</a>
  	<br/><br/><br/>
- 	<form action="">
+ 	<form action="/24_GUESTBOOK/selectQuery.guest">
  		<input type="text" name="query" placeholder="제목 +내용"/>
  		<input type="submit" value="검색"/>
  		

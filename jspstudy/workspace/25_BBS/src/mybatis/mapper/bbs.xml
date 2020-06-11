@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.bbs">
+
+
+	<select id="selectBBSList" parameterType="Map" resultType="dto.BBSDTO">
+		 SELECT *
+		 FROM (SELECT ROWNUM AS RN, A.* FROM ((SELECT * FROM BBS ORDER BY BNO DESC) A))
+		 WHERE RN BETWEEN #{beginRecord} AND #{endRecord}
+	</select>
+	<select id="totalRecord" resultType="int">
+		SELECT COUNT(*)
+		FROM BBS
+	</select>
+ 
+</mapper>

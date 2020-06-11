@@ -63,12 +63,28 @@ public class GuestbookDAO {
 		 return result;
 		 
 	 }
+		//5.deleteDTO()
+		public int deleteDTO(int no) {
+			SqlSession sqlSession = sqlSessionFactory.openSession(false);
+			int result= sqlSession.delete("mybatis.mapper.guestbook.delete", no);
+			if(result >0 ) {
+				sqlSession.commit();
+			}
+			sqlSession.close();
+			return result;
+		}	 
+		
+		//6.selectByQuery()
+		public List<GuestbookDTO> selectByQuery(String query){
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			List<GuestbookDTO> list= sqlSession.selectList("mybatis.mapper.guestbook.selectByQuery", query);
+			sqlSession.close();
+			return list;
+		}
 	 
 	 
-	 
-	 
-	 //.deletDTO()
-
+ 
+	
 }
 
 

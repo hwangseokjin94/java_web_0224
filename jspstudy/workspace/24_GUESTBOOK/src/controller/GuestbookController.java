@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,9 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import command.ActionForward;
+import command.DeleteCommand;
+import command.DeletePageCommand;
+import command.DownloadCommand;
 import command.GuesbookCommand;
 import command.InsertCommand;
 import command.ListCommand;
+import command.SelectQueryCommand;
 import command.UpdateCommand;
 import command.ViewCommand;
 
@@ -72,6 +77,27 @@ public class GuestbookController extends HttpServlet {
 			case "/update.guest":
 				command = new UpdateCommand();
 				actionForward = command.execute(request, response);				
+				break;
+				
+			case "/download.guest":
+				DownloadCommand.download(request, response);			
+				break;
+				
+			case "/deletePage.guest":
+				
+				command =  new DeletePageCommand();
+				actionForward = command.execute(request, response);
+				
+				break;
+			case "/delete.guest":
+				command = new DeleteCommand();
+				actionForward = command.execute(request, response);			
+				break;
+				
+			case "/selectQuery.guest":
+				command = new SelectQueryCommand();
+				
+				actionForward = command.execute(request, response);			
 				break;
 				
 			default:
