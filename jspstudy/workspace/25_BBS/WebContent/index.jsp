@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<input type="button" value="BBS" onclick="location.href='/25_BBS/listPage.bbs'"/>
+	<input type="button" value="BBS" onclick="location.href='/25_BBS/listPage.bbs'" />
 </body>
 </html>

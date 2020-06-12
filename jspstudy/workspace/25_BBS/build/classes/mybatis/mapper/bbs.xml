@@ -3,16 +3,43 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.mapper.bbs">
-
-
+  
 	<select id="selectBBSList" parameterType="Map" resultType="dto.BBSDTO">
-		 SELECT *
-		 FROM (SELECT ROWNUM AS RN, A.* FROM ((SELECT * FROM BBS ORDER BY BNO DESC) A))
-		 WHERE RN BETWEEN #{beginRecord} AND #{endRecord}
+		SELECT *
+		FROM (SELECT ROWNUM AS RN, A.* FROM ((SELECT * FROM BBS ORDER BY BNO DESC) A))
+		WHERE RN BETWEEN #{beginRecord} AND #{endRecord}
 	</select>
+	
 	<select id="totalRecord" resultType="int">
-		SELECT COUNT(*)
-		FROM BBS
+		SELECT COUNT(*) FROM BBS
 	</select>
- 
+
+	<insert id="insertBBS" parameterType="dto.BBSDTO">
+		INSERT INTO BBS
+		VALUES (BBS_SEQ.NEXTVAL, #{bWriter}, #{bTitle}, #{bContent}, #{bPw}, 0, #{bIp}, #{bFilename}, SYSDATE)
+	</insert>
+
+	<select id="selectBBSBybNo" parameterType="int" resultType="dto.BBSDTO">
+		SELECT * FROM BBS
+		WHERE BNO = #{bNo}
+	</select>
+
+	<update id="updatebHit" parameterType="dto.BBSDTO">
+		UPDATE BBS
+		SET BHIT = #{bHit}
+		WHERE BNO = #{bNo}
+	</update>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </mapper>

@@ -4,9 +4,8 @@ import java.sql.Date;
 
 public class BBSDTO {
 	private int bNo, bHit;
-	private String bWriter, bTitle ,bContent ,bPw,bIp,bFilename;
+	private String bWriter, bTitle, bContent, bPw, bIp, bFilename;
 	private Date bRegdate;
-	
 	public int getbNo() {
 		return bNo;
 	}
@@ -61,6 +60,4 @@ public class BBSDTO {
 	public void setbRegdate(Date bRegdate) {
 		this.bRegdate = bRegdate;
 	}
-	
-	
 }

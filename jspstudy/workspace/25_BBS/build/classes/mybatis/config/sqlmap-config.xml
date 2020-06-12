@@ -18,5 +18,6 @@
   <!-- 어떤 mapper 들을 사용할 것인가? -->
   <mappers>
     <mapper resource="mybatis/mapper/bbs.xml"/>
+    <mapper resource="mybatis/mapper/reply.xml"/>
   </mappers>
 </configuration>

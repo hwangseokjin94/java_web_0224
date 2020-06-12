@@ -64,7 +64,7 @@ public class InsertCommand implements GuesbookCommand {
 			out.println("alert('방명록작성되지 않았습니다. 다시시도해주세요')");
 			out.println("history.back()");
 			out.println("</script>");
-			
+			out.close();
 		}
 		
 		

@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class ReplyDTO {
 	private int rNo, bNo;
-	private String rWriter,rContent ,rPw,rIp;
+	private String rWriter, rContent, rPw, rIp;
 	private Date rRegdate;
 	public int getrNo() {
 		return rNo;
@@ -48,5 +48,4 @@ public class ReplyDTO {
 	public void setrRegdate(Date rRegdate) {
 		this.rRegdate = rRegdate;
 	}
-	
 }
