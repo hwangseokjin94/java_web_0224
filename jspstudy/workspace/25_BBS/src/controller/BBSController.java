@@ -10,10 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import command.ActionForward;
 import command.BBSCommand;
+import command.BBSDeleteCommand;
 import command.BBSInsertCommand;
 import command.BBSListCommand;
+import command.BBSUpdateCommand;
 import command.BBSViewCommand;
 import command.DownloadCommand;
+import command.ReplyDeleteCommand;
 import command.ReplyInsertCommand;
 
 @WebServlet("*.bbs")
@@ -59,11 +62,24 @@ public class BBSController extends HttpServlet {
 				command = new BBSViewCommand();
 				actionForward = command.execute(request, response);
 				break;
-				
 			case "/insertReply.bbs":
 				command = new ReplyInsertCommand();
 				actionForward = command.execute(request, response);
 				break;
+			case "/update.bbs":
+				command = new BBSUpdateCommand();
+				actionForward = command.execute(request, response);
+				break;
+			case "/delete.bbs":
+				command = new BBSDeleteCommand();
+				actionForward = command.execute(request, response);
+				break;
+			case "/deleteReply.bbs":
+				command = new ReplyDeleteCommand();
+				actionForward = command.execute(request, response);
+				break;
+				
+				
 				
 				
 			// 단순 이동
@@ -71,7 +87,14 @@ public class BBSController extends HttpServlet {
 				actionForward = new ActionForward();
 				actionForward.setPath("/bbs/insertPage.jsp");
 				break;
-				
+			case "/updatePage.bbs":
+				actionForward = new ActionForward();
+				actionForward.setPath("/bbs/updatePage.jsp");
+				break;
+			case "/deletePage.bbs":
+				actionForward = new ActionForward();
+				actionForward.setPath("/bbs/deletePage.jsp");
+				break;
 			}
 				
 			// 결정된 이동방법으로 이동

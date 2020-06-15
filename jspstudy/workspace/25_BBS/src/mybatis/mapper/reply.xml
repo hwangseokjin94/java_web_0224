@@ -7,16 +7,17 @@
 	<select id="selectList" parameterType="int" resultType="dto.ReplyDTO">
 		SELECT * FROM REPLY
 		WHERE BNO = #{bNo}
-		ORDER BY RNO 
+		ORDER BY RNO
 	</select>
 
 	<insert id="insertReply" parameterType="dto.ReplyDTO">
 		INSERT INTO REPLY
 		VALUES (REPLY_SEQ.NEXTVAL, #{rWriter}, #{rContent}, #{rPw}, #{rIp}, SYSDATE, #{bNo})
-	
 	</insert>
 
-
-
+	<delete id="deleteReply" parameterType="int">
+		DELETE FROM REPLY
+		WHERE RNO = #{rNo}
+	</delete>
 
 </mapper>

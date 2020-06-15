@@ -16,37 +16,31 @@
 	.wrap {
 		width: 760px;
 		margin: auto;
-	background-color: #07592B;
 	}
 	.bbs-list-table {
 		width: 500px;
 		margin: auto;
 		border-collapse: collapse;
-		background-color:#F2D544;
 	}
 	.bbs-list-table td {
 		font-size: 18px;
 		font-family: '돋움', sans-serif;
 		border: 1px solid black;
 		padding: 5px 10px;
-		background-color:#BFBFBF;
 	}
 	pre {
 		font-size: 18px;
 		font-family: '돋움', sans-serif;
-		background-color:#D9A50B;
 	}
 	.bbs-list-table td:nth-of-type(1) { width: 150px; text-align: center; }
 	.bbs-list-table td:nth-of-type(2) { width: 350px; }
 	textarea {
 		width: 100%;
 		padding: 5px;
-		background-color:#BF7E06;
 	}
 	label {
 		display: inline-block;
 		width: 100px;
-		background-color:#BF7E06;
 	}
 	.reply-write {
 		width: 500px;
@@ -67,7 +61,6 @@
 	}
 	.reply-list-table td {
 		padding: 20px;
-		background-color:#F2D544;
 	}
 	.reply-list-table tr {
 		border: 1px solid gray;
@@ -82,16 +75,23 @@
 <!-- fontawesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <script type="text/javascript">
- 	function fn_listPage(f) {
- 		f.action='/25_BBS/listPage.bbs';
- 		f.submit();
-		
+	function fn_listPage(f) { 
+		f.action = '/25_BBS/listPage.bbs';
+		f.submit();
 	}
+	function fn_updatePage(f) {
+		f.action = '/25_BBS/updatePage.bbs';
+		f.submit();  // <input type="hidden" name="page"> 를 파라미터로 넘긴다.
+	}
+	function fn_deletePage(f) {
+		f.action = '/25_BBS/deletePage.bbs';
+		f.submit();
+	}	
 </script>
 </head>
 <body>
 	<div class="wrap">
-		<h1 class="centered title" style="background-color:#F2D544;">${bDTO.bNo } 번 게시물입니다.</h1>
+		<h1 class="centered title">${bDTO.bNo } 번 게시물입니다.</h1>
 		<form method="POST">
 			<table class="bbs-list-table">
 				<tbody>
@@ -121,7 +121,12 @@
 					</tr>
 					<tr class="centered">
 						<td colspan="2">
-							<input type="hidden" name="page" value="${page }" />
+							<c:if test="${param.page eq null }">
+								<input type="hidden" name="page" value="${page }" />
+							</c:if>
+							<c:if test="${param.page ne null }">
+								<input type="hidden" name="page" value="${param.page }" />
+							</c:if>
 							<input type="button" value="게시물수정하기" onclick="fn_updatePage(this.form)" />
 							<input type="button" value="게시물삭제하기" onclick="fn_deletePage(this.form)" />
 							<input type="button" value="전체목록으로이동하기" onclick="fn_listPage(this.form)" />
@@ -153,7 +158,6 @@
 				<table class="reply-list-table">
 					<thead>
 						<tr>
-							<td>번호</td>
 							<td>내용</td>
 							<td>작성자</td>
 							<td>작성일</td>
@@ -169,7 +173,6 @@
 						<c:if test="${not empty rList }">
 							<c:forEach var="rDTO" items="${rList }">
 								<tr>
-									<td>${rDTO.rNo }</td>
 									<td>${rDTO.rContent }</td>
 									<td>${rDTO.rWriter }</td>
 									<td><fmt:formatDate value="${rDTO.rRegdate }" pattern="yy/M/dd" /></td>

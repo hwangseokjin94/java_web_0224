@@ -32,11 +32,22 @@ public class ReplyDAO {
 		return list;
 	}
 	
-	//2.insertReply()
+	// 2. insertReply()
 	public int insertReply(ReplyDTO rDTO) {
-		SqlSession sqlSession =sqlSessionFactory.openSession(false);
-		int result =  sqlSession.insert("mybatis.mapper.reply.insertReply",rDTO );
-		if(result>0) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(false);
+		int result = sqlSession.insert("mybatis.mapper.reply.insertReply", rDTO);
+		if (result > 0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
+	
+	// 3. deleteReply()
+	public int deleteReply(int rNo) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(false);
+		int result = sqlSession.delete("mybatis.mapper.reply.deleteReply", rNo);
+		if (result > 0) {
 			sqlSession.commit();
 		}
 		sqlSession.close();
@@ -46,3 +57,16 @@ public class ReplyDAO {
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

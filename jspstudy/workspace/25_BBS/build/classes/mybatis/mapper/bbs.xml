@@ -30,10 +30,32 @@
 		WHERE BNO = #{bNo}
 	</update>
 
+	<update id="updateBBS" parameterType="dto.BBSDTO">
+		UPDATE BBS
+		SET BTITLE = #{bTitle}, BCONTENT = #{bContent}, BIP = #{bIp}
+		WHERE BNO = #{bNo}
+	</update>
 
+	<update id="updateBBSWithFile" parameterType="dto.BBSDTO">
+		UPDATE BBS
+		SET BTITLE = #{bTitle}, BCONTENT = #{bContent}, BIP = #{bIp}, BFILENAME = #{bFilename}
+		WHERE BNO = #{bNo}
+	</update>
 
-
-
+	<delete id="deleteBBS" parameterType="int">
+		DELETE FROM BBS
+		WHERE BNO = #{bNo}
+	</delete>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 

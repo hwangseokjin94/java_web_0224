@@ -63,17 +63,15 @@ public class BBSListCommand implements BBSCommand {
 		// 9. listPage.jsp 에서 pVO 를 사용할 수 있도록 request 에 저장하기
 		request.setAttribute("pVO", pVO);
 		
-		//10. bhit 처리를 위한 session정보 삭제하기
-		//게시물의 목록을 가져오는 것은 게시물 보기의 종료를 의미한다.
-		HttpSession session =request.getSession();
+		// 10. bHit 처리를 위한 session 정보 삭제하기
+		// 게시물의 목록을 가져오는 것은 게시물 보기의 종료를 의미한다.
+		HttpSession session = request.getSession();
 		String open = (String) session.getAttribute("open");
-		if(open != null) { //게시물 보기상태였다면
+		if ( open != null ) {  // 게시물 보기 상태였다면,
 			session.removeAttribute("open");
-			
 		}
 		
-		
-		// 11. 이동		
+		// 11. 이동
 		ActionForward actionForward = new ActionForward();
 		actionForward.setPath("/bbs/listPage.jsp");
 		actionForward.setRedirect(false);  // request 전달을 위해 forward

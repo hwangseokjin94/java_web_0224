@@ -71,6 +71,45 @@ public class BBSDAO {
 		return result;
 	}
 	
+	// 6. updateBBS()
+	public int updateBBS(BBSDTO bDTO) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(false);
+		int result = sqlSession.update("mybatis.mapper.bbs.updateBBS", bDTO);
+		if (result > 0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
+	
+	// 7. updateBBSWithFile()
+	public int updateBBSWithFile(BBSDTO bDTO) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(false);
+		int result = sqlSession.update("mybatis.mapper.bbs.updateBBSWithFile", bDTO);
+		if (result > 0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
+	
+	// 8. deleteBBS()
+	public int deleteBBS(int bNo) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(false);
+		int result = sqlSession.delete("mybatis.mapper.bbs.deleteBBS", bNo);
+		if (result > 0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -16,19 +16,16 @@
 		width: 760px;
 		margin: auto;
 		text-align: center;
-		background-color: #07592B;
 	}
 	.wrap table {
 		width: 650px;
 		min-height: 150px;
 		margin: auto;
 		border-collapse: collapse;
-		background-color:#F2D544;
 	}
 	th, td {
 		border: 1px solid black;
 		padding: 3px 5px;
-		background-color:#BFBFBF;
 	}
 	td:nth-of-type(1) { width: 50px; }
 	td:nth-of-type(2) { width: 250px; }
@@ -53,7 +50,6 @@
 		text-align: center;
 	}
 	.title {
-	background-color:#D9A50B;
 		margin: 10px 0;
 	}
 	.disable {

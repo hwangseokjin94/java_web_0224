@@ -59,11 +59,3 @@ public class BBSInsertCommand implements BBSCommand {
 	}
 
 }
-
-
-
-
-
-
-
-
