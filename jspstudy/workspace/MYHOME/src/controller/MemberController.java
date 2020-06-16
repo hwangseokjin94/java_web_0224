@@ -51,7 +51,31 @@ public class MemberController extends HttpServlet {
 				actionForward = new ActionForward();
 				actionForward.setPath("/member/findIdPage.jsp");
 				break;
-			
+			case "/findPwPage.member":
+				actionForward = new ActionForward();
+				actionForward.setPath("/member/findPwPage.jsp");
+				break;
+			case "/changePwPage.member":
+				actionForward = new ActionForward();
+				actionForward.setPath("/member/changePwPage.jsp");
+				break;
+			case "/index.member":
+				actionForward = new ActionForward();
+				actionForward.setPath("index.jsp");
+				break;
+			case "/signUpPage.member":
+				actionForward = new ActionForward();
+				actionForward.setPath("/member/signUpPage.jsp");
+				break;
+			case "/leavePage.member":
+				actionForward = new ActionForward();
+				actionForward.setPath("/member/leavePage.jsp");
+				break;
+				
+				
+				
+				
+				
 			case "/login.member":
 				command = new LoginCommand();
 				actionForward = command.execute(request, response);

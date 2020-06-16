@@ -9,12 +9,50 @@
 		FROM MEMBER
 		WHERE MID = #{mId} AND MPW = #{mPw}
 	</select>
-	
+
 	<select id="selectBymEmail" parameterType="String" resultType="dto.MemberDTO">
 		SELECT *
 		FROM MEMBER
 		WHERE MEMAIL = #{mEmail}
 	</select>
+	
+	<select id="selectBymIdmPhone" parameterType="Map" resultType="dto.MemberDTO">
+		SELECT *
+		FROM MEMBER
+		WHERE MID = #{mId} AND MPHONE = #{mPhone}
+	</select>
+	
+	<update id="updatemPw" parameterType="Map">
+		UPDATE MEMBER
+		SET MPW = #{mPw}
+		WHERE MID = #{mId}
+	</update>
+	
+	<select id="selectBymId" parameterType="String" resultType="dto.MemberDTO">
+		SELECT *
+		FROM MEMBER
+		WHERE MID = #{mId}
+	</select>
+
+	<insert id="insertmDTO" parameterType="dto.MemberDTO">
+		INSERT INTO MEMBER
+		VALUES (MEMBER_SEQ.NEXTVAL, #{mId}, #{mPw}, #{mName}, #{mEmail}, #{mPhone}, #{mAddress}, SYSDATE)
+	</insert>
+	
+	
+	<delete id="deletemDTO" parameterType="String" >
+		DELETE FROM MEMBER
+		WHERE MID = #{mId}
+	</delete>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 </mapper>

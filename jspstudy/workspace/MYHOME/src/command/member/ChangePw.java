@@ -2,6 +2,8 @@ package command.member;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,40 +12,44 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.MemberDAO;
-import dto.MemberDTO;
 
-@WebServlet("/FindId.member")
-public class FindId extends HttpServlet {
+@WebServlet("/ChangePw.member")
+public class ChangePw extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public FindId() {
+    public ChangePw() {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		// 1. 전달 받은 파라미터 처리( data: "mEmail=" + $('#mEmail').val() )
+		
+		// 1. 전달 받은 파라미터 저장 ( data: $('#f').serialize() )
 		request.setCharacterEncoding("utf-8");
-		String mEmail = request.getParameter("mEmail");
+		String mId = request.getParameter("mId");
+		String mPw = request.getParameter("mPw");
 		
-		// 2. mEmail 을 가진 회원 검색
-		MemberDTO mDTO = MemberDAO.getInstance().selectBymEmail(mEmail);
+		// 2. mId + mPw = Map
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("mId", mId);
+		map.put("mPw", mPw);
 		
-		// 3. 결과 responseText 생성
+		// 3. mPw 변경
+		int result = MemberDAO.getInstance().updatemPw(map);
+		
+		// 4. 결과 (responseText) 생성
 		String responseText = null;
-		if (mDTO != null) {
-			responseText = mDTO.getmId();
+		if ( result > 0 ) {
+			responseText = "SUCCESS";
 		} else {
-			responseText = "NO";  // 이메일과 일치하는 회원이 없을 때 응답결과는 스스로 정한다.
+			responseText = "FAIL";
 		}
 		
-		// 4. responseText 를 전달 (response)
+		// 5. 결과를 응답(response)
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.println(responseText);  // findIdPage.jsp 의 success: function(responseText) { } 매개변수로 결과가 전달된다.
+		out.println(responseText);
 		out.close();
-	
+			
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

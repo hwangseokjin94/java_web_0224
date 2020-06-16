@@ -2,6 +2,8 @@ package command.member;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,38 +14,52 @@ import javax.servlet.http.HttpServletResponse;
 import dao.MemberDAO;
 import dto.MemberDTO;
 
-@WebServlet("/FindId.member")
-public class FindId extends HttpServlet {
+@WebServlet("/FindPw.member")
+public class FindPw extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public FindId() {
+    public FindPw() {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		// 1. 전달 받은 파라미터 처리( data: "mEmail=" + $('#mEmail').val() )
+		
+		// 1. 전달 받은 파라미터 저장 ( data: 'mId=' + $('#mId').val() + ... )
 		request.setCharacterEncoding("utf-8");
-		String mEmail = request.getParameter("mEmail");
+		String mId = request.getParameter("mId");
+		String mPhone = request.getParameter("mPhone");
 		
-		// 2. mEmail 을 가진 회원 검색
-		MemberDTO mDTO = MemberDAO.getInstance().selectBymEmail(mEmail);
+		// 2. mId + mPhone = Map
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("mId", mId);
+		map.put("mPhone", mPhone);
 		
-		// 3. 결과 responseText 생성
+		// 3. Map 정보를 가진 회원 검색
+		MemberDTO mDTO = MemberDAO.getInstance().selectBymIdmPhone(map);
+		
+		// 4. 결과 (responseText) 생성
 		String responseText = null;
-		if (mDTO != null) {
-			responseText = mDTO.getmId();
+		if ( mDTO == null ) {
+			responseText = "NO";
 		} else {
-			responseText = "NO";  // 이메일과 일치하는 회원이 없을 때 응답결과는 스스로 정한다.
+			responseText = "YES";
 		}
 		
-		// 4. responseText 를 전달 (response)
+		// 5. 결과를 응답 (response)
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.println(responseText);  // findIdPage.jsp 의 success: function(responseText) { } 매개변수로 결과가 전달된다.
+		out.println(responseText);  // findPwPage.jsp 의 success: function(responseText) { } 의 매개변수로 결과를 전달(응답)한다.
 		out.close();
-	
+		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 
 }
+
+
+
+
+
+
+
+

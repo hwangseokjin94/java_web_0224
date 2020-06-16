@@ -9,41 +9,45 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONObject;
+
 import dao.MemberDAO;
 import dto.MemberDTO;
 
-@WebServlet("/FindId.member")
-public class FindId extends HttpServlet {
+@WebServlet("/IdCheck.member")
+public class IdCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public FindId() {
+    public IdCheck() {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		// 1. 전달 받은 파라미터 처리( data: "mEmail=" + $('#mEmail').val() )
+		
+		// 1. 전달되는 파라미터 저장
 		request.setCharacterEncoding("utf-8");
-		String mEmail = request.getParameter("mEmail");
+		String mId = request.getParameter("mId");
 		
-		// 2. mEmail 을 가진 회원 검색
-		MemberDTO mDTO = MemberDAO.getInstance().selectBymEmail(mEmail);
+		// 2. mId 를 가진 회원 정보 확인
+		MemberDTO mDTO = MemberDAO.getInstance().selectBymId(mId);
 		
-		// 3. 결과 responseText 생성
-		String responseText = null;
-		if (mDTO != null) {
-			responseText = mDTO.getmId();
+		// 3. 응답할 JSONObject 객체 생성
+		JSONObject obj = new JSONObject();
+		
+		// 4. mId 를 가진 회원이 있으면 obj 에 result 변수에 "YES" 저장
+		//    mId 를 가진 회원이 없으면 obj 에 result 변수에 "NO" 저장
+		if ( mDTO != null ) {
+			obj.put("result", "YES");
 		} else {
-			responseText = "NO";  // 이메일과 일치하는 회원이 없을 때 응답결과는 스스로 정한다.
+			obj.put("result", "NO");
 		}
 		
-		// 4. responseText 를 전달 (response)
-		response.setContentType("text/html; charset=utf-8");
+		// 5. obj 를 응답
+		response.setContentType("application/json; charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.println(responseText);  // findIdPage.jsp 의 success: function(responseText) { } 매개변수로 결과가 전달된다.
+		out.println(obj);
 		out.close();
-	
+		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }
