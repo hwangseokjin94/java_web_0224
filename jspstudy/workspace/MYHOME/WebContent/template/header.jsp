@@ -28,27 +28,29 @@
 		box-sizing: border-box;
 		width: 600px;
 		text-align: center;
-		margin: auto;
 			background: rgb(42,193,188);
+	}
+	.wrap {
+		margin: auto;
 	}
 	.header-wrap{
 	border: 1px solid black;
 		text-align: right;
 		padding: 20px;
+		background: white;
 	}
 	
 	 .footer-wrap{
 		border: 1px solid black;
 		padding: 20px;
-		
+		background: white;
+		position:fixed;
+		 bottom:0px; 
 	}
-	.wrap{
-		margin: auto;
-	}
-	.main-wrap{
-		width: 600px;
-		padding: 50px;
-		 height: 600px;
+
+	.main-wrap {
+		height: 600px;
+		padding: 50px 0;
 	}
 	a{
 	text-decoration: none;
@@ -60,7 +62,11 @@
 	}
 	tr,td{
 	border: 1px solid black;
-	
+	padding :0px;
+	margin: 0px;
+	}
+	thead{
+	left: 0px;
 	}
 	
 </style>
@@ -88,7 +94,9 @@
 			<!-- 1. 로그인이 안 된 상태에서 처리할 작업 -->
 			<c:if test="${loginDTO eq null}">
 				<input type="button" value="로그인" onclick="location.href='/MYHOME/loginPage.member'" />
-				<input type="button" value="회원가입" onclick="location.href='/MYHOME/signUpPage.member'" />      
+				<input type="button" value="회원가입" onclick="location.href='/MYHOME/signUpPage.member'" />
+				<input type="button" value="마이페이지" onclick="location.href='/MYHOME/loginPage.member'" />
+				<input type="button" value="게시판" onclick="location.href='/MYHOME/boardListPage.board'" />
 			</c:if>
 			
 			
@@ -97,6 +105,8 @@
 				${loginDTO.mName} 님 반갑습니다&nbsp;&nbsp;
 				<input type="button" value="로그아웃" onclick="fn_logout()" />
 				<input type="button" value="회원탈퇴" onclick="fn_leave()" />
+				<input type="button" value="마이페이지" onclick="location.href='/MYHOME/myPage.member'" />
+				<input type="button" value="게시판" onclick="location.href='/MYHOME/boardListPage.board'" />
 			</c:if>
 			
 			

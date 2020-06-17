@@ -34,9 +34,9 @@
 				$('#mPw').focus();
 				return false;
 			}
-			var mPw = ${loginDTO.mPw};
-			if ($('#mPw').val() != mPw ) {
-				alert('비밀본호를확인하세요.');				
+			var mPw = '${loginDTO.mPw}';
+			if ($('#mPw').val() != mPw) {
+				alert('비밀번호를 확인하세요.');
 				return false;
 			}
 			$.ajax({
@@ -45,11 +45,11 @@
 				dataType: 'JSON',
 				data: 'mId=' + $('#mId').val(),
 				success: function( responseObject ) {
-					if ( responseObject.result =='SUCCESS') {
-						alert('탈퇴되었습니다 이용해주셔서 감사합니다.');
-						location.href='/MYHOME/index.member';
+					if ( responseObject.result == 'SUCCESS' ) {
+						alert('탈퇴되었습니다. 이용해 주셔서 감사합니다.');
+						location.href = '/MYHOME/index.member';
 					} else {
-						alert('탈퇴되지않았습니다.');
+						alert('탈퇴되지 않았습니다.');
 						history.back();
 					}
 				},
@@ -69,7 +69,7 @@
 			<tbody>
 				<tr>
 					<td>탈퇴 아이디</td>
-					<td><input id="mId" type="text" name="mId"  value="${loginDTO.mId}" /></td>
+					<td><input id="mId" type="text" name="mId" value="${loginDTO.mId }" /></td>
 				</tr>
 				<tr>
 					<td>비밀번호 확인</td>
@@ -79,7 +79,7 @@
 			<tfoot>
 				<tr>
 					<td colspan="2">
-						<input id="leaveBtn" type="button" value="회원탈퇴" />				
+						<input id="leaveBtn" type="button" value="회원탈퇴" />
 					</td>
 				</tr>
 			</tfoot>

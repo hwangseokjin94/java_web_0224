@@ -3,20 +3,14 @@ package dto;
 import java.sql.Date;
 
 public class BoardDTO {
-	private int bNo, mNo, bHit, bRef, bStep, bDepth, bDelete;
-	private String bTitle, bContent, bPw, bIp;
+	private int bNo, bHit, bRef, bStep, bDepth, bDelete;
+	private String  mId, bTitle, bContent, bPw, bIp;
 	private Date bRegdate;
 	public int getbNo() {
 		return bNo;
 	}
 	public void setbNo(int bNo) {
 		this.bNo = bNo;
-	}
-	public int getmNo() {
-		return mNo;
-	}
-	public void setmNo(int mNo) {
-		this.mNo = mNo;
 	}
 	public int getbHit() {
 		return bHit;
@@ -48,6 +42,12 @@ public class BoardDTO {
 	public void setbDelete(int bDelete) {
 		this.bDelete = bDelete;
 	}
+	public String getmId() {
+		return mId;
+	}
+	public void setmId(String mId) {
+		this.mId = mId;
+	}
 	public String getbTitle() {
 		return bTitle;
 	}
@@ -78,5 +78,8 @@ public class BoardDTO {
 	public void setbRegdate(Date bRegdate) {
 		this.bRegdate = bRegdate;
 	}
+	
+	
+	 
 }
 

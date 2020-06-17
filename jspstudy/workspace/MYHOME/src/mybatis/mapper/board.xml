@@ -4,6 +4,47 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.mapper.board">
 
+	<select id="boardList" parameterType="Map" resultType="dto.BoardDTO">
+		SELECT * FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD ORDER BY BNO DESC) A)
+		WHERE RN BETWEEN #{beginRecord} AND #{endRecord}
+	</select>
 	
+	<select id="getTotalRecord" resultType="int">
+		SELECT COUNT(*)
+		FROM BOARD
+	</select>
+	<!--게시글 (원글)삽입  -->
+	<insert id="insertbDTO" parameterType="dto.BoardDTO">
+		INSERT INTO BOARD
+		VALUES (BOARD_SEQ.NEXTVAL,#{mId},#{bTitle},#{bContent},#{bPw},#{bIp},0,BOARD_SEQ.CURRVAL,0,0,0,SYSDATE) 		
+	</insert>
+
+	<select id="selectBybNo" parameterType="int" resultType="dto.BoardDTO">
+		SELECT *
+		FROM BOARD
+		WHERE BNO = #{bNo}
+	</select>
+	<update id="updatebHit" parameterType="int">
+		UPDATE BOARD 
+		SET BHIT = BHIT+1
+		WHERE BNO = #{bNo}
+	</update>
+
+	<!-- 새로운 댓글이 달리는경우 -->
+	<!--같은 원글에달린(bRef가 같은)기존의 모든댓글(bDepth>0)들의 bStep값을 1씩증가시킨다.-->
+	<update id="updatebStep" parameterType="dto.BoardDTO">
+		UPDATE BOARD 
+		SET BSTEP = BSTEP+1
+		WHERE BREF = #{bRef} AND BDEPTH > 0
+	</update>
+
+
+
+
+
+
+
+
+
 
 </mapper>

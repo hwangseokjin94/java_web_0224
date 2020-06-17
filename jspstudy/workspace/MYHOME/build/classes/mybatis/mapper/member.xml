@@ -33,26 +33,21 @@
 		FROM MEMBER
 		WHERE MID = #{mId}
 	</select>
-
+	
 	<insert id="insertmDTO" parameterType="dto.MemberDTO">
 		INSERT INTO MEMBER
 		VALUES (MEMBER_SEQ.NEXTVAL, #{mId}, #{mPw}, #{mName}, #{mEmail}, #{mPhone}, #{mAddress}, SYSDATE)
 	</insert>
 	
-	
-	<delete id="deletemDTO" parameterType="String" >
+	<delete id="deletemDTO" parameterType="String">
 		DELETE FROM MEMBER
 		WHERE MID = #{mId}
 	</delete>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<update id="updatemDTO" parameterType="dto.MemberDTO">
+		UPDATE MEMBER
+		SET MNAME=#{mName}, MEMAIL=#{mEmail}, MPHONE=#{mPhone}, MADDRESS=#{mAddress}
+		WHERE MID=#{mId}
+	</update>
 	
 </mapper>

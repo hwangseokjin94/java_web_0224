@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import command.board.BoardInsertCommand;
+import command.board.BoardListCommand;
+import command.board.BoardViewCommand;
+import command.board.ReplyInsertCommand;
 import common.ActionForward;
 import common.Command;
 
@@ -39,7 +43,37 @@ public class BoardController extends HttpServlet {
 			
 			// Command 호출 및 이동방법 결정
 			switch (cmd) {
+			case "/boardListPage.board":
+				command = new BoardListCommand();
+				actionForward = command.execute(request, response);
+				break;
 			
+			case "/insertBoard.board":
+				command = new BoardInsertCommand();
+				actionForward = command.execute(request, response);
+				break;
+			case "/boardViewPage.board":
+				command =new BoardViewCommand();				
+				actionForward = command.execute(request, response);
+				break;
+			case "/replyInsert.board":
+				command = new ReplyInsertCommand();		
+				actionForward = command.execute(request, response);
+				break;
+						
+			
+			//단순이동
+			case "/insertBoardPage.board":
+				actionForward = new ActionForward();				
+				actionForward.setPath("/board/insertBoardPage.jsp");
+				break;
+		
+			case "/replyInsertPage.board":
+				actionForward = new ActionForward();				
+				actionForward.setPath("/board/replyInsertPage.jsp");
+				break;
+				
+				
 			}
 				
 			// 결정된 이동방법으로 이동

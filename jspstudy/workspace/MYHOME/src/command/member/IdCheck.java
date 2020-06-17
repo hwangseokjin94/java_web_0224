@@ -20,6 +20,7 @@ public class IdCheck extends HttpServlet {
     public IdCheck() {
         super();
     }
+    @SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 1. 전달되는 파라미터 저장
@@ -32,12 +33,12 @@ public class IdCheck extends HttpServlet {
 		// 3. 응답할 JSONObject 객체 생성
 		JSONObject obj = new JSONObject();
 		
-		// 4. mId 를 가진 회원이 있으면 obj 에 result 변수에 "YES" 저장
-		//    mId 를 가진 회원이 없으면 obj 에 result 변수에 "NO" 저장
+		// 4. mId 를 가진 회원이 있으면 obj 에 result 변수에 "EXIST" 저장
+		//    mId 를 가진 회원이 없으면 obj 에 result 변수에 "" 저장
 		if ( mDTO != null ) {
-			obj.put("result", "YES");
+			obj.put("result", "EXIST");
 		} else {
-			obj.put("result", "NO");
+			obj.put("result", "");
 		}
 		
 		// 5. obj 를 응답

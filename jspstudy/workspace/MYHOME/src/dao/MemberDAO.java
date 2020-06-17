@@ -67,8 +67,7 @@ public class MemberDAO {
 		return mDTO;
 	}
 	
-	
-	//6.insertmDTO()
+	// 6. insertmDTO()
 	public int insertmDTO(MemberDTO mDTO) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(false);
 		int result = sqlSession.insert("mybatis.mapper.member.insertmDTO", mDTO);
@@ -78,7 +77,8 @@ public class MemberDAO {
 		sqlSession.close();
 		return result;
 	}
-	//7.deletemDTO()
+	
+	// 7. deletemDTO()
 	public int deletemDTO(String mId) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(false);
 		int result = sqlSession.delete("mybatis.mapper.member.deletemDTO", mId);
@@ -89,14 +89,15 @@ public class MemberDAO {
 		return result;
 	}
 	
+	// 8. updatemDTO()
+	public int updatemDTO(MemberDTO mDTO) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(false);
+		int result = sqlSession.update("mybatis.mapper.member.updatemDTO", mDTO);
+		if (result > 0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
 	
 }
-
-
-
-
-
-
-
-
-

@@ -71,8 +71,10 @@ public class MemberController extends HttpServlet {
 				actionForward = new ActionForward();
 				actionForward.setPath("/member/leavePage.jsp");
 				break;
-				
-				
+			case "/myPage.member":
+				actionForward = new ActionForward();
+				actionForward.setPath("/member/myPage.jsp");
+				break;
 				
 				
 				
