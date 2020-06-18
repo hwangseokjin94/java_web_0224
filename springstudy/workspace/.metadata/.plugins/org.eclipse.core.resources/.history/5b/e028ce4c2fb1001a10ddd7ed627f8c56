@@ -1,0 +1,10 @@
+package com.koreait.spring;
+
+public class Calculator {
+	private int num1;
+	private int num2;
+	
+	public Calculator() {
+		// TODO Auto-generated constructor stub
+	}
+}

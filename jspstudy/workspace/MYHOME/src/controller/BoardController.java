@@ -8,9 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import command.board.BoardDeleteCommand;
 import command.board.BoardInsertCommand;
 import command.board.BoardListCommand;
 import command.board.BoardViewCommand;
+import command.board.MyBoardListCommand;
+import command.board.QueryBoardListCommand;
 import command.board.ReplyInsertCommand;
 import common.ActionForward;
 import common.Command;
@@ -61,6 +64,20 @@ public class BoardController extends HttpServlet {
 				actionForward = command.execute(request, response);
 				break;
 						
+			case "/boardDelete.board":
+				command = new BoardDeleteCommand();		
+				actionForward = command.execute(request, response);
+				break;
+				
+			case "/myBoardListPage.board":
+				command = new MyBoardListCommand();
+				actionForward = command.execute(request, response);
+				break;
+			case "/QueryBoardListPage.board":
+				command = new QueryBoardListCommand();
+				actionForward = command.execute(request, response);
+				break;
+				
 			
 			//단순이동
 			case "/insertBoardPage.board":

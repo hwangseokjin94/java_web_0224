@@ -1,0 +1,6 @@
+package com.koreait.spring;
+
+public class Calculator {
+	private int num1;
+	
+}

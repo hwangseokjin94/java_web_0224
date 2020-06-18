@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!--spring bean configuration file : 빈 생성 파일  -->
+	
+	<!--
+		1.디폴트 생성자 
+		<bean id="객체명(인스턴스명)" class = "클래스명"/>
+		<bean id= "객체명(인스턴스명)" class="클래스명">
+			<property name ="필드명1">
+				<value>값1 </value> //값이 문자 , 숫자 상관없이 그냥 적는다. (따옴표가 없다.)
+			</property>
+			
+			<property name ="필드명2">
+				<value>값2 </value> //값이 문자 , 숫자 상관없이 그냥 적는다. (따옴표가 없다.)
+			</property>
+			
+		</bean>		
+		2.필드생성자	
+	 -->
+	
+</beans>

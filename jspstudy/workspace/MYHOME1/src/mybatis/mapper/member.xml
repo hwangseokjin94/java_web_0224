@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.member">
+  
+
+	<select id="selectBymIdmPw" parameterType="dto.MemberDTO" resultType="dto.MemberDTO">
+		SELECT *
+		FROM MEMBER
+		WHERE MID = #{mId} AND MPW = #{mPw}
+	</select>
+
+</mapper>

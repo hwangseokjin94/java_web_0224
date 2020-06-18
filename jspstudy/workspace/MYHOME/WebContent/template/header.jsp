@@ -68,6 +68,8 @@
 	thead{
 	left: 0px;
 	}
+
+	
 	
 </style>
 
@@ -87,7 +89,7 @@
 </script>
 </head>
 <body>
-	
+
 	<div class="wrap">
 		<div class="header-wrap">
 			

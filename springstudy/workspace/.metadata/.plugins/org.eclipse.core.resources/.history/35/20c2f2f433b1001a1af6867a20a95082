@@ -1,0 +1,5 @@
+package com.koreait.spring;
+
+public class MyCalculator {
+
+}

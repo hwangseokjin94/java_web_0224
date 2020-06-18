@@ -1,0 +1,22 @@
+package com.koreait.spring;
+
+public class CalculatorMain {
+
+	public static void main(String[] args) {
+	
+		
+		//1.디폴트 생성자 +setter
+		Calculator calculator1 = new Calculator();
+		calculator1.setNum1(10);
+		calculator1.setNum2(3);
+		calculator1.addition();
+		calculator1.substraction();
+		calculator1.multiplication();
+		calculator1.division();
+		
+		
+		//2.필드 생성자
+		
+	}
+
+}

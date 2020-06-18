@@ -93,9 +93,9 @@
 					<input type="reset" value="다시작성하기"/>					
 					<input type="button" value="목록으로이동" onclick="fn_boardListPage(this.form)"/>
 					
-					<input type="hidden" name="page" value="${page}"/>					
+					<input type="hidden" name="page" value="${param.page}"/>					
 					<input type="hidden" name="mId" value="${loginDTO.mId}"/><!--  작성자-->					
-					<input type="hidden" name="bNo" value="${bNo}"/> <!-- 잿글이달리는 게시글번호 -->
+					<input type="hidden" name="bNo" value="${param.bNo}"/> <!-- 잿글이달리는 게시글번호 -->
 				</td>
 			</tr>
 		</tfoot>

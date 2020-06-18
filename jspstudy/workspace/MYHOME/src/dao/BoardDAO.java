@@ -82,9 +82,52 @@ public class BoardDAO {
 	}
 	
 	
+	//7 insertReplyDTO()
+	public int insertReplyDTO(BoardDTO replyDTO){
+		SqlSession sqlSession =sqlSessionFactory.openSession(false);
+		int result = sqlSession.update("mybatis.mapper.board.insertReplyDTO",replyDTO);
+		if(result>0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
+	
+	//8 deletebDTO()
+	//실제로는 update 처리를 한다.
+	public int deletebDTO(BoardDTO bDTO){
+		SqlSession sqlSession =sqlSessionFactory.openSession(false);
+		int result = sqlSession.update("mybatis.mapper.board.deletebDTO",bDTO);
+		if(result>0) {
+			sqlSession.commit();
+		}
+		sqlSession.close();
+		return result;
+	}
+	// 9. myBoardList()
+		public List<BoardDTO> myBoardList(Map<String, String> map) {
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			List<BoardDTO> list = sqlSession.selectList("mybatis.mapper.board.myBoardList", map);
+			sqlSession.close();
+			return list;
+		}
+	
+	// 10. getMyRecord()
+	public int getMyRecord(String mId) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int result = sqlSession.selectOne("mybatis.mapper.board.getMyRecord",mId);
+		sqlSession.close();
+		return result;
+	}
 	
 	
-	
+	//1.selectByTitle()
+	public List<BoardDTO> selectByTitle(Map<String, String> map){
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<BoardDTO> list =sqlSession.selectList("mybatis.mapper.board.selectByTitle",map);		
+		sqlSession.close();		
+		return list;
+	}
 	
 	
 	

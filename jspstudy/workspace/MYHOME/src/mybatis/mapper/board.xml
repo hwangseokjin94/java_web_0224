@@ -5,7 +5,7 @@
 <mapper namespace="mybatis.mapper.board">
 
 	<select id="boardList" parameterType="Map" resultType="dto.BoardDTO">
-		SELECT * FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD ORDER BY BNO DESC) A)
+		SELECT * FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD ORDER BY BREF DESC,BDEPTH ASC, BSTEP DESC) A)
 		WHERE RN BETWEEN #{beginRecord} AND #{endRecord}
 	</select>
 	
@@ -39,12 +39,31 @@
 	</update>
 
 
+	<insert id="insertReplyDTO"  parameterType="dto.BoardDTO">
+		INSERT INTO BOARD
+		VALUES (BOARD_SEQ.NEXTVAL, #{mId},#{bTitle},#{bContent},#{bPw},#{bIp},0,#{bRef},#{bStep},#{bDepth},0,SYSDATE)
+	</insert>
 
 
+	<update id="deletebDTO" parameterType="dto.BoardDTO">
+		UPDATE BOARD 
+		SET BDELETE = -1
+		WHERE BNO = #{bNo}
+	</update>
 
+	<select id="myBoardList" parameterType="Map" resultType="dto.BoardDTO">
+		SELECT * FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD WHERE MID = #{mId} ORDER BY BREF DESC,BDEPTH ASC, BSTEP DESC) A)
+		WHERE RN BETWEEN #{beginRecord} AND #{endRecord}
+	</select>
+	
+	<select id="getMyRecord" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE MID = #{mId}
+	</select>
 
-
-
-
-
+	<select id="selectByTitle" parameterType="Map" resultType="dto.BoardDTO">
+	SELECT * FROM (SELECT ROWNUM RN, A.* FROM (SELECT * FROM BOARD WHERE BTITLE LIKE '%' || #{q} || '%' ORDER BY BREF DESC,BDEPTH ASC, BSTEP DESC) A)
+		WHERE RN BETWEEN #{beginRecord} AND #{endRecord}
+	</select>
 </mapper>

@@ -1,0 +1,34 @@
+package com.koreait.spring;
+
+public class Calculator {
+	private int num1;
+	private int num2;
+	
+	public Calculator() {	//디폴트 생성자
+		// TODO Auto-generated constructor stub
+	}
+
+	public Calculator(int num1, int num2) {
+		super();
+		this.num1 = num1;
+		this.num2 = num2;
+	}
+	// Method
+	public void addition() {
+		int result = num1 + num2;
+		System.out.println(num1+"+"+num2+"="+result);
+	}
+	public void substraction() {
+		int result = num1 - num2;
+		System.out.println(num1+"-"+num2+"="+result);
+	}
+	public void multiplication() {
+		int result = num1 * num2;
+		System.out.println(num1+"*"+num2+"="+result);
+	}
+	public void division() {
+		int result = num1 / num2;
+		System.out.println(num1+"/"+num2+"="+result);
+	}
+	
+}

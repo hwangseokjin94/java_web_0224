@@ -1,0 +1,22 @@
+package com.koreait.spring;
+
+import java.util.ResourceBundle;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class CalculatorMain {
+
+	public static void main(String[] args) {
+		
+		String configLocation = "calsspath:appCTX.xml";
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext(ResourceBundle);
+		//ctx가 xml을 통해 bean을 생성하려면 getBean()메소드를 사용한다.
+		MyCalculator myCalculator1 =ctx.getBean("myCalculator1",MyCalculator.class);
+		 myCalculator1.addtion();
+		 myCalculator1.substraction();
+		 myCalculator1.multiplication();
+		 myCalculator1.division();
+	}
+
+}

@@ -48,7 +48,24 @@
 		f.action ='/MYHOME/replyInsertPage.board';
 		f.submit();
 	}
-
+	//
+	function fn_boardDelete(f) {
+		var bPw='${bDTO.bPw}'
+		if(f.bPw.value =='' ){
+			alert('삭제비밀번호를 입력하세요');
+			f.bPw.focus();
+			return;
+		}
+		
+		if(f.bPw.value !=bPw ){
+			alert('비밀번호를 확인하세요');
+			f.bPw.focus();
+			return;
+		}
+		
+		f.action='/MYHOME/boardDelete.board';
+		f.submit();
+	}
 
 </script>
 <form method="POST">
@@ -89,11 +106,20 @@
 		<tfoot>
 			<tr>
 				<td colspan="2">		
-					<!-- 로그인을 해야만글을 쓸수있다. -->
-					<c:if test="${loginDTO ne null}">
+					<!-- 로그인을 해야만글을 쓸수있다.원글에만 댓글을 달수 있다. -->
+					<c:if test="${loginDTO ne null and bDTO.bDepth eq 0 }">
 						<input type="button" value="댓글달기" onclick="fn_replyInsertPage(this.form)"/>
-					</c:if>							
+					</c:if>
+												
 					<input type="button" value="목록으로이동" onclick="location.href='/MYHOME/boardListPage.board?page=${page}'"/>
+					&nbsp;&nbsp;&nbsp;
+					
+					<!--로그인을 해야만 글을 삭제할수 있다. -->
+					<c:if test="${loginDTO ne null}">
+						<input type="button" value="삭제하기" onclick="fn_boardDelete(this.form)"/>
+						삭제비밀번호<input type="password" name ="bPw" size="5" />
+					</c:if>
+					
 					<input type="hidden" name="page" value="${page}"/>					
 					<input type="hidden" name="bNo" value="${bDTO.bNo}"/>					
 				</td>

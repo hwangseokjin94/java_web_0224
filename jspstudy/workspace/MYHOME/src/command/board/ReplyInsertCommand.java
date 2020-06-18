@@ -1,5 +1,7 @@
 package command.board;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -48,11 +50,24 @@ public class ReplyInsertCommand implements Command {
 		
 		BoardDAO.getInstance().updatebStep(bDTO);
 		
+		//6.replyDTO저장
 		
-		
-		
-		
-		return null;
+		int result= BoardDAO.getInstance().insertReplyDTO(replyDTO);
+		ActionForward actionForward = new ActionForward();
+		if(result>0) {
+			actionForward.setPath("/MYHOME/boardListPage.board?page="+page);
+			actionForward.setRedirect(true);
+		}else{
+			response.setContentType("text/html; charset=utf-8");
+			PrintWriter out =response.getWriter();
+			
+			out.println("<script type='text/javascript'>");
+			out.println("alert('댓글이 등록되지않았습니다.');");
+			out.println("history.back();");
+			out.println("</script>");
+			out.close();			
+		}
+		return actionForward;
 	}
 
 }

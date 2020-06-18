@@ -1,0 +1,12 @@
+package com.koreait.spring;
+
+public class CalculatorMain {
+
+	public static void main(String[] args) {
+	
+		
+		//1.디폴트 생성자 +
+		
+	}
+
+}
