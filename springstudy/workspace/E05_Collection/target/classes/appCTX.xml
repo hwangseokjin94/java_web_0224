@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="handler1" class="com.koreait.spring.ListHandler">
+		<property name="list">
+			<list>
+				<value>탕수육</value>
+				<value>물</value>
+				<value>커피</value>
+				<value>마라상궈</value>
+				<value>꿔바로우우</value>
+			</list>	
+		</property>
+	</bean>
+	
+	<!-- Set는 중복을 허용하지않는다. -->
+	<bean id="handler2" class="com.koreait.spring.SetHandler">
+		<property name="mySet">
+			<set>
+				<value>서울</value>
+				<value>부산</value>
+				<value>부산</value>
+				<value>인천</value>
+				<value>서울</value>
+			</set>
+		</property>
+	</bean>
+	<!--3. Map계열은  <map>태그와  <entry>태그를 사용하낟.  -->
+	<bean id="handler3" class="com.koreait.spring.MapHandler">
+		<property name="myMap">
+			<map>	
+				<entry key="name" value="에밀리"/>
+				<entry key="age" value="27"/>
+				<entry key="address" value="서울시"/>
+				<entry key="gender" value="여자"/>
+				<entry key="phone" value="010-1111-1111"/>
+			</map>		
+		</property>
+	</bean>
+	
+	
+</beans>

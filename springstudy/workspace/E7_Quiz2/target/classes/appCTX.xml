@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="calc" class="com.koreait.spring.Calculator"></bean>
+	
+	<bean id="gugudan" class="com.koreait.spring.Gugudan">
+		<property name="startDan" value="3" />
+		<property name="endDan" value="4" />
+		<property name="startNum" value="5" />
+		<property name="endNum" value="7" />
+		<property name="calculator" ref="calc" />
+	</bean>
+
+
+</beans>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!--1. 디폴트 생성  -->
+	<!--2. Setter를 통한 주입 -->
+	<bean id="person1" class="com.koreait.spring.Person">
+		<property name="name" value="제임스"/>			
+		<property name="age" value="44"/>			
+		<property name="gender" value="여"/>			
+		<property name="phone" value="010-3333-3333"/>			
+	</bean>
+	
+	<!--2.1 필드를 이용한 생성자로 주입  -->
+	<bean id="person2" class="com.koreait.spring.Person">
+		<constructor-arg value="앨리스"/>			
+		<constructor-arg value="44"/>			
+		<constructor-arg value="여"/>			
+		<constructor-arg value="010-3333-3333"/>		
+	</bean>
+	
+	<!--property방식과  constructor-arg방식중 많이사용되고 우수한방식은? property방식이다-->
+	
+	<!--3.1  -->
+	<bean id="handler1" class="com.koreait.spring.PersonHandler">
+		<property name="person" ref="person1"/>
+				
+	</bean>
+	<!--4.1필드를 ㅣ용하는 생성자 주입  -->
+	<bean id="handler2" class="com.koreait.spring.PersonHandler">
+		<constructor-arg ref="person2"/>
+			
+	</bean>
+	
+	
+</beans>

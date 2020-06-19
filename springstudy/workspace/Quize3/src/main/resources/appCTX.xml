@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="midterm" class="com.koreait.spring.ExamScore"></bean>
+	
+	<bean id="student" class="com.koreait.spring.Student">
+		<property name="name" value="david" />
+		<property name="age" value="19" />
+		<property name="homeInfo">
+			<map>	
+				<entry key="address" value="seoul"/>
+				<entry key="phone" value="02-555-5555"/>				
+			</map>		
+				
+		</property>
+		<property name="scoreList">
+			<list>
+				<value>50</value>
+				<value>60</value>
+				<value>60</value>
+				<value>70</value>
+				<value>80</value>
+			</list>
+		</property>
+		<property name="exam" ref="midterm" />
+		
+	</bean>
+
+</beans>
