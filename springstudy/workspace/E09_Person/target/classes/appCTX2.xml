@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!--
+	
+		Person p = new Person();
+		p.setName("에밀리");
+		p.setAge("20");
+		my.setCar(myCar)
+	
+	  -->
+<!-- 
+	 	<bean id="p" class="com.koreait.spring.Person">		
+			<property name="name" value="에밀리"/>
+			<property name="age" value="20"/>
+			<property name="car"  ref="myCar"/>
+		</bean> -->
+<bean id ="p" class="com.koreait.spring.Person" p:name="에밀리" p:age="20" p:car-ref="myCar"/>
+
+ 
+ </beans>

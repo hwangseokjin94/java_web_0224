@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	
+	<bean id = "person1" class="com.koreit.spring.Person">
+		<property name="name" value="에밀리"/>
+		<property name="hobbies">
+			<list>
+				<value>등산</value>
+				<value>수영</value>
+				<value>필라테스</value>
+			</list>
+		</property>
+	</bean>	
+	<context:annotation-config/>
+	<bean class="com.koreit.spring.AnnoCTX"/>
+</beans>
+
+	<!-- 
+		AnnoCTX.java 로 생성하는 Bean을 
+		appCTX.xml 에서 생성할수 있도록 처리하는 방법
+		앞으로 appCTX.xml  사용하겠다.
+		
+		xml이 java를 흡수하는 방법
+		1. Namespaces 에서 context를 추가한다.
+		2.<context : annotation-config/>릋 추가하낟.
+		3.<bean class="Annoctx클래스"/>
+		
+	 -->
+	 <!--Annoctx.java 에 정의된bean을 생성하라.  -->

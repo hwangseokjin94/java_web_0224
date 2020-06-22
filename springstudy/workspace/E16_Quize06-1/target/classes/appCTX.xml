@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<bean id="myEngine" class="com.koreait.spring.Engine">
+		<property name="fuelType" value="디젤" />
+		<property name="cc" value="1991" />
+		<property name="hp" value="245" />
+		<property name="fuelEfficiency" value="12.5" />
+	</bean>
+
+</beans>

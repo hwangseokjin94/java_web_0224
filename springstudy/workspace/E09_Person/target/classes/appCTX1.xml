@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<!-- Car myCar = new Car();
+		myCar.setModel("520d");
+		myCar.sePrice(7000); -->
+	<!-- 	<bean id ="myCar" class="com.koreait.spring.Car">
+			<property name="model" value="520d"/>
+			<property name="price" value="7000"/>	
+		</bean>	
+	 -->
+	 
+	 <!--Namespaces 탭에서 p를 체크하면 property를 bean태그의 속성으로 사용할수있다.  -->
+	 <bean id="myCar" class="com.koreait.spring.Car" p:model="520d" p:price="7000"/>
+	 
+
+ </beans>
