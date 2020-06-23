@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	
+ 
+	<!-- 기존방식
+	myCalculator 에 Calculator 넣기
+	 
+	1 디폴트 생성자 +setter
+ 	<bean id="calc" class="com.koreait.spring.Calculator"/>
+	<bean id="MyCalc" class="com.koreait.spring.MyCalculator">
+		<property name="calculator" ref="calc"/>
+	</bean>
+
+		2.필드생성자
+	<bean id="calc1" class="com.koreait.spring.Calculator"/>
+	<bean id="MyCalc1" class="com.koreait.spring.MyCalculator">
+		<constructor-arg ref="calc"/>
+	</bean> -->
+ 
+
+	<!--새로운 방식  -->
+	<!--클래스에서 애너테이션을 이요해 직접주입할수있다.  -->
+	<!--XML에는 Bean의 정의 만 해둔다.  -->
+	
+	<!--MyCalculator 에 Calculator 주입하기  -->
+	<!--
+		1.Calculator클래스에 이름을 달아 놓는다.
+			1) @Component("이름")
+			2) 예시
+				@Component("calc") : 내가 calc이다.
+		2.MyCalculator클래스의 필드 선언(private Calculator calculator)에두개ㅡ이 애너테이션
+			1) @Qualifier("calc") : calc를	(calc라는 Bean)을
+			2) @Autowired         : 자동으로 주입해주세요.
+		3.애너테이션을활성화한다.
+			1)appCTX.xml 의 Namespace 탭 context를 체크한다.
+			2)appCTX.xml에 <context:annotion-config/>		
+	  -->
+	<context:annotation-config/>
+	<bean id="calc" class="com.koreait.spring.Calculator"/>
+	<bean id="MyCalc" class="com.koreait.spring.MyCalculator"/>
+	
+	
+	
+	
+	
+	
+	
+	
+</beans>

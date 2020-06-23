@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!--안녕 나는 appCTX.xml야  -->
+	<!--1.디폴트 생성자 +setter  -->
+		<bean id="contact1" class="com.koreait.mvc02.dto.ContactDTO">
+			<property name="phone" value="010-1111-1111"/>
+			<property name="addr" value="마포"/>
+		</bean>
+		<bean id="person1" class="com.koreait.mvc02.dto.PersonDTO">
+			<property name="name" value="신소율"/>
+			<property name="age" value="30"/>
+			<property name="contact" ref="contact1"/>
+		</bean>
+	
+	<!-- 필드를 이용한 생성자 -->
+		<bean id="contact2" class="com.koreait.mvc02.dto.ContactDTO">
+			<constructor-arg value="010-2222-2222"/>
+			<constructor-arg value="구로"/>
+			
+		</bean>
+		<bean id="person2" class="com.koreait.mvc02.dto.PersonDTO">
+			<constructor-arg value="신소율"/>
+			<constructor-arg value="30"/>
+			<constructor-arg ref="contact2"/>
+			
+		</bean>
+	
+</beans>
