@@ -1,0 +1,15 @@
+E16_Quiz6.java
+Engine.java
+	private String fuelType;  // 가솔린, 디젤
+	private int cc;  // 배기량 1,991
+	private int hp;  // 마력 245
+	private double fuelEfficiency;  // 연비 12.5
+Car.java
+	private String model;
+	private Engine engine;
+	//  AnnoCTX.java 에 appCTX.xml 포함시키기.
+	// 모델: 520d
+	// 연료: 디젤
+	// 배기량: 1991cc
+	// 마력: 245
+	// 연비: 12.5

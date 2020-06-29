@@ -1,0 +1,43 @@
+	<!-- DataSource 사용을 위해 필요한 태그를 추가합니다. -->
+	
+	<!-- MySQL 5.x -->
+	<Resource
+		name="jdbc/mysql5"
+		auth="Container"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/spring"
+		username="root"
+		password="1111"
+		maxTotal="8"
+		maxIdle="2"
+		maxWaitMillis="-1"
+		type="javax.sql.DataSource"
+	/>
+	
+	<!-- MySQL 8.x -->
+	<Resource
+		name="jdbc/mysql8"
+		auth="Container"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/spring?serverTimezone=UTC"
+		username="root"
+		password="1111"
+		maxTotal="8"
+		maxIdle="2"
+		maxWaitMillis="-1"
+		type="javax.sql.DataSource"
+	/>
+	
+	<!-- Oracle XE -->
+	<Resource
+		name="jdbc/oracle"
+		auth="Container"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
+		username="javaweb0224"
+		password="1111"
+		maxTotal="8"
+		maxIdle="2"
+		maxWaitMillis="-1"
+		type="javax.sql.DataSource"
+	/>

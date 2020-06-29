@@ -1,0 +1,21 @@
+ojdbc6.jar 디펜던시 추가하기
+
+
+- ojdbc6.jar 는 mvnrepository 에 없어서 별도의 repository 설정을 한다.
+- 개인적으로 만들거나 아니면 가져다 쓰는 방식
+
+1. <dependencies> 위에 추가합니다.
+<repositories>
+	<repository>
+		<id>oracle</id>
+		<name>ORACLE JDBC Repository</name>
+		<url>http://maven.jahia.org/maven2</url>
+	</repository>
+</repositories>
+
+2. <dependencies> 내부에 추가합니다.
+<dependency> 
+	<groupId>com.oracle</groupId>
+	<artifactId>ojdbc6</artifactId>
+	<version>12.1.0.2</version>
+</dependency>

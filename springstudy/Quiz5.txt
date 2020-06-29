@@ -1,0 +1,17 @@
+E15_Quiz5.java
+Gun.java
+	private String model;
+	private int bullet;
+Police.java
+	private String name;
+	private HashMap<String, String> deptInfo;
+	private Gun pistol;
+
+	// appCTX.xml 에 AnnoCTX.java 를 포함시키기.
+	// 다음과 같이 출력됩니다.
+	이름: 제임스
+	부서명: 강력반
+	부서위치: 102호
+	권총: 베레타
+	현재총알수: 6발
+
