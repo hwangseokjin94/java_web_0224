@@ -116,17 +116,16 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>        
-		
-<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-jdbc</artifactId>
-    <version>4.1.4.RELEASE</version>
-</dependency>
-		
-		
-		
-		
+	
+	
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>4.1.4.RELEASE</version>
+		</dependency>
+	
+	
 	</dependencies>
     <build>
         <plugins>

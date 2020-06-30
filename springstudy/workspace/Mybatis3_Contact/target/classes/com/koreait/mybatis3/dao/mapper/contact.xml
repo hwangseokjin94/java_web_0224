@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.koreait.mybatis3.dao.ContactDAO">
+	
+	<select id="selectcontactList" resultType="com.koreait.mybatis3.dto.ContactDTO">
+	SELECT CNO , CNAME, CPHONE ,CADDRESS ,CEMAIL,CNOTE
+	FROM CONTACT
+	ORDER BY CNO
+	</select>
+	
+	<select id="selectcontactByNo" resultType="com.koreait.mybatis3.dto.ContactDTO">
+	SELECT CNO , CNAME, CPHONE ,CADDRESS ,CEMAIL,CNOTE
+	FROM CONTACT
+	WHERE CNO = #{cNo}
+	</select>
+	
+	<insert id="insertContact">
+	INSERT INTO CONTACT (CNO , CNAME, CPHONE ,CADDRESS ,CEMAIL,CNOTE)
+VALUES (CONTACT_SEQ.NEXTVAL,#{param1},#{param2},#{param3},#{param4},#{param5})
+	</insert>
+	
+	<delete id="deletecontactByNo">
+	DELETE FROM CONTACT WHERE CNO = #{cNo}
+	</delete>
+	
+</mapper>

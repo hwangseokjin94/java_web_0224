@@ -4,17 +4,23 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
-		<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-			<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
-			<property name="username" value="javaweb0224" />
-			<property name="password" value="1111" />
-		</bean>
-		
-		<bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
-			<property name="dataSource" ref="ds" />
-		</bean>
-		
-		
+
+	<!-- 1. spring-jdbc -->
+	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+		<property name="username" value="javaweb0224" />
+		<property name="password" value="1111" />
+	</bean>
+	<bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds" />
+	</bean>
+	
+	<!-- 2. DI -->
+	<bean id="contactListCommand" class="com.koreait.mvc14.command.ContactListCommand" />
+	<bean id="contactViewCommand" class="com.koreait.mvc14.command.ContactViewCommand" />
+	<bean id="contactInsertCommand" class="com.koreait.mvc14.command.ContactInsertCommand" />
+	<bean id="contactUpdateCommand" class="com.koreait.mvc14.command.ContactUpdateCommand" />
+	<bean id="contactDeleteCommand" class="com.koreait.mvc14.command.ContactDeleteCommand" />
+
 </beans>

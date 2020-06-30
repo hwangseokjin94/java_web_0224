@@ -24,5 +24,4 @@
 	<context:component-scan base-package="com.koreait.mvc14" />
 	
 	
-	
 </beans:beans>

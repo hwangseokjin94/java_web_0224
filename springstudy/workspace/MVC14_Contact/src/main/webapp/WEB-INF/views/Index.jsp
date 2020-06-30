@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="ContactViewPage">목록보기</a>
-	<a href="map">지도보기</a>
+
+	<a href="contactListPage">연락처 관리</a>
+
 </body>
 </html>

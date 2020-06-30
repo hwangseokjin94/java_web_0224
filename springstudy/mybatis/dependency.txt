@@ -1,0 +1,32 @@
+<!-- 프로퍼티 수정 -->
+<properties>
+	<java-version>1.8</java-version>
+	<org.springframework-version>5.1.4.RELEASE</org.springframework-version>
+	<org.aspectj-version>1.9.2</org.aspectj-version>
+	<org.slf4j-version>1.7.25</org.slf4j-version>
+</properties>
+
+
+<!-- 3가지 dependency 추가 -->
+<!-- mybatis + mybatis-spring + spring-jdbc -->
+
+<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+<dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis</artifactId>
+	<version>3.2.8</version>
+</dependency>
+		
+<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+<dependency>
+	<groupId>org.mybatis</groupId>
+	<artifactId>mybatis-spring</artifactId>
+	<version>1.2.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-jdbc</artifactId>
+	<version>${org.springframework-version}</version>
+</dependency>

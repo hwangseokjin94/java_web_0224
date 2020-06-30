@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.koreait.mybatis2.dao.SimpleDAO">
+	<select id="selectSimpleList" resultType="com.koreait.mybatis2.dto.SimplieDTO">
+		SELECT BNO,BWRITER,BTITLE,BCONTENT,BDATE
+		FROM SIMPLE
+		ORDER BY BNO DESC
+	</select>
+	<select id="selectBybNo" resultType="com.koreait.mybatis2.dto.SimplieDTO">
+		SELECT BNO,BWRITER,BTITLE,BCONTENT,BDATE
+		FROM SIMPLE
+		WHERE BNO = #{bNo}
+		ORDER BY BNO DESC
+	</select>
+	<update id="updateSimple">
+		UPDATE SIMPLE
+		SET BTITLE = #{param1},BCONTENT = #{param2}
+		WHERE BNO = #{param3}
+	</update>
+	<delete id="deleteSimple">
+	DELETE FROM SIMPLE WHERE BNO = #{bNo}
+	</delete>
+	<insert id="insertSimple">
+	INSERT INTO SIMPLE(BNO,BWRITER,BTITLE,BCONTENT,BDATE) VALUES (SIMPLE_SEQ.NEXTVAL,#{param1},#{param2},#{param3},SYSDATE)
+	</insert>
+</mapper>

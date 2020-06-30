@@ -1,12 +1,11 @@
 package com.koreait.mvc14.dto;
 
 public class ContactDTO {
-	
+
 	private int cNo;
-	private String cName, cPhone, cAddress ,cEmail, cNote;
-	public ContactDTO() {
-		// TODO Auto-generated constructor stub
-	}
+	private String cName, cPhone, cAddress, cEmail, cNote;
+	
+	public ContactDTO() {}
 	public ContactDTO(int cNo, String cName, String cPhone, String cAddress, String cEmail, String cNote) {
 		super();
 		this.cNo = cNo;
@@ -16,6 +15,7 @@ public class ContactDTO {
 		this.cEmail = cEmail;
 		this.cNote = cNote;
 	}
+	
 	public int getcNo() {
 		return cNo;
 	}
@@ -52,6 +52,5 @@ public class ContactDTO {
 	public void setcNote(String cNote) {
 		this.cNote = cNote;
 	}
-	
 	
 }

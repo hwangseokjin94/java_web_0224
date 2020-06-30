@@ -1,52 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function fn_contactUpdate(f) {
+		f.action = 'contactUpdate';
+		f.submit();
+	}
+	function fn_contactDelete(f) {
+		if (confirm('삭제할까요?')) {
+			f.action = 'contactDelete';
+			f.submit();
+		}
+	}
+</script>
 </head>
 <body>
-	<table border="1">		
-	<thead>
-	<tr>
-		<td>번호</td>		
-		<td>이름</td>		
-		<td>연락처</td>		
-		<td>주소</td>		
-		<td>이메일</td>		
-		<td>비고</td>		
-	</tr>
-	</thead>	
-	<tbody>
-	<c:if test="${empty list}">
-	<tr>
-		<td colspan="6">연락처없어요</td>
-	</tr>
-	</c:if>
-	<c:if test="${not empty list}">
-		<c:forEach var="cDTO" items="${list}">
-			<tr>
-				<td>${cDTO.cNo}</td>
-				<td><a href="ViewPage?cNo=${cDTO.cNo}">${cDTO.cName}</a></td>
-				<td>${cDTO.cPhone}</td>
-				<td>${cDTO.cAddress}</td>
-				<td>${cDTO.cEmail}</td>
-				<td>${cDTO.cNote}</td>
-			</tr>
-		</c:forEach>
-	</c:if>
-	</tbody>
-	<tfoot>
-	<tr>
-		<td colspan="6">
-			<input type="button" value="새연락처등록" onclick="location.href='contactInsertPage'">
-		</td>
-		
-	</tr>
-	</tfoot>
-	</table>
+
+	<div>
+		<h3>${cDTO.cNo}번 연락처</h3>
+		이름 : ${cDTO.cName}<br/>
+		전화 : ${cDTO.cPhone}<br/>
+		주소 : ${cDTO.cAddress}<br/>
+		이메일 : ${cDTO.cEmail}<br/>
+		비고 : ${cDTO.cNote}<br/>
+	</div>
+	
+	<br/>
+	
+	<form method="post">
+		<h3>정보를 수정하고 수정하기 버튼을 클릭하세요</h3>
+		<input type="text" name="cName" value="${cDTO.cName}" /><br/>
+		<input type="text" name="cPhone" value="${cDTO.cPhone}" /><br/>
+		<input type="text" name="cAddress" value="${cDTO.cAddress}" /><br/>
+		<input type="text" name="cEmail" value="${cDTO.cEmail}" /><br/>
+		<input type="text" name="cNote" value="${cDTO.cNote}" /><br/>
+	
+		<input type="hidden" name="cNo" value="${cDTO.cNo}" />
+		<input type="button" value="수정하기" onclick="fn_contactUpdate(this.form)" />
+		<input type="button" value="삭제하기" onclick="fn_contactDelete(this.form)" />
+	</form>
+
 </body>
 </html>
