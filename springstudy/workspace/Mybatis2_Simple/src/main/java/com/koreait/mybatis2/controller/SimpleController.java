@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.koreait.mybatis2.command.SImpleViewCommand;
 import com.koreait.mybatis2.command.SimpleCommand;
@@ -62,9 +63,12 @@ public class SimpleController {
 	public String simpleListPage() {		
 		return"simple/insertPage";
 	}
+	
 	@RequestMapping(value="simpleInsert", method=RequestMethod.POST)
-	public String simpleInsert(HttpServletRequest request, Model model) {
-		model.addAttribute("request",request);		
+	public String simpleInsert(RedirectAttributes rttr,
+			HttpServletRequest request, Model model) {
+		model.addAttribute("rttr",rttr);
+		model.addAttribute("request",request);
 		simpleCommand = new SimpleInsertCommand();
 		simpleCommand.execute(sqlSession, model);
 		return"redirect:simpleListPage";

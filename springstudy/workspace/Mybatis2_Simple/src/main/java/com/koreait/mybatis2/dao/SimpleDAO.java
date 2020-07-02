@@ -16,5 +16,5 @@ public interface SimpleDAO {
 	//4.삭제
 	public void deleteSimple(int bNo);
 	//5.삽입
-	public void insertSimple(String bWriter ,String bTitle,String bContent);
+	public int insertSimple(String bWriter ,String bTitle,String bContent);
 }

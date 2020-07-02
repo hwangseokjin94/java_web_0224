@@ -8,7 +8,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	INSERT INTO IMAGEBOARD (INO, IWRITER, ITITLE, ICONTENT, IFILENAME, IREGDATE)
 		VALUES (IMAGEBOARD_SEQ.NEXTVAL, #{param1}, #{param2}, #{param3}, #{param4}, SYSDATE)
 	</insert>
-	
+
 	<select id="selectImageBoardList" resultType="com.koreait.mybatis4.dto.ImageboardDTO">
 	SELECT INO, IWRITER, ITITLE, ICONTENT, IFILENAME, IREGDATE
 	FROM IMAGEBOARD

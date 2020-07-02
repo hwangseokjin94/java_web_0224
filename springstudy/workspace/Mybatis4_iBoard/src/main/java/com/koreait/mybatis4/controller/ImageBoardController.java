@@ -31,7 +31,7 @@ public class ImageBoardController {
 	
 	@RequestMapping("/")
 	public String goIndex() {
-		return"index";
+		return"uploadPage";
 	}
 	@RequestMapping("uploadPage")
 	public String goUploadPage() {
